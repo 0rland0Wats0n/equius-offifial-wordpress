@@ -1,0 +1,75 @@
+/* Avenir */
+@font-face {
+  font-family: "Avenir LT Std";
+  src: url(./Avenir\ LT\ Std/AvenirLTStd-Light.oft);
+}
+
+@font-face {
+  font-family: "Avenir LT Std";
+  font-style: italic;
+  src: url(./Avenir\ LT\ Std/AvenirLTStd-LightOblique.oft);
+}
+
+@font-face {
+  font-family: "Avenir LT Std";
+  font-weight: 500;
+  src: url(./Avenir\ LT\ Std/AvenirLTStd-Book.oft);
+}
+
+@font-face {
+  font-family: "Avenir LT Std";
+  font-weight: 500;
+  font-style: italic;
+  src: url(./Avenir\ LT\ Std/AvenirLTStd-BookOblique.oft);
+}
+
+/* Berlingske Serif Cn */
+@font-face {
+  font-family: "Berlingske Serif Cn";
+  src: url(./Berlingske\ Serif\ Cn/BERLINGSKESERIFCN-MD.TTF);
+}
+
+@font-face {
+  font-family: "Berlingske Serif Cn";
+  font-style: italic;
+  src: url(./Berlingske\ Serif\ Cn/BERLINGSKESERIFCN-MDITALIC.TTF);
+}
+
+@font-face {
+  font-family: "Berlingske Serif Cn";
+  font-weight: bold;
+  src: url(./Berlingske\ Serif\ Cn/BERLINGSKESERIFCN-DBD.TTF);
+}
+
+@font-face {
+  font-family: "Berlingske Serif Cn";
+  font-style: italic;
+  font-weight: bold;
+  src: url(./Berlingske\ Serif\ Cn/BERLINGSKESERIFCN-MDITALIC.TTF);
+}
+
+/* Berlingske Serif */
+@font-face {
+  font-family: "Berlingske Serif";
+  src: url(./Berlingske\ Serif/BERLINGSKESERIF-MD.TTF);
+}
+
+@font-face {
+  font-family: "Berlingske Serif";
+  font-style: italic;
+  src: url(./Berlingske\ Serif/BERLINGSKESERIF-MDITALIC.TTF);
+}
+
+@font-face {
+  font-family: "Berlingske Serif";
+  font-weight: bold;
+  src: url(./Berlingske\ Serif/BERLINGSKESERIF-DB.TTF);
+}
+
+@font-face {
+  font-family: "Berlingske Serif";
+  font-weight: bold;
+  font-style: italic;
+  src: url(./Berlingske\ Serif/BERLINGSKESERIF-DBITALIC.TTF);
+}
+

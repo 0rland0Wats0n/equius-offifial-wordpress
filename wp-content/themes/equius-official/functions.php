@@ -120,9 +120,13 @@ add_action( 'widgets_init', 'equius_official_widgets_init' );
  * Enqueue scripts and styles.
  */
 function equius_official_scripts() {
+	wp_enqueue_style( 'fonts', get_template_directory_uri() . '/fonts/fonts.main.css' );
 	wp_enqueue_style( 'equius-official-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'main-styles', get_template_directory_uri() . '/css/equius.main.style.css' );
 
 	wp_enqueue_script( 'equius-official-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+	
+	wp_enqueue_script( 'equius-official-main', get_template_directory_uri() . '/js/equis.main.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'equius-official-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 

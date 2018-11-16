@@ -1,0 +1,49 @@
+/*----------- 
+# TYPOGRAPHY 
+------------*/
+
+h1 {
+  font-family: "Berlingske Serif Cn", serif;
+  font-size: 52.5px;
+}
+
+h2, h3 {
+  font-family: "Berlingske Serif", serif;
+  font-size: 36px;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 25.5px;
+}
+
+h3.type__leader {
+  font-family: "Avenir LT Std", sans-serif;
+}
+
+h4 {
+  font-family: "Berlingske Serif", serif;
+  font-size: 15.75px;
+  font-weight: bold;
+}
+
+h5,
+h6,
+.type__caption {
+  font-family: "Avenir LT Std",  sans-serif;
+  font-weight: 500;
+  font-size: 11.25px;
+}
+
+small,
+.type__small {
+  font-family: "Avenir LT Std",  sans-serif;
+  font-weight: 500;
+  font-size: 13.5px;
+}
+
+html,
+body {
+  font-family: "Avenir LT Std", sans-serif;
+  font-size: 15px;
+}
