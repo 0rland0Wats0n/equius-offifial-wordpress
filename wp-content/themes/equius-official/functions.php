@@ -17,6 +17,43 @@ if ( ! function_exists( 'equius_official_setup' ) ) :
 	 */
 	function equius_official_setup() {
 		/*
+		 * Include Advance Custom Fields
+		 * plugin if it hasn't already been loaded
+		 * into WordPress.
+		*/
+		if ( !class_exists('ACF') ) {
+			// 1. customize ACF path
+			add_filter('acf/settings/path', 'my_acf_settings_path');
+			function my_acf_settings_path( $path ) {
+			
+					// update path
+					$path = get_stylesheet_directory() . '/acf/';
+					
+					// return
+					return $path;
+					
+			}
+			
+			// 2. customize ACF dir
+			add_filter('acf/settings/dir', 'my_acf_settings_dir');
+			function my_acf_settings_dir( $dir ) {
+			
+					// update path
+					$dir = get_stylesheet_directory_uri() . '/acf/';
+					
+					// return
+					return $dir;
+					
+			}
+			
+			// 3. Hide ACF field group menu item
+			// add_filter('acf/settings/show_admin', '__return_false');
+
+			// 4. Include ACF
+			include_once( get_stylesheet_directory() . '/acf/acf.php' );
+		}
+
+		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
 		 * If you're building a theme based on equiusofficial, use a find and replace
