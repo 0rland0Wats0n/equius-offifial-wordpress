@@ -257,6 +257,74 @@ section[role="navigation"] > nav > ul > li:not(:last-child) a::after {
   margin: 0 0 1em;
 }
 
+/* Team */
+.widget__team {
+  margin: 10.5em auto 0;
+  position: relative;
+}
+
+.widget_team__arrow_right,
+.widget_team__arrow_left {
+  display: block;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  margin: auto;
+  cursor: pointer;
+  opacity: 0.85;
+  -webkit-transition: opacity 200ms ease;
+  transition: opacity 200ms ease;
+}
+
+.widget_team__arrow_right:hover,
+.widget_team__arrow_left:hover {
+  opacity: 1;
+}
+
+.widget_team__arrow_right {
+  right: 0;
+}
+
+.widget_team__arrow_left {
+  left: 0;
+}
+
+.widget_team__content .team__members {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+
+.widget_team__content .team__members>li {
+  text-align: center;
+  color: white;
+}
+
+.widget_team__content .team__members>li>img {
+  width: 75px;
+  max-width: 100%;
+  border-radius: 50%;
+}
+
+.widget_team__content .team__members>li>h4 {
+  margin: 1em 0;
+}
+
+.widget_team__content .team__members>li>p {
+  margin: 0 0 1em;
+}
+
+
 /* ----------------
 # LANDING HEADER
 -----------------*/
@@ -445,6 +513,32 @@ header .header__content .header__scroll::after {
   line-height: 1.25;
 }
 
+/* Team */
+#team {
+  background-color: #001A44;
+  padding: 7em 2em 10em;
+  margin-top: -4em;
+}
+
+.team__content {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.team__content>h1 {
+  text-align: center;
+  margin: 0 auto 2em;
+  color: white;
+}
+
+.team__content>p {
+  text-align: center;
+  max-width: 750px;
+  margin: 0 auto 1em;
+  color: white;
+  font-family: "Berlingske Serif", serif;
+  font-size: 27px;
+}
 
 /*----------- 
 # FOOTER

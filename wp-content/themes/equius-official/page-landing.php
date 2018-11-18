@@ -12,11 +12,9 @@
   ?>
   <header style="background-image: url(<?php echo($featured_image) ?>)">
     <div class="header__content">
-      <!-- get hero heaing from ACF -->
       <?php $hero_heading = get_field( 'hero_heading' ) ?>
       <h1 class="type__hero"><?php echo $hero_heading ?></h1>
 
-      <!-- get 3 most recent posts -->
       <?php
         $args = array(
           'numberposts' => 3,
@@ -36,7 +34,6 @@
         $recent_posts = wp_get_recent_posts( $args, ARRAY_A );
       ?>
 
-      <!-- show recent posts widget if posts were found -->
       <?php if($recent_posts): ?>
         <section class="widget__recent_articles">
           <p class="type__caption">Recent Articles</p>
@@ -45,7 +42,6 @@
               <div class="recent_articles__article" data-active="<?php echo $key == 0 ? "active" : "inactive" ?>">
                 <h4><?php echo($recent["post_title"]); ?></h4>
                 <span>
-                  <!-- get post categories -->
                   <?php $post_categories = get_the_category($recent["ID"]); ?>
                   <p class="type__caption">
                     <?php echo(date("m.d.Y", time($recent["post_date"]))); ?>
@@ -78,7 +74,6 @@
     </div>
   </header>
 
-  <!-- render no secrets section -->
   <section id="no-secrets">
     <?php 
       $ns_heading   = get_field( 'ns_heading' );
@@ -90,7 +85,26 @@
     </div>
   </section>
       
-  <!-- get beliefs template part -->
-  <?php get_template_part( 'template-parts/content', 'beliefs' ); ?>
+  <?php 
+    //get beliefs template part
+    get_template_part( 'template-parts/content', 'beliefs' ); 
+  ?>
 
+  <?php 
+    //get team heading and content
+    $team_heading   = get_field( 'team_heading' );
+    $team_content   = get_field( 'team_content' );
+  ?>
+
+  <section id="team">
+    <div class="team__content">
+        <h1><?php echo $team_heading ?></h1>
+        <?php echo $team_content ?>
+
+        <?php
+          //get team members template part
+          get_template_part( 'template-parts/content', 'team' ); 
+        ?>
+    </div>
+  </section>
  <?php get_footer() ?>

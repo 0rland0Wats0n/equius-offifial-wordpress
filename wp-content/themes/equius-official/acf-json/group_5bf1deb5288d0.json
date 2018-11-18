@@ -1,0 +1,97 @@
+{
+    "key": "group_5bf1deb5288d0",
+    "title": "Team Members",
+    "fields": [
+        {
+            "key": "field_5bf1df075c17a",
+            "label": "Name",
+            "name": "team_member_name",
+            "type": "text",
+            "instructions": "Add the team member's name here.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5bf1debe5c179",
+            "label": "Photo",
+            "name": "team_member_photo",
+            "type": "image",
+            "instructions": "Upload a photo of the team member here.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_5bf1df285c17b",
+            "label": "Role",
+            "name": "team_member_role",
+            "type": "text",
+            "instructions": "Add team member's role here.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "team_members"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "permalink",
+        "the_content",
+        "excerpt",
+        "discussion",
+        "comments",
+        "slug",
+        "author",
+        "page_attributes",
+        "featured_image",
+        "categories"
+    ],
+    "active": 1,
+    "description": "",
+    "modified": 1542580922
+}
