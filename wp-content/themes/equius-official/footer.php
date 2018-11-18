@@ -13,7 +13,16 @@
 
 	</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer">
+	<footer>
+		<div class="footer__content">
+			<?php the_custom_logo() ?>
+			<p class="type__caption">(415) 382-2500  -  3 Hamilton Landing, Suite 130, Novato CA 94949, USA</p>
+			<ul class="social-nav"></ul>
+			<p class="type__caption">&copy; <?php echo date('Y'); ?> Equius Partners Inc. All rights reserved.</p>
+		</div>
+	</footer>
+
+	<!-- <footer id="colophon" class="site-footer">
 		<div class="site-info">
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'equius-official' ) ); ?>">
 				<?php
@@ -26,8 +35,8 @@
 				/* translators: 1: Theme name, 2: Theme author. */
 				printf( esc_html__( 'Theme: %1$s by %2$s.', 'equius-official' ), 'equius-official', '<a href="http://www.orlandogwatson.com">Orlando Watson</a>' );
 				?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
+		</div><!-- .site-info
+	</footer> -->
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

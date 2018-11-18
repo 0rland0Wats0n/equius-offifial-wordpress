@@ -130,3 +130,39 @@ section[role="navigation"] > nav > ul > li:not(:last-child) a::after {
   top: -50%;
   background-color: #F6AE2D;
 }
+
+/*----------- 
+# FOOTER
+------------*/
+footer {
+  width: 100%;
+  background-color: #001A44;
+  color: white;
+  padding: 2em;
+}
+
+footer .footer__content {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+footer .footer__content .custom-logo-link img {
+  max-width: 120px;
+}
+
+footer .footer__content > p {
+  padding: 0 1em;
+}
+
+footer .footer__content .social-nav {
+  padding: 0 3em;
+}
