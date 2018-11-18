@@ -199,9 +199,9 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "",
+            "return_format": "url",
             "preview_size": "thumbnail",
-            "library": "",
+            "library": "all",
             "min_width": "",
             "min_height": "",
             "min_size": "",
@@ -278,9 +278,9 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "",
+            "return_format": "url",
             "preview_size": "thumbnail",
-            "library": "",
+            "library": "all",
             "min_width": "",
             "min_height": "",
             "min_size": "",
@@ -357,9 +357,9 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "",
+            "return_format": "url",
             "preview_size": "thumbnail",
-            "library": "",
+            "library": "all",
             "min_width": "",
             "min_height": "",
             "min_size": "",
@@ -1157,5 +1157,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1542573869
+    "modified": 1542576067
 }

@@ -347,6 +347,104 @@ header .header__content .header__scroll::after {
   font-weight: lighter;
 }
 
+/* Beliefs */
+#beliefs {
+  position: relative;
+  padding: 4em 0;
+  width: 1800px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+#beliefs::before {
+  content: "";
+  height: 100%;
+  width: 1px;
+  background-color: #F6AE2D;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+#beliefs::after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: solid 7.5px transparent;
+  border-right: solid 7.5px transparent;
+  border-top: solid 15px #F6AE2D;
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.belief {
+  position: relative;
+  max-width: 1440px;
+  margin: 0 auto 8em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.belief .belief__image {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 1 60%;
+  flex: 0 1 60%;
+  text-align: right;
+}
+
+.belief:nth-child(2n) .belief__image {
+  -webkit-box-ordinal-group: 3;
+  -ms-flex-order: 2;
+  order: 2;
+  text-align: left;
+}
+
+.belief .belief__image>img {
+  width: 750px;
+  max-width: 100%;
+}
+
+.belief .belief__content {
+  padding: 2em 4em;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.belief:nth-child(2n) .belief__content {
+  -webkit-box-ordinal-group: 2;
+  -ms-flex-order: 1;
+  order: 1;
+}
+
+.belief .belief__content>h2 {
+  font-family: "Tiempos Fine", serif;
+  color: #001A44;
+}
+
+.belief .belief__content>p {
+  font-size: 21px;
+  color: #737B80;
+  max-width: 330px;
+  line-height: 1.25;
+}
+
 
 /*----------- 
 # FOOTER

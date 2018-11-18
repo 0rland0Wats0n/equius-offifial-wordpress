@@ -89,5 +89,8 @@
       <p><?php echo $ns_content ?></p>
     </div>
   </section>
+      
+  <!-- get beliefs template part -->
+  <?php get_template_part( 'template-parts/content', 'beliefs' ); ?>
 
  <?php get_footer() ?>
