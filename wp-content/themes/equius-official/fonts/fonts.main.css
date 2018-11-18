@@ -1,26 +1,26 @@
 /* Avenir */
 @font-face {
   font-family: "Avenir LT Std";
-  src: url(./Avenir\ LT\ Std/AvenirLTStd-Light.oft);
+  src: url(./Avenir\ LT\ Std/AvenirLTStd-Light.otf);
 }
 
 @font-face {
   font-family: "Avenir LT Std";
   font-style: italic;
-  src: url(./Avenir\ LT\ Std/AvenirLTStd-LightOblique.oft);
+  src: url(./Avenir\ LT\ Std/AvenirLTStd-LightOblique.otf);
 }
 
 @font-face {
   font-family: "Avenir LT Std";
   font-weight: 500;
-  src: url(./Avenir\ LT\ Std/AvenirLTStd-Book.oft);
+  src: url(./Avenir\ LT\ Std/AvenirLTStd-Book.otf);
 }
 
 @font-face {
   font-family: "Avenir LT Std";
   font-weight: 500;
   font-style: italic;
-  src: url(./Avenir\ LT\ Std/AvenirLTStd-BookOblique.oft);
+  src: url(./Avenir\ LT\ Std/AvenirLTStd-BookOblique.otf);
 }
 
 /* Berlingske Serif Cn */
@@ -63,13 +63,43 @@
 @font-face {
   font-family: "Berlingske Serif";
   font-weight: bold;
-  src: url(./Berlingske\ Serif/BERLINGSKESERIF-DB.TTF);
+  src: url(./Berlingske\ Serif/BERLINGSKESERIF-DBD.TTF);
 }
 
 @font-face {
   font-family: "Berlingske Serif";
   font-weight: bold;
   font-style: italic;
-  src: url(./Berlingske\ Serif/BERLINGSKESERIF-DBITALIC.TTF);
+  src: url(./Berlingske\ Serif/BERLINGSKESERIF-DBDITALIC.TTF);
 }
 
+@font-face {
+  font-family: "Berlingske Serif";
+  font-weight: lighter;
+  src: url(./Berlingske\ Serif/BERLINGSKESERIF-LT.TTF)
+}
+
+@font-face {
+  font-family: "Berlingske Serif";
+  font-weight: lighter;
+  font-style: italic;
+  src: url(./Berlingske\ Serif/BERLINGSKESERIF-LTITALIC.TTF)
+}
+
+/* Tiempos Fine */
+@font-face {
+  font-family: "Tiempos Fine";
+  src: url(./Tiempos/TiemposFineWeb-Light.woff);
+}
+
+@font-face {
+  font-family: "Tiempos Fine";
+  font-style: italic;
+  src: url(./Tiempos/TiemposFineWeb-LightItalic.woff);
+}
+
+@font-face {
+  font-family: "Tiempos Fine";
+  font-weight: bold;
+  src: url(./Tiempos/TiemposFineWeb-Medium.woff);
+}
