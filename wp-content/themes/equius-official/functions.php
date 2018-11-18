@@ -126,7 +126,7 @@ function equius_official_scripts() {
 
 	wp_enqueue_script( 'equius-official-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 	
-	wp_enqueue_script( 'equius-official-main', get_template_directory_uri() . '/js/equis.main.js', array(), '20151215', true );
+	wp_enqueue_script( 'equius-official-main', get_template_directory_uri() . '/js/equius.main.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'equius-official-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
