@@ -12,7 +12,9 @@
   ?>
   <header style="background-image: url(<?php echo($featured_image) ?>)">
     <div class="header__content">
-      <h1 class="type__hero"><?php echo(get_bloginfo('description')) ?></h1>
+      <!-- get hero heaing from ACF -->
+      <?php $hero_heading = get_field( 'hero_heading' ) ?>
+      <h1 class="type__hero"><?php echo $hero_heading ?></h1>
 
       <!-- get 3 most recent posts -->
       <?php
@@ -75,5 +77,17 @@
       <span class="header__scroll">Scroll</span>
     </div>
   </header>
+
+  <!-- render no secrets section -->
+  <section id="no-secrets">
+    <?php 
+      $ns_heading   = get_field( 'ns_heading' );
+      $ns_content   = get_field( 'ns_content' );
+    ?>
+    <div class="no_secrets__content">
+      <h1><?php echo $ns_heading ?></h1>
+      <p><?php echo $ns_content ?></p>
+    </div>
+  </section>
 
  <?php get_footer() ?>

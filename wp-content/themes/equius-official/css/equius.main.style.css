@@ -6,6 +6,7 @@ h1 {
   font-family: "Tiempos Fine", serif;
   font-size: 52.5px;
   letter-spacing: 1px;
+  line-height: 1.15;
 }
 
 h1.type__hero {
@@ -121,7 +122,7 @@ section[role="navigation"] > .custom-logo-link {
 }
 
 section[role="navigation"] > .custom-logo-link > img {
-  width: 220px;
+  width: 170px;
   max-width: 100%;
 }
 
@@ -310,6 +311,42 @@ header .header__content .header__scroll::after {
   left: -7px;
   bottom: -2em;
 }
+
+/* -----------------
+# LANDING SECTIONS
+-------------------*/
+/* No Screts */
+#no-secrets {
+  padding: 7em 2em 4em;
+}
+
+.no_secrets__content {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.no_secrets__content>h1 {
+  margin: 0;
+  max-width: 315px;
+  color: #001A44;
+}
+
+.no_secrets__content>p {
+  margin: 0;
+  max-width: 850px;
+  padding: 0 2em;
+  font-size: 27px;
+  color: #005391;
+  font-family: "Tiempos Fine", serif;
+  font-weight: lighter;
+}
+
 
 /*----------- 
 # FOOTER

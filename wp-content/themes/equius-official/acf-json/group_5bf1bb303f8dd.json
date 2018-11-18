@@ -19,6 +19,25 @@
             "endpoint": 0
         },
         {
+            "key": "field_5bf1cee76d680",
+            "label": "Hero Heading",
+            "name": "hero_heading",
+            "type": "text",
+            "instructions": "Add the text overlay for the hero image.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_5bf1cb3cb7a1d",
             "label": "Show contact section?",
             "name": "show_contact_section",
@@ -1138,5 +1157,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1542573424
+    "modified": 1542573869
 }
