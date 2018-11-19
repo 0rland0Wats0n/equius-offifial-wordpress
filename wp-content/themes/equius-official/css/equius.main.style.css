@@ -303,11 +303,14 @@ section[role="navigation"] > nav > ul > li:not(:last-child) a::after {
   -webkit-box-align: start;
   -ms-flex-align: start;
   align-items: flex-start;
+  overflow: hidden;
 }
 
 .widget_team__content .team__members>li {
   text-align: center;
   color: white;
+  min-width: 160px;
+  padding: 0 1em;
 }
 
 .widget_team__content .team__members>li>img {
@@ -452,26 +455,26 @@ section[role="navigation"] > nav > ul > li:not(:last-child) a::after {
   padding: 1em;
 }
 
-::-webkit-input-placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+.widget__mailing_list_content ::-webkit-input-placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: white;
     opacity: 1; /* Firefox */
 }
 
-:-ms-input-placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+.widget__mailing_list_content :-ms-input-placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: white;
     opacity: 1; /* Firefox */
 }
 
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+.widget__mailing_list_content ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: white;
     opacity: 1; /* Firefox */
 }
 
-:-ms-input-placeholder { /* Internet Explorer 10-11 */
+.widget__mailing_list_content :-ms-input-placeholder { /* Internet Explorer 10-11 */
     color: white;
 }
 
-::-ms-input-placeholder { /* Microsoft Edge */
+.widget__mailing_list_content ::-ms-input-placeholder { /* Microsoft Edge */
     color: white;
 }
 
@@ -564,6 +567,8 @@ header.header__landing .header__content .header__scroll::after {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
 }
 
 .no_secrets__content>h1 {
@@ -580,6 +585,9 @@ header.header__landing .header__content .header__scroll::after {
   color: #005391;
   font-family: "Tiempos Fine", serif;
   font-weight: lighter;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
 }
 
 /* Beliefs */
@@ -824,6 +832,7 @@ header.header__landing .header__content .header__scroll::after {
 .expertise__content .expertise__items>li>p {
   color: #737B80;
   line-height: 1.35;
+  font-size: 16.5px;
 }
 
 /* Working w/ Equius */
@@ -1064,4 +1073,114 @@ footer .footer__content > p {
 
 footer .footer__content .social-nav {
   padding: 0 3em;
+}
+
+
+/* -------------
+#   RESPONSIVE
+--------------*/
+@media (max-width: 600px) {
+  h1.type__hero {
+    font-size: 12vw;
+  }
+
+  .widget__mailing_list_content {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+  }
+
+  .expertise__content .expertise__items {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .expertise__content .expertise__items>li {
+    padding: 2em 0 !important;
+    border: none !important;
+  }
+
+  .widget__testimonials .testimonials__items>li>blockquote {
+    font-size: 5.5vw;
+  }
+
+  #contact .contact__bottom {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  #contact .contact__bottom>div {
+    width: 100%;
+  }
+
+  footer .footer__content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+@media (max-width: 800px) {
+  .no_secrets__content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column wrap;
+            flex-flow: column wrap;
+  }
+
+  .no_secrets__content>p {
+    padding: 2em 0 0;
+  }
+
+  .belief .belief__image {
+    width: 100%;
+  }
+
+  .expertise__content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+@media (max-width: 992px) {
+  .belief {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .belief .belief__content {
+    width: 100%;
+    padding: 2em;
+  }
+
+  .belief .belief__content>p {
+    max-width: 100%;
+  }
+
+  .belief:nth-child(2n) .belief__image {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+
+  .belief:nth-child(2n) .belief__content {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+
+  #beliefs::before,
+  #beliefs::after {
+    display: none;
+  }
 }

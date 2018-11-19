@@ -8,11 +8,7 @@
 
   <section class="widget__team">
     <div class="widget_team__content">
-      <span class="object__arrow_left">
-        <img src="<?php echo get_template_directory_uri() . '/assets/images/arrow_left.png'?>" alt="">
-      </span>
-      <ul class="team__members">
-        <?php
+      <?php
           /**
            * Get team members
            */
@@ -25,7 +21,14 @@
           );
           $the_query = new WP_Query( $args );
 
-          if( $the_query->have_posts() ): while( $the_query->have_posts() ):
+          if( $the_query->have_posts() ):
+      ?>
+      <span class="object__arrow_left">
+        <img src="<?php echo get_template_directory_uri() . '/assets/images/arrow_left.png'?>" alt="">
+      </span>
+      <ul class="team__members">
+        <?php
+         while( $the_query->have_posts() ):
             $the_query->the_post();
 
             $name   = get_field( 'team_member_name' );
@@ -39,14 +42,12 @@
           <p class="type__caption"><?php echo $role ?></p>
         </li>
 
-        <?php
-          endwhile;
-          endif;
-        ?>
+        <?php endwhile; ?>
       </ul>
       <span class="object__arrow_right">
         <img src="<?php echo get_template_directory_uri() . '/assets/images/arrow_right.png'?>" alt="">
       </span>
+      <?php endif; ?>
     </div>
   </section>
 
