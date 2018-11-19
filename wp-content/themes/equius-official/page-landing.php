@@ -201,4 +201,42 @@
 
   <?php get_template_part( 'template-parts/content',  'testimonials' ); ?>
 
+  <?php 
+    $show_contact = get_field( 'show_contact_section' );
+    
+    if( $show_contact == "Show" ) :
+  ?>
+
+    <section id="contact">
+      <section class="contact__top">
+        <h1>Contact Equius</h1>
+        <h3><?php echo get_field( 'business_phone' ); ?></h3>
+      </section>
+      <section class="contact__bottom">
+        <div class="contact__form">
+          <form action="">
+            <input type="text" name="name" placeholder="Name" required />
+            <input type="email" name="email" placeholder="Email" required />
+            <textarea name="message" cols="30" rows="10"></textarea>
+            <button type="button">Submit</button>
+          </form>
+        </div>
+        <div class="contact__details">
+          <img src="<?php echo get_template_directory_uri() . '/assets/images/Map.png' ?>" alt="">
+          <h4>Where to Find Us</h4>
+          <section>
+            <span>
+              <p><?php echo get_field( 'business_address' ) ?></p>
+            </span>
+            <span>
+              <p><?php echo get_field( 'business_email' ) ?></p>
+              <p><?php echo get_field( 'business_phone' ) ?></p>
+            </span>
+          </section>
+        </div>
+      </section>
+    </section>
+    
+  <?php endif; ?>
+
  <?php get_footer() ?>
