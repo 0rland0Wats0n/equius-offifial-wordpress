@@ -540,6 +540,140 @@ header .header__content .header__scroll::after {
   font-size: 27px;
 }
 
+/* Expertise */
+#expertise {
+  width: 1440px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 4em 2em;
+  position: relative;
+  overflow: visible;
+}
+
+#expertise .expertise__q_overlay {
+  max-width: 362px;
+  position: absolute;
+  top: -6em;
+  left: -3.25em;
+}
+
+.expertise__content {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+
+.expertise__content>section:first-of-type {
+  max-width: 300px;
+  color: #001A44;
+}
+
+.expertise__content>section:first-of-type>h1 {
+  margin-top: 0;
+}
+
+.expertise__content>section:last-of-type {
+  max-width: 836px;
+}
+
+.expertise__content>section:last-of-type>p {
+  margin-top: 0;
+  line-height: 1.35;
+}
+
+.expertise__content>section:last-of-type>p:first-of-type {
+  font-size: 27px;
+  font-family: "Tiempos Fine", serif;
+  color: #005391;
+}
+
+.expertise__content>section:last-of-type>p:last-of-type {
+  font-size: 21px;
+  color: #60676C;
+}
+
+.expertise__content .expertise__items {
+  padding: 2em 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+}
+
+.expertise__content .expertise__items>li {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 0 50%;
+  flex: 1 0 50%;
+  padding-bottom: 2em;
+}
+
+.expertise__content .expertise__items>li:first-child,
+.expertise__content .expertise__items>li:nth-child(3) {
+  padding-right: 2em;
+  border-right: 1px solid #D8D8D8;
+}
+
+.expertise__content .expertise__items>li:nth-child(2),
+.expertise__content .expertise__items>li:last-child {
+  padding-left: 2em;
+}
+
+.expertise__content .expertise__items>li:nth-child(3),
+.expertise__content .expertise__items>li:last-child {
+  padding-top: 2em;
+  border-top: 1px solid #D8D8D8;
+}
+
+.expertise__content .expertise__items>li>img,
+.expertise__content .expertise__items>li>h3 {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.expertise__content .expertise__items>li>img {
+  margin-right: 1em;
+}
+
+.expertise__content .expertise__items>li>h3 {
+  max-width: 240px;
+  margin: 0;
+  color: #F6AE2D;
+  font-size: 21px;
+}
+
+.expertise__content .expertise__items>li>p {
+  color: #737B80;
+  line-height: 1.35;
+}
+
+/* Working w/ Equius */
+#working {
+  background-color: #FAFAFA;
+  padding: 4em 2em;
+}
+
+.working__content {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.working__content>h1 {
+  color: #001A44;
+}
+
 /*----------- 
 # FOOTER
 ------------*/

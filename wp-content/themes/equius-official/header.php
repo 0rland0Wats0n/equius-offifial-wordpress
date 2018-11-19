@@ -31,8 +31,7 @@
 			wp_nav_menu( array(
                 "theme_location"    => "menu-1",
                 "menu_id"           => "primary-menu",
-                "container"         => "nav",
-                "menu_class"        => $menu_class
+                "container"         => "nav"
             ));
 		?>
 	</section>

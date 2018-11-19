@@ -107,4 +107,63 @@
         ?>
     </div>
   </section>
+
+  <?php
+    $expertise_heading        = get_field( 'expertise_heading' );
+    $expertise_details        = get_field( 'expertise_details' );
+    $expertise_more_details   = get_field( 'expertise_more_details' );
+    $expertise                = array(
+      "1" => array(
+        get_field( 'expertise_1_icon' ),
+        get_field( 'expertise_1_heading' ),
+        get_field( 'expertise_1_details' )
+      ),
+      "2" => array(
+        get_field( 'expertise_2_icon' ),
+        get_field( 'expertise_2_heading' ),
+        get_field( 'expertise_2_details' )
+      ),
+      "3" => array(
+        get_field( 'expertise_3_icon' ),
+        get_field( 'expertise_3_heading' ),
+        get_field( 'expertise_3_details' )
+      ),
+      "4" => array(
+        get_field( 'expertise_4_icon' ),
+        get_field( 'expertise_4_heading' ),
+        get_field( 'expertise_4_details' )
+      )
+    )
+  ?>
+
+  <section id="expertise">
+    <img class="expertise__q_overlay" src="<?php echo get_template_directory_uri() . '/assets/images/Q Overlay.png'; ?>" alt="" />
+    <div class="expertise__content">
+      <section>
+        <h1><?php echo $expertise_heading ?></h1>
+      </section>
+      <section>
+        <p><?php echo $expertise_details ?></p>
+        <p><?php echo $expertise_more_details ?></p>
+        <ul class="expertise__items">
+          <?php foreach( $expertise as $e ) : ?>
+          <li>
+            <img src="<?php echo $e[0] ?>" alt="">
+            <h3><?php echo $e[1] ?></h3>
+            <p><?php echo $e[2] ?></p>
+          </li>
+          <?php endforeach; ?>
+        </ul>
+      </section>
+    </div>
+  </section>
+
+  <?php
+    $working_heading    = get_field( 'working_heading' );
+  ?>
+  <section id="working">
+    <div class="working__content">
+      <h1><?php echo $working_heading ?></h1>
+    </div>
+  </section>
  <?php get_footer() ?>

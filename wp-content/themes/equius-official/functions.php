@@ -158,6 +158,8 @@ if ( ! function_exists( 'equius_official_setup' ) ) :
 			/**
 			 * Update column headings for the team members post type
 			 */
+
+			 remove_action( 'shutdown', 'wp_ob_end_flush_all', 1 );
 	}
 endif;
 add_action( 'after_setup_theme', 'equius_official_setup' );
