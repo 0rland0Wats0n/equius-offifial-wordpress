@@ -1,0 +1,100 @@
+{
+    "key": "group_5bf2197c9869a",
+    "title": "Testimonials",
+    "fields": [
+        {
+            "key": "field_5bf219a3080c3",
+            "label": "Attestant",
+            "name": "testimonial_attestant",
+            "type": "text",
+            "instructions": "Enter the name of the person who gave this testimonial.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5bf219ef080c4",
+            "label": "Job Title",
+            "name": "testimonial_job_title",
+            "type": "text",
+            "instructions": "Enter the job title of the person giving this testimonial here.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5bf21a4c080c5",
+            "label": "Company",
+            "name": "testimonial_company",
+            "type": "text",
+            "instructions": "Enter the company the person giving this testimonial works for.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5bf21a81080c6",
+            "label": "Testimonial",
+            "name": "testimonial_details",
+            "type": "textarea",
+            "instructions": "Enter the testimonial below.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "testimonials"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1542594457
+}

@@ -76,6 +76,33 @@ body {
   border-left: 15px solid white;
 }
 
+.object__arrow_right,
+.object__arrow_left {
+  display: block;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  margin: auto;
+  cursor: pointer;
+  opacity: 0.85;
+  -webkit-transition: opacity 200ms ease;
+  transition: opacity 200ms ease;
+}
+
+.object__arrow_right:hover,
+.object__arrow_left:hover {
+  opacity: 1;
+}
+
+.object__arrow_right {
+  right: 0;
+}
+
+.object__arrow_left {
+  left: 0;
+}
+
 /*----------- 
 # GENERAL 
 ------------*/
@@ -263,33 +290,6 @@ section[role="navigation"] > nav > ul > li:not(:last-child) a::after {
   position: relative;
 }
 
-.widget_team__arrow_right,
-.widget_team__arrow_left {
-  display: block;
-  position: absolute;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  margin: auto;
-  cursor: pointer;
-  opacity: 0.85;
-  -webkit-transition: opacity 200ms ease;
-  transition: opacity 200ms ease;
-}
-
-.widget_team__arrow_right:hover,
-.widget_team__arrow_left:hover {
-  opacity: 1;
-}
-
-.widget_team__arrow_right {
-  right: 0;
-}
-
-.widget_team__arrow_left {
-  left: 0;
-}
-
 .widget_team__content .team__members {
   max-width: 960px;
   margin: 0 auto;
@@ -324,6 +324,51 @@ section[role="navigation"] > nav > ul > li:not(:last-child) a::after {
   margin: 0 0 1em;
 }
 
+/* Testimonials */
+.widget__testimonials {
+  width: 100%;
+  background-color: #001A44;
+  padding: 2em 2em 8em;
+}
+
+.widget__testimonials .testimonials__content {
+  max-width: 1440px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.widget__testimonials .testimonials__items {
+  padding: 0;
+  max-width: 800px;
+  margin: 0 auto 2em;
+}
+
+.widget__testimonials .testimonials__items > li {
+  text-align: center;
+  color: white;
+}
+
+.widget__testimonials .testimonials__items > li > blockquote {
+  font-size: 36px;
+  font-family: "Tiempos Fine", serif;
+  font-style: italic;
+  margin-bottom: 1em;
+}
+
+.widget__testimonials .testimonials__items > li > blockquote::before,
+.widget__testimonials .testimonials__items > li > blockquote::after {
+  content: '"';
+  font-family: "Avenir Std LT", sans-serif;
+}
+
+.widget__testimonials .testimonials__items > li > p:first-of-type {
+  margin: 0;
+  font-size: 18px;
+}
+
+.widget__testimonials .testimonials__items > li > p:last-of-type {
+  margin: 0;
+}
 
 /* ----------------
 # LANDING HEADER

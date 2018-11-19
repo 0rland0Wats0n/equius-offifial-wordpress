@@ -198,4 +198,7 @@
     </div>
     <div class="working__blue_bg"></div>
   </section>
+
+  <?php get_template_part( 'template-parts/content',  'testimonials' ); ?>
+
  <?php get_footer() ?>

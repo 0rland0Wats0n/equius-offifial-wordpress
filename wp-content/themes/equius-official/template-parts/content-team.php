@@ -8,7 +8,7 @@
 
   <section class="widget__team">
     <div class="widget_team__content">
-      <span class="widget_team__arrow_left">
+      <span class="object__arrow_left">
         <img src="<?php echo get_template_directory_uri() . '/assets/images/arrow_left.png'?>" alt="">
       </span>
       <ul class="team__members">
@@ -44,7 +44,7 @@
           endif;
         ?>
       </ul>
-      <span class="widget_team__arrow_right">
+      <span class="object__arrow_right">
         <img src="<?php echo get_template_directory_uri() . '/assets/images/arrow_right.png'?>" alt="">
       </span>
     </div>

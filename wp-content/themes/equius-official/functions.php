@@ -117,49 +117,9 @@ if ( ! function_exists( 'equius_official_setup' ) ) :
 			'flex-height' => true,
 		) );
 
-		/**
-		 * Add custom post type
-		 * Team Members
-		 */
+		include_once( get_stylesheet_directory() . '/inc/custom-post-types.php' );
 
-		 function create_team_members_post_type() {
-					$supports = array(
-							'revisions'
-					);
-
-					$labels = array(
-							'name'              => _x( 'All Team Members', 'plural' ),
-							'singular_name'     => _x( 'Team Member', 'singular' ),
-							'menu_name'         => _x( 'Team Members', 'admin menu' ),
-							'name_admin_bar'    => _x( 'Team Members', 'admin bar' ),
-							'add_new'           => _x( 'Add New', 'add new' ),
-							'add_new_item'      => __( 'Add New Team Member' ),
-							'new_item'          => __( 'New Team Member' ),
-							'edit_item'         => __( 'Edit Team Member' ),
-							'view_item'         => __( 'View Team Members' ),
-							'all_items'         => __( 'All Team Members' ),
-							'search_items'      => __( 'Search Team Members' ),
-							'not_found'         => __( 'No team members found.' ),
-					);
-
-					$args = array(
-							'supports'      => $supports,
-							'labels'        => $labels,
-							'public'        => true,
-							'query_var'     => true,
-							'has_archive'   => false,
-							'hierarchical'  => false
-					);
-
-					register_post_type( 'team_members', $args );
-			}
-			add_action( 'init', 'create_team_members_post_type' );
-
-			/**
-			 * Update column headings for the team members post type
-			 */
-
-			 remove_action( 'shutdown', 'wp_ob_end_flush_all', 1 );
+		remove_action( 'shutdown', 'wp_ob_end_flush_all', 1 );
 	}
 endif;
 add_action( 'after_setup_theme', 'equius_official_setup' );
