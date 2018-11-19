@@ -38,6 +38,30 @@
             "maxlength": ""
         },
         {
+            "key": "field_5bf23e938a376",
+            "label": "Show mailing list widget?",
+            "name": "show_mailinglist_widget",
+            "type": "radio",
+            "instructions": "Choose whether to show mailing list widget or not.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Show": "Show",
+                "Hide": "Hide"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "",
+            "layout": "vertical",
+            "return_format": "value",
+            "save_other_choice": 0
+        },
+        {
             "key": "field_5bf1cb3cb7a1d",
             "label": "Show contact section?",
             "name": "show_contact_section",
@@ -1238,5 +1262,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1542596592
+    "modified": 1542602441
 }
