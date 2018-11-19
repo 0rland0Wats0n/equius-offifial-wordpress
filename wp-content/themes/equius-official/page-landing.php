@@ -10,7 +10,7 @@
         $featured_image = get_the_post_thumbnail_url();
     }
   ?>
-  <header style="background-image: url(<?php echo($featured_image) ?>)">
+  <header class="header__landing" style="background-image: url(<?php echo($featured_image) ?>)">
     <div class="header__content">
       <?php $hero_heading = get_field( 'hero_heading' ) ?>
       <h1 class="type__hero"><?php echo $hero_heading ?></h1>
@@ -160,10 +160,42 @@
 
   <?php
     $working_heading    = get_field( 'working_heading' );
+    $steps              = array(
+      "One" => array(
+        get_field( 'step_1_heading' ),
+        get_field( 'step_1_details' ),
+        get_field( 'step_1_icon' )
+      ),
+      "Two" => array(
+        get_field( 'step_2_heading' ),
+        get_field( 'step_2_details' ),
+        get_field( 'step_2_icon' )
+      ),
+      "Three" => array(
+        get_field( 'step_3_heading' ),
+        get_field( 'step_3_details' ),
+        get_field( 'step_3_icon' )
+      )
+    )
   ?>
   <section id="working">
     <div class="working__content">
       <h1><?php echo $working_heading ?></h1>
+      <ul class="working__steps">
+        <?php foreach( $steps as $key => $step ) : ?>
+        <li>
+          <header>
+            <img src="<?php echo $step[2] ?>" alt="">
+            <span>
+              <p class="type__caption">step <?php echo $key ?></p>
+              <h3><?php echo $step[0] ?></h3>
+            </span>
+          </header>
+          <p><?php echo $step[1] ?></p>
+        </li>
+        <?php endforeach; ?>
+      </ul>
     </div>
+    <div class="working__blue_bg"></div>
   </section>
  <?php get_footer() ?>
