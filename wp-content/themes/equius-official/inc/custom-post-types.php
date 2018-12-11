@@ -80,4 +80,38 @@
 			 * Update column headings for the team members post type
 			 */
 
+			 function create_asset_class_post_type() {
+					$supports = array(
+							'revisions',
+							'title',
+							'editor'
+					);
+
+					$labels = array(
+							'name'              => _x( 'Asset Classes', 'plural' ),
+							'singular_name'     => _x( 'Asset Class', 'singular' ),
+							'menu_name'         => _x( 'Asset Classes', 'admin menu' ),
+							'name_admin_bar'    => _x( 'Asset Classes', 'admin bar' ),
+							'add_new'           => _x( 'Add New', 'add new' ),
+							'add_new_item'      => __( 'Add New Asset Class' ),
+							'new_item'          => __( 'New Asset Class' ),
+							'edit_item'         => __( 'Edit Asset Class' ),
+							'view_item'         => __( 'View Asset Classes' ),
+							'all_items'         => __( 'All Asset Classes' ),
+							'search_items'      => __( 'Search Asset Classes' ),
+							'not_found'         => __( 'No asset classes found.' ),
+					);
+
+					$args = array(
+							'supports'      => $supports,
+							'labels'        => $labels,
+							'public'        => true,
+							'query_var'     => true,
+							'has_archive'   => true,
+							'hierarchical'  => false
+					);
+
+					register_post_type( 'asset_classes', $args );
+			}
+      add_action( 'init', 'create_asset_class_post_type' );
 ?>
