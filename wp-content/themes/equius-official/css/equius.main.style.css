@@ -124,7 +124,6 @@ html {
 body {
   min-height: 100%;
   position: relative;
-  padding-bottom: 104px;
 }
 
 /*----------- 
@@ -1065,6 +1064,13 @@ header.header__landing .header__content .header__scroll::after {
   color: #737B80;
 }
 
+/*------------- 
+# ASSET CLASS
+--------------*/
+main.archive__asset_classes {
+  margin-top: 73.72px;
+}
+
 /*----------- 
 # FOOTER
 ------------*/
@@ -1072,13 +1078,10 @@ footer {
   width: 100%;
   background-color: #001A44;
   color: white;
-  padding: 2em;
-  position: absolute;
-  bottom: 0;
-  left: 0;
 }
 
 footer .footer__content {
+  padding: 2em;
   max-width: 1440px;
   margin: 0 auto;
   display: -webkit-box;
