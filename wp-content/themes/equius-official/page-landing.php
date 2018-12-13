@@ -202,7 +202,7 @@
         </a>
       </li>
       <li>
-        <a href="#">
+        <a href="<?php  echo get_post_type_archive_link( 'asset_classes' ); ?>">
           <span>
             <h4>Asset Class</h4>
             <img src="<?php echo get_template_directory_uri() . '/assets/images/arrow_right.png'?>" alt="">
