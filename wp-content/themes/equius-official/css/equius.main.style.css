@@ -117,59 +117,74 @@ ul {
   padding: 0;
 }
 
+html {
+  height: 100%;
+}
+
 body {
+  min-height: 100%;
   position: relative;
+  padding-bottom: 104px;
 }
 
 /*----------- 
 # NAVIGATION
 ------------*/
 section[role="navigation"] {
-  width: 1650px;
-  max-width: 100%;
+  width: 100%;
   position: absolute;
   margin: auto;
   padding: 0 2em;
-  top: 50px;
+  top: 0;
   left: 0;
   right: 0;
+  background-color: white;
+}
+
+section[role="navigation"] .nav__content {
+  max-width: 1280px;
+  margin: 10px auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
-section[role="navigation"] > .custom-logo-link {
+section[role="navigation"] .nav__content > .custom-logo-link {
   display: inline-block;
 }
 
-section[role="navigation"] > .custom-logo-link > img {
-  width: 170px;
+section[role="navigation"] .nav__content > .custom-logo-link > img {
+  width: 150px;
   max-width: 100%;
 }
 
-section[role="navigation"] > nav {
-  color: white;
+section[role="navigation"] .nav__content > nav {
 }
 
-section[role="navigation"] > nav > ul > li {
+section[role="navigation"] .nav__content > nav > ul > li {
   display: inline-block;
   position: relative;
   padding: 7px 10px;
 }
 
-section[role="navigation"] > nav > ul > li:not(:last-child) a::after {
+section[role="navigation"] .nav__content > nav > ul > li > a {
+  color: #001a44;
+  font-weight: 900;
+}
+
+section[role="navigation"] .nav__content > nav > ul > li:not(:last-child) a::after {
   content: "";
   width: 1px;
-  height: 60px;
+  height: 48px;
   position: absolute;
   right: 0;
-  top: -50%;
+  top: -25%;
   background-color: #F6AE2D;
 }
 
@@ -1058,6 +1073,9 @@ footer {
   background-color: #001A44;
   color: white;
   padding: 2em;
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
 
 footer .footer__content {

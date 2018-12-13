@@ -23,6 +23,19 @@
   src: url(./Avenir\ LT\ Std/AvenirLTStd-BookOblique.otf);
 }
 
+@font-face {
+  font-family: "Avenir LT Std";
+  font-weight: 900;
+  src: url(./Avenir\ LT\ Std/AvenirLTStd-Heavy.otf);
+}
+
+@font-face {
+  font-family: "Avenir LT Std";
+  font-weight: 900;
+  font-style: italic;
+  src: url(./Avenir\ LT\ Std/AvenirLTStd-HeavyOblique.otf);
+}
+
 /* Berlingske Serif Cn */
 @font-face {
   font-family: "Berlingske Serif Cn";
