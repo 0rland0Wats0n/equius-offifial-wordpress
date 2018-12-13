@@ -6,7 +6,7 @@
    */
 ?>
 
-<section class="widget__mailing_list">
+<section class="widget__mailing_list_plus">
     <ul class="widget__mailing_list_content">
       <li>
         <a href="#">

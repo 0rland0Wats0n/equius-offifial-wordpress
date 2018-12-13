@@ -18,7 +18,7 @@
         <h1>whoops!</h1>
         <h4>No Asset Classes added yet. Subscribe to find out when we post Asset Classes.</h4>
       </section>
-
+      <?php get_template_part( 'template-parts/widgets/mailing', 'list' ); ?>
     <?php } ?>
   </main>
 <?php get_footer(); ?>

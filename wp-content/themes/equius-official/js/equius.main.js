@@ -1,7 +1,6 @@
 (function() {
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", function(e) {
-      
         // handle recent articles auto switching
         var rac = document.querySelectorAll(".recent_articles__article").length;
 
