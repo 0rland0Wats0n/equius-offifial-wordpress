@@ -14,7 +14,10 @@
 
     <?php } else { ?>
 
-      <span>no posts</span>
+      <section class="asset_classes__empty">
+        <h1>whoops!</h1>
+        <h4>No Asset Classes added yet. Subscribe to find out when we post Asset Classes.</h4>
+      </section>
 
     <?php } ?>
   </main>

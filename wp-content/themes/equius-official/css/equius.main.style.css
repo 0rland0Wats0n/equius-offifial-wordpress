@@ -1071,6 +1071,26 @@ main.archive__asset_classes {
   margin-top: 73.72px;
 }
 
+/* Empty state */
+main.archive__asset_classes .asset_classes__empty {
+  max-width: 992px;
+  margin: 0 auto;
+  padding: 4em 2em;
+  text-align: center;
+}
+
+main.archive__asset_classes .asset_classes__empty > h1 {
+  text-transform: uppercase;
+  opacity: 0.15;
+  font-family: "Avenir LT Std", sans-serif;
+}
+
+main.archive__asset_classes .asset_classes__empty > h4 {
+  max-width: 300px;
+  margin: 0 auto;
+  text-align: center;
+}
+
 /*----------- 
 # FOOTER
 ------------*/
