@@ -20,5 +20,10 @@
       </section>
       <?php get_template_part( 'template-parts/widgets/mailing', 'list' ); ?>
     <?php } ?>
+    <section class="asset_classes__back_to_posts <?php echo have_posts() ? "" : "empty" ?>">
+      <a href="<?php echo get_post_type_archive_link( 'post' ); ?>">
+        <h3>Return to Knowledge Base</h3>
+      </a>
+    </section>
   </main>
 <?php get_footer(); ?>

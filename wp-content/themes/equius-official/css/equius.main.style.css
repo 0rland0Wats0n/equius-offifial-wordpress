@@ -1166,7 +1166,7 @@ main.archive__asset_classes {
 main.archive__asset_classes .asset_classes__empty {
   max-width: 992px;
   margin: 0 auto;
-  padding: 4em 2em;
+  padding: 8em 2em;
   text-align: center;
 }
 
@@ -1174,12 +1174,33 @@ main.archive__asset_classes .asset_classes__empty > h1 {
   text-transform: uppercase;
   opacity: 0.15;
   font-family: "Avenir LT Std", sans-serif;
+  margin-top: 0;
 }
 
 main.archive__asset_classes .asset_classes__empty > h4 {
   max-width: 300px;
   margin: 0 auto;
   text-align: center;
+}
+
+main.archive__asset_classes .asset_classes__back_to_posts {
+  background-color: #f6ae2d;
+  padding: 2em;
+  text-align: center;
+  color: #001A44;
+}
+
+main.archive__asset_classes .asset_classes__back_to_posts.empty {
+  background-color: rgba(246, 174, 45, 0.8);
+}
+
+main.archive__asset_classes .asset_classes__back_to_posts > a {
+  display: block;
+}
+
+main.archive__asset_classes .asset_classes__back_to_posts > a > h3 {
+  margin: 0;
+  font-weight: 900;
 }
 
 /*----------- 
