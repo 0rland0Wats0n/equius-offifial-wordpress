@@ -27,13 +27,15 @@
 
 <?php if( $most_recent ) : ?>
 
-  <section class="asset_classes__most_recent">
-    <div class="asset_classes__most_recent_content">
+  <section class="asset_classes__most_recent" 
+    style="background-image: url(<?php echo get_stylesheet_directory_uri() . "/assets/images/mras_bg.jpg" ?>)">
+    <div>
       <h1>Asset Class</h1>
       <h4>latest asset class</h4>
       <h2><?php echo $most_recent[0]["post_title"] ?></h2>
-      <p><?php echo date("F Y", time($most_recent[0]["post_date"])) ?></p>
+      <p><?php echo date("F, Y", time($most_recent[0]["post_date"])) ?></p>
       <p><?php echo $most_recent[0]["post_content"] ?></p>
+      <a href="<?php echo get_field( 'asset_class_pdf' ); ?>" download>download pdf</a>
     </div>
   </section>
 
