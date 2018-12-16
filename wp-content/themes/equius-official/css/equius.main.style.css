@@ -66,8 +66,23 @@ input[type] {
 html,
 body {
   font-family: "Avenir LT Std", sans-serif;
-  font-size: 15px;
+  font-size: 16px;
+  font-weight: 500;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* -------
 # OBJECTS
@@ -108,6 +123,21 @@ body {
   left: 0;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*----------- 
 # GENERAL 
 ------------*/
@@ -131,17 +161,30 @@ body {
   position: relative;
 }
 
+hr {
+  width: 100%;
+  background-color: #dedede;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*----------- 
 # NAVIGATION
 ------------*/
 section[role="navigation"] {
   width: 100%;
-  position: absolute;
-  margin: auto;
+  margin: 0 auto;
   padding: 0 2em;
-  top: 0;
-  left: 0;
-  right: 0;
   background-color: white;
 }
 
@@ -166,6 +209,8 @@ section[role="navigation"] .nav__content > .custom-logo-link {
 section[role="navigation"] .nav__content > .custom-logo-link > img {
   width: 150px;
   max-width: 100%;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 section[role="navigation"] .nav__content > nav {
@@ -1155,13 +1200,21 @@ header.header__landing .header__content .header__scroll::after {
   color: #737B80;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
 /*------------- 
 # ASSET CLASS
 --------------*/
-main.archive__asset_classes {
-  margin-top: 73.72px;
-}
-
 /* Empty state */
 main.archive__asset_classes .asset_classes__empty {
   max-width: 992px;
@@ -1301,6 +1354,8 @@ main.archive__asset_classes .asset_classes__back_to_posts > a > h3 {
   -ms-flex: 0 1 49%;
   flex: 0 1 49%;
   padding: 2em 0;
+  margin-bottom: 2em;
+  position: relative;
 }
 
 .asset_classes__content > section .asset_classes__class > h5 {
@@ -1329,6 +1384,9 @@ main.archive__asset_classes .asset_classes__back_to_posts > a > h3 {
 
 .asset_classes__content > section .asset_classes__class > a {
   display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
 
 .asset_classes__content > section .asset_classes__class > a > i {
@@ -1348,6 +1406,132 @@ main.archive__asset_classes .asset_classes__back_to_posts > a > h3 {
   font-size: 12px;
   letter-spacing: 2px;
 }
+
+
+
+
+
+
+/*------------- 
+# SINGLE POST
+--------------*/
+article.post__single > header {
+  background-color: #005391;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 10em 2em;
+}
+
+article.post__single > header .post__meta {
+  max-width: 800px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+}
+
+article.post__single > header .post__meta > span:first-of-type {
+  display: block;
+  background-color: white;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}
+
+article.post__single > header .post__meta > p {
+  color: white;
+  text-transform: uppercase;
+  margin: 0 2em;
+  line-height: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 12px;
+}
+
+article.post__single > header .post__meta > p > span:not(:last-of-type)::after {
+  content: "/";
+  margin: 0 0.5em;
+}
+
+article.post__single > header .post__title {
+  max-width: 800px;
+  margin: 0.5em auto 0;
+  color: white;
+}
+
+article.post__single > main {
+  max-width: 1080px;
+  margin: 4em auto;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  color: #737b80;
+  line-height: 1.43;
+}
+
+article.post__single > main > p,
+article.post__single > main > h1,
+article.post__single > main > h2,
+article.post__single > main > h3,
+article.post__single > main > h4,
+article.post__single > main > h5,
+article.post__single > main .wp-block-columns {
+  max-width: 80%;
+  padding: 0 32px;
+}
+
+article.post__single>main h1,
+article.post__single>main h2,
+article.post__single>main h3,
+article.post__single>main h4,
+article.post__single>main h5 {
+  color: #001A44;
+}
+
+article.post__single > main > hr {
+  width: calc(80% - 4em);
+  margin: 2em;
+}
+
+article.post__single > main > figure {
+  margin: 0 auto;
+}
+
+
+
+
+
+
+
+
+
 
 /*----------- 
 # FOOTER

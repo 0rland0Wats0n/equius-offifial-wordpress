@@ -9,7 +9,7 @@
 <section class="widget__mailing_list_plus">
     <ul class="widget__mailing_list_content">
       <li>
-        <a href="#">
+        <a href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>">
           <span>
             <h4>Knowledge Base</h4>
             <img src="<?php echo get_template_directory_uri() . '/assets/images/arrow_right.png'?>" alt="">
