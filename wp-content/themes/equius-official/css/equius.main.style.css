@@ -727,8 +727,78 @@ section[role="navigation"] .nav__content > nav > ul > li:not(:last-child) a::aft
   font-size: 0.75em;
 }
 
+/* Category Switcher */
+.widget__category_switcher {
+  background-color: #001A44;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
 
+.widget__category_switcher > h3 {
+  padding: 0 1em;
+  margin: 0;
+}
 
+.widget__category_switcher > section {
+  position: relative;
+  color: white;
+  padding: 1.5em 0.5em;
+  min-width: 150px;
+}
+
+.widget__category_switcher > section > i {
+  display: block;
+  text-align: right;
+  font-size: 2em;
+  cursor: pointer;
+}
+
+.widget__category_switcher > section > ul {
+  padding: 0;
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 4em;
+  max-height: 0;
+  overflow-y: hidden;
+  -webkit-transition: max-height 200ms linear;
+  transition: max-height 200ms linear;
+}
+
+.widget__category_switcher > section > ul[data-state="open"] {
+  max-height: 290px;
+  overflow-y: auto;
+}
+
+.widget__category_switcher > section > ul > li > a {
+  display: block;
+  background-color: white;
+  color: #001A44;
+  font-family: "Tiempos Fine", serif;
+  font-weight: bold;
+  padding: 1em;
+  border: 1px solid #ececec;
+}
 
 
 
@@ -1872,4 +1942,5 @@ footer .footer__content .social-nav {
   #beliefs::after {
     display: none;
   }
+} }
 }

@@ -7,7 +7,12 @@
 ?>
   
   <main id="main" class="site-main">
-    <?php get_template_part( 'template-parts/content', 'most-recent-post' ) ?>
+    <?php 
+      
+      get_template_part( 'template-parts/content', 'most-recent-post' );
+      
+      get_template_part( 'template-parts/widgets/category', 'switcher' );
+    ?>
   </main>
 
 <?php get_footer(); ?>
