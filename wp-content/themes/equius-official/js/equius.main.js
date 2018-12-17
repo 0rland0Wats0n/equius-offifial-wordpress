@@ -48,15 +48,19 @@
         }
 
         // handle category switcher view toggle
-        document.querySelector(".widget__category_switcher__toggler").addEventListener("click", function(e) {
-          var $categories = document.querySelector(".widget__category_switcher > section > ul");
+        var $toggler = document.querySelector(".widget__category_switcher__toggler");
 
-          if ($categories.getAttribute("data-state") === "open") {
-            $categories.setAttribute("data-state", "closed");
-          } else {
-            $categories.setAttribute("data-state", "open");
-          }
-        });
+        if ($toggler) {
+          $toggler.addEventListener("click", function(e) {
+            var $categories = document.querySelector(".widget__category_switcher > section > ul");
+  
+            if ($categories.getAttribute("data-state") === "open") {
+              $categories.setAttribute("data-state", "closed");
+            } else {
+              $categories.setAttribute("data-state", "open");
+            }
+          });
+        }
     });
   }
 })();

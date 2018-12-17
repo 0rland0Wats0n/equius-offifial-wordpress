@@ -29,7 +29,7 @@ h3.type__leader {
 }
 
 h4 {
-  font-family: "Berlingske Serif", serif;
+  font-family: "Tiempos Fine", serif;
   font-size: 15.75px;
   font-weight: bold;
 }
@@ -123,6 +123,21 @@ body {
   left: 0;
 }
 
+.object__fancy_heading {
+  position: relative;
+}
+
+.object__fancy_heading::after {
+  content: "";
+  width: calc(100% - 215px);
+  height: 1px;
+  background-color: #dedede;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
 
 
 
@@ -1656,13 +1671,20 @@ main.archive__asset_classes .asset_classes__back_to_posts > a > h3 {
   margin: 0 0.5em;
 }
 
-.posts__most_recent .post__meta .post__title {
+.posts__most_recent .post__title {
+  max-width: 800px;
   margin: 0.5em auto 0;
   color: white;
 }
 
-.posts__most_recent .post__meta > a {
+.posts__most_recent > span {
   display: block;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.posts__most_recent > span > a {
+  display: inline-block;
   margin: 2em 0 0;
   text-transform: uppercase;
   outline: none;
@@ -1676,7 +1698,35 @@ main.archive__asset_classes .asset_classes__back_to_posts > a > h3 {
   color: white;
 }
 
+/* Recent Posts */
+.posts__recent {
+  max-width: 1366px;
+  margin: 0 auto;
+  padding: 4em 2em;
+}
 
+.posts__recent > h3 {
+  color: #001A44;
+}
+
+.posts__recent .posts__recent_contatainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.posts__recent .posts__recent_contatainer .post_card {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 24%;
+          flex: 0 1 24%;
+}
 
 
 
@@ -1805,9 +1855,96 @@ article.post__single > main > figure > figcaption {
 
 
 
+/*------------
+# POST CARD
+------------*/
+.post_card {
+  margin-bottom: 2em;
+  max-width: 350px;
+  overflow: hidden;
+  border-radius: 5px;
+  border: 1px solid #dedede;
+}
 
+.post_card > header {
+  min-height: 200px;
+  background-color: #005391;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 1.5em;
+  color: white;
+}
 
+.post_card > header > span {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 0.65em;
+}
 
+.post_card > main {
+  background-color: white;
+  padding: 2em 1.5em;
+}
+
+.post_card > main .post_card__meta {
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.post_card > main .post_card__meta > span {
+  display: block;
+  background-color: white;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  margin-right: 1em;
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+}
+
+.post_card > main .post_card__meta > p {
+  margin: 0;
+  color: #F6AE2D;
+  font-weight: bold;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-size: 0.75em;
+}
+
+.post_card > main .post_card__title {
+  color: #001A44;
+  font-size: 1.45em;
+  font-weight: bold;
+  margin: 0.5em 0;
+  max-width: 250px;
+}
+
+.post_card > main .post_card__date {
+  margin: 0;
+  font-weight: bold;
+  color: #737b80;
+  font-size: 0.85em;
+}
+
+.post_card > main .post_card__excerpt {
+  color: #737B80;
+}
 
 
 
@@ -1828,18 +1965,6 @@ article.post__single > main > figure > figcaption {
   color: #001A44;
   margin: 0;
   position: relative;
-}
-
-.category_search>header>h3::after {
-  content: "";
-  width: calc(100% - 215px);
-  height: 1px;
-  background-color: #979797;
-  position: absolute;
-  right: 0;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
 }
 
 /* Empty state */
@@ -2030,5 +2155,4 @@ footer .footer__content .social-nav {
   #beliefs::after {
     display: none;
   }
-} }
-}
+} 

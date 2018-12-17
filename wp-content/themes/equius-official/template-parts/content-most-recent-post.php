@@ -39,9 +39,11 @@
         <?php endif; ?>
         <span><?php echo date("m.d.Y", time( get_the_date() ) ); ?></span>
       </p>
-      <?php the_title( '<h1 class="post__title">', '</h1>' ); ?>
-      <a href="<?php echo get_permalink( $p["ID"] ); ?>">Read Article</a>
     </div>
+    <?php the_title( '<h1 class="post__title">', '</h1>' ); ?>
+    <span>
+      <a href="<?php echo get_permalink( $p["ID"] ); ?>">Read Article</a>
+    </span>
   </section>
 
 <?php 

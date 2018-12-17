@@ -15,7 +15,7 @@
       <span>
         <h2>Results for<br/> <?php  echo $category ?></h2>
       </span>
-      <h3>Sorted Category</h3>
+      <h3 class="object__fancy_heading">Sorted Category</h3>
     </header>
     
     <?php if ( have_posts() ) { ?>

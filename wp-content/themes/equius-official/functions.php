@@ -119,6 +119,18 @@ if ( ! function_exists( 'equius_official_setup' ) ) :
 
 		include_once( get_stylesheet_directory() . '/inc/custom-post-types.php' );
 
+		// set excerpt length
+		function custom_excerpt_length( $length ) {
+			return 20;
+		}
+		add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+
+		// change excerpt more
+		function new_excerpt_more( $more ) {
+			return '...';
+		}
+		add_filter('excerpt_more', 'new_excerpt_more');
+
 		remove_action( 'shutdown', 'wp_ob_end_flush_all', 1 );
 	}
 endif;

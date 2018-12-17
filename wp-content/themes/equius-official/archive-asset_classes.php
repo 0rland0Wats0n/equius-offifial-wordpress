@@ -5,8 +5,6 @@
    * 
    */
 
-   global $numpages;
-
    get_header();
 ?>
   <main class="archive__asset_classes">
