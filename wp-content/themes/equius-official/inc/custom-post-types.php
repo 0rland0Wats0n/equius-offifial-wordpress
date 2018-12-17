@@ -115,7 +115,7 @@
 			}
 			add_action( 'init', 'create_asset_class_post_type' );
 			
-			// 
+			// rewrite permalink rules to make custom archive pages by date work
 			add_action('generate_rewrite_rules', 'my_date_archives_rewrite_rules');
 			function my_date_archives_rewrite_rules($wp_rewrite) {
 				$rules = my_generate_date_archives('asset_classes', $wp_rewrite);
@@ -163,4 +163,27 @@
 
 				return $rules;
 			}
+
+			// track popular posts
+			function cus_popular_posts($post_id) {
+				$count_key = 'popular_posts';
+				$count = get_post_meta($post_id, $count_key, true);
+				if ($count == '') {
+					$count = 0;
+					delete_post_meta($post_id, $count_key);
+					add_post_meta($post_id, $count_key, '0');
+				} else {
+					$count++;
+					update_post_meta($post_id, $count_key, $count);
+				}
+			}
+			function cus_track_posts($post_id) {
+				if (!is_single()) return;
+				if (empty($post_id)) {
+					global $post;
+					$post_id = $post->ID;
+				}
+				cus_popular_posts($post_id);
+			}
+			add_action('wp_head', 'cus_track_posts');
 ?>
