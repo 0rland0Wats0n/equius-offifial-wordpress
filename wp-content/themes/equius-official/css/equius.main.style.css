@@ -139,6 +139,35 @@ body {
   transform: translateY(-50%);
 }
 
+.object__overlay {
+  position: absolute;
+  background-color: rgba(0, 83, 145, 0.35);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.grayscale_overlay {
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+}
+
+.object__author_avatar {
+  display: block;
+  background-color: white;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  margin-right: 1em;
+}
+
 
 
 
@@ -251,6 +280,16 @@ section[role="navigation"] .nav__content > nav > ul > li:not(:last-child) a::aft
   top: -25%;
   background-color: #F6AE2D;
 }
+
+
+
+
+
+
+
+
+
+
 
 /* -------
 # WIDGETS
@@ -669,7 +708,7 @@ section[role="navigation"] .nav__content > nav > ul > li:not(:last-child) a::aft
   cursor: pointer;
 }
 
-/* Post Navigation */
+/* Post(s) Navigation */
 .widget__post_navigation {
   width: 100%;
   color: #001A44;
@@ -1613,6 +1652,23 @@ main.archive__asset_classes .asset_classes__back_to_posts > a > h3 {
 /* ------------
 # POSTS HOME
 ---------------*/
+.posts__view_all {
+  width: 100%;
+  color: #001A44;
+  background-color: #F6AE2D;
+  text-align: center;
+}
+
+.posts__view_all > a {
+  display: block;
+  font-family: "Tiempos Fine", serif;
+  font-size: 2em;
+  font-weight: bold;
+  padding: 1em 2em;
+}
+
+
+
 /* Most Recent Post */
 .posts__most_recent {
   background-color: #005391;
@@ -1735,8 +1791,87 @@ main.archive__asset_classes .asset_classes__back_to_posts > a > h3 {
   padding: 0 2em 2em;
 }
 
+.popular_posts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 2em 0;
+}
 
+.popular_posts .popular_posts__post {
+  position: relative;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 48.5%;
+          flex: 0 1 48.5%;
+  padding: 4em 2em;
+  text-align: center;
+  margin-bottom: 2em;
+  background-color: #001A44;
+  color: white;
+}
 
+.popular_posts .popular_posts__post .popular_posts__post_meta {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; 
+  -webkit-box-orient: horizontal; 
+  -webkit-box-direction: normal; 
+      -ms-flex-flow: row nowrap; 
+          flex-flow: row nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+.popular_posts .popular_posts__post .popular_posts__post_meta > p {
+  margin: 0;
+  text-transform: uppercase;
+  font-size: 0.65em;
+  letter-spacing: 3px;
+}
+
+.popular_posts .popular_posts__post > a:first-of-type {
+  display: block;
+  margin: 1.5em;
+  color: #F6AE2D;
+  text-transform: uppercase;
+  font-size: 0.75em;
+  position: relative;
+  letter-spacing: 3px;
+}
+
+.popular_posts .popular_posts__post > a:nth-of-type(2) {
+  position: relative;
+  max-width: 400px;
+  display: inline-block;
+}
+
+.popular_posts .popular_posts__post > a:nth-of-type(2) > h3 {
+  font-family: "Avenir LT Std", sans-serif;
+  font-weight: 900;
+  margin-bottom: 0;
+}
+
+.popular_posts .popular_posts__post > p {
+  position: relative;
+}
+
+.popular_posts .popular_posts__post > p:last-of-type {
+  margin: 2em auto 0;
+  max-width: 400px;
+  font-size: 0.85em;
+}
 
 
 
@@ -1965,6 +2100,16 @@ article.post__single > main > figure > figcaption {
 .post_card > main .post_card__excerpt {
   color: #737B80;
 }
+
+
+
+
+
+
+
+
+
+
 
 
 

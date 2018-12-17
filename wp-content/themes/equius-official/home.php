@@ -9,14 +9,22 @@
   <main id="main" class="site-main">
     <?php 
       
-      get_template_part( 'template-parts/content', 'most-recent-post' );
+      if ( !is_paged() ) {
+        get_template_part( 'template-parts/content', 'most-recent-post' );
+      }
       
       get_template_part( 'template-parts/widgets/category', 'switcher' );
 
     ?>
 
     <section class="posts__recent">
-      <h3 class="object__fancy_heading">Recent Posts</h3>
+      <h3 class="object__fancy_heading">
+        <?php if ( is_paged() ) { ?>  
+          Articles
+        <?php } else { ?>
+          Recent Posts
+        <?php } ?>
+      </h3>
       <div class="posts__recent_contatainer">
         <?php 
           if ( have_posts() ) : 
@@ -33,11 +41,27 @@
         <?php endwhile; endif; ?>
       </div>
     </section>
+    
+    <?php if ( !is_paged() ) : ?>
+      <section class="posts__popular">
+        <h3 class="object__fancy_heading">Most Popular</h3>
+        <?php get_template_part( 'template-parts/content', 'most-popular-posts' ); ?>
+      </section>
+    <?php endif; ?>
+    
+    <?php if ( !is_paged() ) : ?>
+      <section class="posts__view_all">
+        <?php echo get_next_posts_link("View All Articles"); ?>
+      </section>
+    <?php endif; ?>
 
-    <section class="posts__popular">
-      <h3 class="object__fancy_heading">Most Popular</h3>
-      <?php get_template_part( 'template-parts/content', 'most-popular-posts' ); ?>
-    </section>
+    <?php 
+      if ( is_paged() ) {
+
+        get_template_part( 'template-parts/widgets/posts', 'navigation' );
+
+      }
+    ?>
   </main>
 
 <?php get_footer(); ?>
