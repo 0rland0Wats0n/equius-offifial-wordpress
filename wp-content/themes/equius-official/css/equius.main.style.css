@@ -1522,6 +1522,14 @@ article.post__single > main > hr {
 
 article.post__single > main > figure {
   margin: 0 auto;
+  padding: 0 32px;
+}
+
+article.post__single > main > figure > figcaption {
+  max-width: 600px;
+  text-align: left;
+  margin: 0.5em auto 1em;
+  color: #737B80;
 }
 
 
