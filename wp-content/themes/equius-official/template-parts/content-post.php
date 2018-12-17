@@ -23,7 +23,6 @@
     <?php the_title( '<h1 class="post__title">', '</h1>' ); ?>
   </header>
   <main>
-    
-    <?php the_content() ?>
+    <?php the_content(); ?>
   </main>
 </article>
