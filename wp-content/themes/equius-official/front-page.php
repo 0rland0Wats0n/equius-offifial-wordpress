@@ -12,7 +12,7 @@
   ?>
   <header class="header__landing" style="background-image: url(<?php echo($featured_image) ?>)">
     <div class="header__content">
-      <?php $hero_heading = get_field( 'hero_heading' ) ?>
+      <?php $hero_heading = get_bloginfo( 'description' ) ?>
       <h1 class="type__hero"><?php echo $hero_heading ?></h1>
       <?php get_template_part( 'template-parts/content', 'recent-articles' ); ?>
       <span class="header__scroll">Scroll</span>
@@ -20,13 +20,8 @@
   </header>
 
   <section id="no-secrets">
-    <?php 
-      $ns_heading   = get_field( 'ns_heading' );
-      $ns_content   = get_field( 'ns_content' );
-    ?>
     <div class="no_secrets__content">
-      <h1><?php echo $ns_heading ?></h1>
-      <p><?php echo $ns_content ?></p>
+      <?php the_content() ?>
     </div>
   </section>
       
@@ -39,6 +34,15 @@
     //get team heading and content
     $team_heading   = get_field( 'team_heading' );
     $team_content   = get_field( 'team_content' );
+
+    if ( !$team_heading ) {
+      $team_heading = "Wisdom never gets old.";
+    }
+
+    if ( !$team_content ) {
+      $team_content = "<p>Everyone on the Equius team believes that adhering to our proven investment principles is the key to your success. We are focused and disciplined, but also realize we must continue to nourish our own intellectual curiosity around new technologies, new research, and new generations of investors.</p> 
+      <p>That’s the difference between knowledge and wisdom.</p>";
+    }
   ?>
 
   <section id="team">

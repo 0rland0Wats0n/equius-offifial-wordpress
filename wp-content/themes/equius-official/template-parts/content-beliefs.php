@@ -22,19 +22,23 @@
       get_field( 'belief_3_content' ),
       get_field( 'belief_3_image' )
     )
-  )
+    );
+
+    $beliefs = array_filter( $beliefs );
 ?>
 
 <section id="beliefs">
-  <?php foreach( $beliefs as $belief ): ?>
-    <div class="belief">
-      <section class="belief__image">
-        <img src="<?php echo $belief[2] ?>" alt="">
-      </section>
-      <section class="belief__content">
-        <h2><?php echo $belief[0] ?></h2>
-        <p><?php echo $belief[1] ?></p>
-      </section>
-    </div>
-  <? endforeach; ?>
+  <?php if ( !empty( $beliefs ) ) : ?>
+    <?php foreach( $beliefs as $belief ): $belief = array_filter( $belief ); ?>
+      <?php if ( ! empty( $belief ) ) : ?>
+        <div class="belief">
+          <section class="belief__image">
+            <img src="<?php echo $belief[2] ?>" alt="">
+          </section>
+          <section class="belief__content">
+            <h2><?php echo $belief[0] ?></h2>
+            <p><?php echo $belief[1] ?></p>
+          </section>
+        </div>
+  <? endif; endforeach; endif; ?>
 </section>

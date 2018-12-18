@@ -1,6 +1,6 @@
 {
     "key": "group_5bf1bb303f8dd",
-    "title": "Landing",
+    "title": "Front Page Settings",
     "fields": [
         {
             "key": "field_5bf1cb18b7a1c",
@@ -17,73 +17,6 @@
             },
             "placement": "top",
             "endpoint": 0
-        },
-        {
-            "key": "field_5bf1cee76d680",
-            "label": "Hero Heading",
-            "name": "hero_heading",
-            "type": "text",
-            "instructions": "Add the text overlay for the hero image.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_5bf23e938a376",
-            "label": "Show mailing list widget?",
-            "name": "show_mailinglist_widget",
-            "type": "radio",
-            "instructions": "Choose whether to show mailing list widget or not.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "Show": "Show",
-                "Hide": "Hide"
-            },
-            "allow_null": 0,
-            "other_choice": 0,
-            "default_value": "",
-            "layout": "vertical",
-            "return_format": "value",
-            "save_other_choice": 0
-        },
-        {
-            "key": "field_5bf1cb3cb7a1d",
-            "label": "Show contact section?",
-            "name": "show_contact_section",
-            "type": "radio",
-            "instructions": "Choose whether to show contact section or not.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "Show": "Show",
-                "Hide": "Hide"
-            },
-            "allow_null": 0,
-            "other_choice": 0,
-            "default_value": "",
-            "layout": "vertical",
-            "return_format": "value",
-            "save_other_choice": 0
         },
         {
             "key": "field_5bf2269ae0cd4",
@@ -1245,7 +1178,7 @@
             {
                 "param": "page_template",
                 "operator": "==",
-                "value": "page-landing.php"
+                "value": "front-page.php"
             }
         ]
     ],
@@ -1262,5 +1195,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1542602441
+    "modified": 1545173341
 }
