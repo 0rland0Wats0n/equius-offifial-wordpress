@@ -724,6 +724,11 @@ section[role="navigation"] .nav__content > nav > ul > li:not(:last-child) a::aft
 
 .widget__post_navigation > ul {
   padding: 2em;
+}
+
+.widget__post_navigation > ul > .inner {
+  max-width: 1366px;
+  margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -731,12 +736,33 @@ section[role="navigation"] .nav__content > nav > ul > li:not(:last-child) a::aft
   -webkit-box-direction: normal;
   -ms-flex-flow: row wrap;
   flex-flow: row wrap;
-  -webkit-box-pack: space-evenly;
-  -ms-flex-pack: space-evenly;
-  justify-content: space-evenly;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
-.widget__post_navigation > ul > li {
+.widget__post_navigation > ul > .inner.prev-only {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.widget__post_navigation > ul > .inner.next-only {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.widget__post_navigation > ul > .inner.prev-only > li,
+.widget__post_navigation > ul > .inner.next-only > li
+ {
+  max-width: 50%;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.widget__post_navigation > ul > .inner > li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -745,11 +771,20 @@ section[role="navigation"] .nav__content > nav > ul > li:not(:last-child) a::aft
           align-items: center;
 }
 
-.widget__post_navigation > ul > li > a {
-  display: inline-block;
+.widget__post_navigation > ul > .inner.next-only > li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+
+.widget__post_navigation > ul > .inner > li > a {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-flow: row nowrap;
@@ -762,15 +797,15 @@ section[role="navigation"] .nav__content > nav > ul > li:not(:last-child) a::aft
           align-items: center;
 }
 
-.widget__post_navigation > ul > li > a > h3 {
+.widget__post_navigation > ul > .inner > li > a > h3 {
   margin: 0;
 }
 
-.widget__post_navigation > ul > li.back-to-posts > a > i {
+.widget__post_navigation > ul > .inner > li.back-to-posts > a > i {
    font-size: 2em;
 }
 
-.widget__post_navigation > ul > li:not([class="back-to-posts"]) > a > i {
+.widget__post_navigation > ul > .inner > li:not([class="back-to-posts"]) > a > i {
   width: 32px;
   height: 32px;
   border: 2px solid #001A44;

@@ -9,26 +9,28 @@
 <nav class="widget__post_navigation" role="navigation">
   <h2 class="screen-reader-text">Post navigation</h2>
   <ul class="post_navigation__links">
-    <?php $prev = get_previous_post(); if( $prev ) : ?>
-      <li>
-        <a href="<?php echo get_permalink( $prev->ID ) ?>">
-          <i class="fas fa-chevron-left"></i>
-          <h3>Previous <span>Post</span></h3>
+    <div class="inner">
+      <?php $prev = get_previous_post(); if( $prev ) : ?>
+        <li>
+          <a href="<?php echo get_permalink( $prev->ID ) ?>">
+            <i class="fas fa-chevron-left"></i>
+            <h3>Previous <span>Post</span></h3>
+          </a>
+        </li>
+      <? endif; ?>
+      <li class="back-to-posts">
+        <a href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>">
+          <i class="fas fa-th"></i>
         </a>
       </li>
-    <? endif; ?>
-    <li class="back-to-posts">
-      <a href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>">
-        <i class="fas fa-th"></i>
-      </a>
-    </li>
-    <?php $next = get_next_post(); if( $next ) : ?>
-      <li>
-        <a href="<?php echo get_permalink( $next->ID ) ?>">
-            <h3>Next <span>Post</span></h3>
-            <i class="fas fa-chevron-right"></i>
-        </a>
-      </li>
-    <? endif; ?>
+      <?php $next = get_next_post(); if( $next ) : ?>
+        <li>
+          <a href="<?php echo get_permalink( $next->ID ) ?>">
+              <h3>Next <span>Post</span></h3>
+              <i class="fas fa-chevron-right"></i>
+          </a>
+        </li>
+      <? endif; ?>
+    </div>
   </ul>
 </nav>
