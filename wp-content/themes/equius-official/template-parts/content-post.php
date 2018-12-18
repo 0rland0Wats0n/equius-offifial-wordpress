@@ -12,7 +12,9 @@
     <div class="post__meta">
       <span style="background-image: url(<?php echo get_avatar_url( get_the_author_meta( "ID" ) ); ?>)"></span>
       <p>
-        <span><?php echo get_the_author_meta( "user_firstname" ) . " " . get_the_author_meta( "user_lastname" )?></span>
+        <a href="<?php echo get_author_posts_url( get_the_author_meta( "ID" ) ); ?>">
+          <?php echo get_the_author_meta( "user_firstname" ) . " " . get_the_author_meta( "user_lastname" )?>
+        </a>
         <?php $post_categories = get_the_category( get_the_ID() );
           if( !empty($post_categories) ) : ?>
           <span><?php echo $post_categories[0]->name ?></span>

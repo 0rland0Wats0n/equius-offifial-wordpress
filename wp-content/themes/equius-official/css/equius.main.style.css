@@ -210,6 +210,13 @@ hr {
   background-color: #dedede;
 }
 
+a,
+a:visited,
+a:focus {
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
 
 
 
@@ -1940,7 +1947,8 @@ article.post__single > header .post__meta > p {
   font-size: 12px;
 }
 
-article.post__single > header .post__meta > p > span:not(:last-of-type)::after {
+article.post__single > header .post__meta > p > span:not(:last-of-type)::after,
+article.post__single > header .post__meta > p > a::after {
   content: "/";
   margin: 0 0.5em;
 }
@@ -2183,6 +2191,69 @@ article.post__single > main > figure > figcaption {
   flex: 0 1 24%;
 }
 
+
+
+
+
+
+
+
+/*----------- 
+# AUTHOR
+------------*/
+main.author > header {
+  padding: 4em 2em;
+  background-color: #001a44;
+}
+
+main.author > header > div {
+  max-width: 1280px;
+  margin: 0 auto;
+  color: white;
+}
+
+main.author > header > div  > h1 {
+  margin-top: 0;
+}
+
+
+main.author > header > div > h3 {
+  font-family: "Avenir LT Std", sans-serif;
+}
+
+main.author > header > div > span {
+  display: block;
+}
+
+main.author > header > div > span > i {
+  margin-right: 1em;
+}
+
+main.author > section {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 4em 2em;
+}
+
+main.author > section .author__posts {
+   padding: 4em 0;
+   display: -webkit-box;
+   display: -ms-flexbox;
+   display: flex;
+   -webkit-box-orient: horizontal;
+   -webkit-box-direction: normal;
+   -ms-flex-flow: row wrap;
+   flex-flow: row wrap;
+   -webkit-box-pack: justify;
+   -ms-flex-pack: justify;
+   justify-content: space-between;
+}
+
+main.author > section .author__posts .post_card {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 1 24%;
+  flex: 0 1 24%;
+}
 
 
 
