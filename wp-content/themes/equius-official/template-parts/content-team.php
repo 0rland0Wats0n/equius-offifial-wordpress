@@ -4,25 +4,24 @@
  * 
  * @package equius-official
  */
+
+  /**
+  * Get team members
+  */
+  $args = array(
+    'meta_key'          => 'team_member_name',
+    'orderby'           => 'meta_value',
+    'order'             => 'ASC',
+    'post_type'         => 'team_members',
+    'suppress_filters'  => true
+  );
+  $the_query = new WP_Query( $args );
+
+  if( $the_query->have_posts() ):
 ?>
 
   <section class="widget__team">
     <div class="widget_team__content">
-      <?php
-          /**
-           * Get team members
-           */
-          $args = array(
-            'meta_key'          => 'team_member_name',
-            'orderby'           => 'meta_value',
-            'order'             => 'ASC',
-            'post_type'         => 'team_members',
-            'suppress_filters'  => true
-          );
-          $the_query = new WP_Query( $args );
-
-          if( $the_query->have_posts() ):
-      ?>
       <span class="object__arrow_left">
         <img src="<?php echo get_template_directory_uri() . '/assets/images/arrow_left.png'?>" alt="">
       </span>
