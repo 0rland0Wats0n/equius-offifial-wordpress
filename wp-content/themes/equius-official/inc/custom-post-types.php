@@ -186,4 +186,11 @@
 				cus_popular_posts($post_id);
 			}
 			add_action('wp_head', 'cus_track_posts');
+
+			function cus_increase_posts_per_page( $query ) {
+			if ( $query->is_archive() && $query->is_main_query() && !is_admin() ) {
+							$query->set( 'posts_per_page', 20 );
+					}
+			}
+			add_action( 'pre_get_posts', 'cus_increase_posts_per_page' );
 ?>

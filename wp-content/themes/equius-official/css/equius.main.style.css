@@ -2117,7 +2117,7 @@ article.post__single > main > figure > figcaption {
 # CATEGORY
 ------------*/
 .category_search > header {
-  max-width: 1280px;
+  max-width: 1366px;
   padding: 5em 2em 2em;
   margin: 0 auto;
 }
@@ -2158,6 +2158,29 @@ article.post__single > main > figure > figcaption {
   padding: 2em;
   text-align: center;
   color: #001A44;
+}
+
+/* Results */
+.category_search .category_search__results {
+  max-width: 1366px;
+  margin: 0 auto;
+  padding: 4em 2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.category_search .category_search__results .post_card {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 1 24%;
+  flex: 0 1 24%;
 }
 
 

@@ -18,8 +18,21 @@
       <h3 class="object__fancy_heading">Sorted Category</h3>
     </header>
     
-    <?php if ( have_posts() ) { ?>
-    
+    <section class="category_search__results">
+      <?php if ( have_posts() ) { ?>
+
+      <?php 
+        while ( have_posts() ) :
+
+          the_post();
+
+          get_template_part( 'template-parts/content', 'post-card' );
+        endwhile;
+      ?>
+    </section>
+
+    <?php get_template_part( 'template-parts/widgets/category', 'posts-navigation' ); ?>
+
     <?php } else { ?>
       <section class="category_search__empty">
         <h1>whoops!</h1>
