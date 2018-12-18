@@ -57,87 +57,44 @@
     </div>
   </section>
 
-  <?php get_template_part( 'template-parts/content', 'expertise' ); ?>
-
-  <?php
-    $working_heading    = get_field( 'working_heading' );
-    $steps              = array(
-      "One" => array(
-        get_field( 'step_1_heading' ),
-        get_field( 'step_1_details' ),
-        get_field( 'step_1_icon' )
-      ),
-      "Two" => array(
-        get_field( 'step_2_heading' ),
-        get_field( 'step_2_details' ),
-        get_field( 'step_2_icon' )
-      ),
-      "Three" => array(
-        get_field( 'step_3_heading' ),
-        get_field( 'step_3_details' ),
-        get_field( 'step_3_icon' )
-      )
-    )
-  ?>
-  <section id="working">
-    <div class="working__content">
-      <h1><?php echo $working_heading ?></h1>
-      <ul class="working__steps">
-        <?php foreach( $steps as $key => $step ) : ?>
-        <li>
-          <header>
-            <img src="<?php echo $step[2] ?>" alt="">
-            <span>
-              <p class="type__caption">step <?php echo $key ?></p>
-              <h3><?php echo $step[0] ?></h3>
-            </span>
-          </header>
-          <p><?php echo $step[1] ?></p>
-        </li>
-        <?php endforeach; ?>
-      </ul>
-    </div>
-    <div class="working__blue_bg"></div>
-  </section>
-
-  <?php get_template_part( 'template-parts/content',  'testimonials' ); ?>
-
   <?php 
-    $show_contact = get_field( 'show_contact_section' );
     
-    if( $show_contact == "Show" ) :
+    get_template_part( 'template-parts/content', 'expertise' ); 
+
+    get_template_part( 'template-parts/content', 'working-with' );
+    
+    get_template_part( 'template-parts/content',  'testimonials' ); 
+  
   ?>
 
-    <section id="contact">
-      <section class="contact__top">
-        <h1>Contact Equius</h1>
-        <h3><?php echo get_field( 'business_phone' ); ?></h3>
-      </section>
-      <section class="contact__bottom">
-        <div class="contact__form">
-          <form action="">
-            <input type="text" name="name" placeholder="Name" required />
-            <input type="email" name="email" placeholder="Email" required />
-            <textarea name="message" cols="30" rows="10"></textarea>
-            <button type="button">Submit</button>
-          </form>
-        </div>
-        <div class="contact__details">
-          <img src="<?php echo get_template_directory_uri() . '/assets/images/Map.png' ?>" alt="">
-          <h4>Where to Find Us</h4>
-          <section>
-            <span>
-              <p><?php echo get_field( 'business_address' ) ?></p>
-            </span>
-            <span>
-              <p><?php echo get_field( 'business_email' ) ?></p>
-              <p><?php echo get_field( 'business_phone' ) ?></p>
-            </span>
-          </section>
-        </div>
-      </section>
+  <section id="contact">
+    <section class="contact__top">
+      <h1>Contact Equius</h1>
+      <h3><?php echo get_field( 'business_phone' ); ?></h3>
     </section>
-    
-  <?php endif; ?>
+    <section class="contact__bottom">
+      <div class="contact__form">
+        <form action="">
+          <input type="text" name="name" placeholder="Name" required />
+          <input type="email" name="email" placeholder="Email" required />
+          <textarea name="message" cols="30" rows="10"></textarea>
+          <button type="button">Submit</button>
+        </form>
+      </div>
+      <div class="contact__details">
+        <img src="<?php echo get_template_directory_uri() . '/assets/images/Map.png' ?>" alt="">
+        <h4>Where to Find Us</h4>
+        <section>
+          <span>
+            <p><?php echo get_field( 'business_address' ) ?></p>
+          </span>
+          <span>
+            <p><?php echo get_field( 'business_email' ) ?></p>
+            <p><?php echo get_field( 'business_phone' ) ?></p>
+          </span>
+        </section>
+      </div>
+    </section>
+  </section>
 
  <?php get_footer() ?>
