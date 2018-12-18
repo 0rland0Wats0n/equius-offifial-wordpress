@@ -116,8 +116,12 @@ if ( ! function_exists( 'equius_official_setup' ) ) :
 			'flex-width'  => true,
 			'flex-height' => true,
 		) );
-
+		
+		// include custom post types
 		include_once( get_stylesheet_directory() . '/inc/custom-post-types.php' );
+
+		// include custom comments
+		include_once( get_stylesheet_directory() . '/inc/custom-comments.php' );
 
 		// set excerpt length
 		function custom_excerpt_length( $length ) {
