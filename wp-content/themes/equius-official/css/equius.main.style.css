@@ -1216,7 +1216,6 @@ header.header__landing .header__content .header__scroll::after {
 }
 
 .expertise__content .expertise__items {
-  padding: 2em 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
