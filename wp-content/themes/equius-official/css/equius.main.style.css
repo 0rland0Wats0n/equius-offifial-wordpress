@@ -467,7 +467,7 @@ section[role="navigation"] .nav__content > nav > ul > li:not(:last-child) a::aft
 .widget__testimonials {
   width: 100%;
   background-color: #001A44;
-  padding: 2em 2em 8em;
+  padding: 8em 2em;
 }
 
 .widget__testimonials .testimonials__content {
