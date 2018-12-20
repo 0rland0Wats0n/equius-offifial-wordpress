@@ -211,7 +211,6 @@ html {
 
 body {
   min-height: 100%;
-  position: relative;
 }
 
 hr {
@@ -282,6 +281,10 @@ section[role="navigation"] .nav__content > nav > ul > li {
   padding: 7px 10px;
 }
 
+section[role="navigation"] .nav__content > nav > ul > li:not(:first-child) {
+  margin-left: -5px;
+}
+
 section[role="navigation"] .nav__content > nav > ul > li > a {
   color: #001a44;
   font-weight: 900;
@@ -290,10 +293,10 @@ section[role="navigation"] .nav__content > nav > ul > li > a {
 section[role="navigation"] .nav__content > nav > ul > li:not(:last-child) a::after {
   content: "";
   width: 1px;
-  height: 48px;
+  height: 40px;
   position: absolute;
   right: 0;
-  top: -25%;
+  top: 0;
   background-color: #F6AE2D;
 }
 
@@ -415,10 +418,23 @@ section[role="navigation"] .nav__content > nav > ul > li:not(:last-child) a::aft
   color: white;
 }
 
-.widget_team__content .team__members>li>img {
+.widget_team__content .team__members>li>a {
+  display: block;
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   width: 75px;
-  max-width: 100%;
+  height: 75px;
   border-radius: 50%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.widget_team__content .team__members>li>a>img {
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+  max-width: 100%;
 }
 
 .widget_team__content .team__members>li>h4 {
@@ -436,19 +452,24 @@ section[role="navigation"] .nav__content > nav > ul > li:not(:last-child) a::aft
 }
 
 .widget_team__content .team__members {
-  max-width: 960px;
+  max-width: 1080px;
   margin: 0 auto;
-  padding: 0 1em;
+  padding: 0 3em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   -webkit-box-align: start;
   -ms-flex-align: start;
   align-items: flex-start;
-  overflow: hidden;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  overflow-y: hidden;
+  max-height: 157px;
 }
 
 .widget_team__content .team__members>li {

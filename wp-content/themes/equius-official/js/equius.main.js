@@ -87,6 +87,19 @@
             }
           });
         }
+
+        // handle teams carousel switching
+        // var $teamCarousel = document.querySelector(".widget__team");
+
+        // if( $teamCarousel ) {
+
+        //   document.querySelector(".widget__team .object__arrow_right").addEventListener("click", function(e) {
+
+
+
+        //   });
+
+        // }
     });
   }
 })();

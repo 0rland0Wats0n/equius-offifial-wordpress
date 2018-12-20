@@ -36,7 +36,10 @@
         ?>
 
         <li>
-          <img src="<?php echo $image ?>" alt="">
+          <a href="#">
+            <img src="<?php echo $image ?>" alt="">
+            <div class="object__overlay"></div>
+          </a>
           <h4><?php echo $name ?></h4>
           <p class="type__caption"><?php echo $role ?></p>
         </li>
