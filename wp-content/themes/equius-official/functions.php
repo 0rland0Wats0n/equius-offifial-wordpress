@@ -135,6 +135,26 @@ if ( ! function_exists( 'equius_official_setup' ) ) :
 		}
 		add_filter('excerpt_more', 'new_excerpt_more');
 
+
+		/**
+		 * Register new widget areas
+		 *
+		 */
+		function cus_widgets_init() {
+
+			register_sidebar( array(
+				'name'          => 'Home contact',
+				'id'            => 'home_contact',
+				'before_widget' => '<div>',
+				'after_widget'  => '</div>',
+				'before_title'  => '<h2 class="rounded">',
+				'after_title'   => '</h2>',
+			) );
+
+		}
+		add_action( 'widgets_init', 'cus_widgets_init' );
+
+
 		remove_action( 'shutdown', 'wp_ob_end_flush_all', 1 );
 	}
 endif;

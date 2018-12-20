@@ -73,14 +73,15 @@
       <h3><?php echo get_field( 'business_phone' ); ?></h3>
     </section>
     <section class="contact__bottom">
-      <div class="contact__form">
-        <form action="">
-          <input type="text" name="name" placeholder="Name" required />
-          <input type="email" name="email" placeholder="Email" required />
-          <textarea name="message" cols="30" rows="10"></textarea>
-          <button type="button">Submit</button>
-        </form>
-      </div>
+      <?php if ( is_active_sidebar( 'home_contact' ) ) { ?>
+        <div id="home-contact" class="primary-sidebar widget-area" role="complementary">
+          <?php dynamic_sidebar( 'home_contact' ); ?>
+        </div>
+      <?php } else { ?>
+        <div class="contact__activate_home_contact_widget">
+          <h2>Please activate home contact widget to display contact form.</h2>
+        </div>
+      <?php } ?>
       <div class="contact__details">
         <img src="<?php echo get_template_directory_uri() . '/assets/images/Map.png' ?>" alt="">
         <h4>Where to Find Us</h4>

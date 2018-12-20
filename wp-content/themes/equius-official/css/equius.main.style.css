@@ -564,7 +564,7 @@ section[role="navigation"] .nav__content > nav > ul > li:not(:last-child) a::aft
 }
 
 .widget__mailing_list_plus .widget__mailing_list_content > li {
-  padding: 4em 3em;
+  padding: 4em 2em;
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
@@ -2422,6 +2422,85 @@ main.author > section .author__posts .post_card {
 
 
 
+/* --------------------------------
+# FORM IN HOME CONTACT WIDGET AREA
+-----------------------------------*/
+#home-contact form input[type],
+#home-contact form textarea {
+  padding: 1em;
+  background-color: rgba(171, 181, 186, 30%);
+  color: #005391;
+  outline: none;
+  border: none;
+  border-radius: 4px;
+  display: block;
+  width: 100%;
+  margin: 0;
+}
+
+#home-contact form .nf-field-container {
+  margin-bottom: 1em;
+}
+
+#home-contact form input[type="button"],
+#home-contact form input[type="submit"],
+#home-contact form input[type="reset"],
+#home-contact form button {
+  border: none;
+  outline: none;
+  background-color: #F6AE2D;
+  color: white;
+  padding: 1em 2em;
+  cursor: pointer;
+  width: auto;
+}
+
+#home-contact .nf-form-fields-required {
+  display: none;
+}
+
+#home-contact form ::-webkit-input-placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #005391;
+  opacity: 1;
+  font-size: 12px;
+  /* Firefox */
+}
+
+#home-contact form :-ms-input-placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #005391;
+  opacity: 1;
+  font-size: 12px;
+  /* Firefox */
+}
+
+#home-contact form ::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #005391;
+  opacity: 1;
+  font-size: 12px;
+  /* Firefox */
+}
+
+#home-contact form :-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #005391;
+  font-size: 12px;
+}
+
+#home-contact form ::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #005391;
+  font-size: 12px;
+}
+
+
+
+
+
+
+
 
 
 /*----------- 
@@ -2440,16 +2519,29 @@ footer .footer__content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
+footer .footer__content > span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+} 
+
 footer .footer__content .custom-logo-link img {
   max-width: 120px;
+  margin-right: 2em;
 }
 
 footer .footer__content > p {

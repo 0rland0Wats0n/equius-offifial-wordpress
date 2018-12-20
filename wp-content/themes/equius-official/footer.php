@@ -15,8 +15,10 @@
 	<footer>
 		<?php get_template_part( 'template-parts/widgets/mailing',  'list-plus' ); ?>
 		<div class="footer__content">
-			<?php the_custom_logo() ?>
-			<p class="type__caption">(415) 382-2500  -  3 Hamilton Landing, Suite 130, Novato CA 94949, USA</p>
+			<span>
+				<?php the_custom_logo() ?>
+				<p class="type__caption">(415) 382-2500  -  3 Hamilton Landing, Suite 130, Novato CA 94949, USA</p>
+			</span>
 			<ul class="social-nav"></ul>
 			<p class="type__caption">&copy; <?php echo date('Y'); ?> Equius Partners Inc. All rights reserved.</p>
 		</div>
