@@ -61,6 +61,32 @@
             }
           });
         }
+
+        // handle testimonials switching
+        var $testimonialWidget = document.querySelector(".widget__testimonials");
+
+        if ( $testimonialWidget ) {
+          
+          document.querySelector(".widget__testimonials .object__arrow_right").addEventListener("click", function(e) {
+            var $active = e.currentTarget.previousElementSibling.querySelector("li[data-state='active']");
+            var $next = $active.nextElementSibling || e.currentTarget.previousElementSibling.querySelector("li:first-child");
+
+            if ($next) {
+              $active.setAttribute("data-state", "inactive");
+              $next.setAttribute("data-state", "active");
+            }
+          });
+
+          document.querySelector(".widget__testimonials .object__arrow_left").addEventListener("click", function (e) {
+            var $active = e.currentTarget.nextElementSibling.querySelector("li[data-state='active']");
+            var $prev = $active.previousElementSibling || e.currentTarget.nextElementSibling.querySelector("li:last-child");
+
+            if ($prev) {
+              $active.setAttribute("data-state", "inactive");
+              $prev.setAttribute("data-state", "active");
+            }
+          });
+        }
     });
   }
 })();

@@ -35,7 +35,7 @@
               <p><?php echo get_field( 'testimonial_attestant' ) ?></p>
               <p><?php echo get_field( 'testimonial_job_title' ) . ', ' . get_field( 'testimonial_company' ) ?></p>
             </li>
-          <?php endwhile; ?>
+          <?php $i++; endwhile; ?>
         </ul>
         <?php if ( $the_query->post_count > 1 ) : ?>
           <span class="object__arrow_right">

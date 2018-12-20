@@ -68,6 +68,8 @@ body {
   font-family: "Avenir LT Std", sans-serif;
   font-size: 16px;
   font-weight: 500;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
 
@@ -98,7 +100,14 @@ body {
 
 .object__arrow_right,
 .object__arrow_left {
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  padding: 0 1em;
   position: absolute;
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -509,6 +518,10 @@ section[role="navigation"] .nav__content > nav > ul > li:not(:last-child) a::aft
   margin: 0;
 }
 
+.widget__testimonials .testimonials__items > li[data-state="inactive"] {
+  height: 0;
+  overflow: hidden;
+}
 
 /* Mailing List Plus Nav */
 .widget__mailing_list_plus {
