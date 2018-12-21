@@ -34,8 +34,8 @@
       <p>
         <span><?php echo get_the_author_meta( "user_firstname", $p["post_author"] ) . " " . get_the_author_meta( "user_lastname", $p["post_author"] )?></span>
         <?php $post_categories = get_the_category( $most_recent[0]["ID"] );
-          if( !empty($post_categories) && $post_categories[0]->name !== "Uncategorized" ) : ?>
-          <span><?php echo $post_categories[0]->name ?></span>
+          if( !empty($post_categories) ) : ?>
+          <a href="<?php echo get_category_link( $post_categories[0]->term_id ) ?>"><?php echo $post_categories[0]->name ?></a>
         <?php endif; ?>
         <span><?php echo date("m.d.Y", time( get_the_date() ) ); ?></span>
       </p>
