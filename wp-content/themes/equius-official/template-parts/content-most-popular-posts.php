@@ -14,8 +14,11 @@
 
    $popular = new WP_Query( $args );
 
+   if ( $popular->have_posts() ) :
+
    ?>
 
+      <h3 class="object__fancy_heading">Most Popular</h3>
       <div class="popular_posts">
         <?php while( $popular->have_posts() ) : $popular->the_post(); ?>
 
@@ -39,3 +42,5 @@
 
         <?php endwhile; wp_reset_postdata(); ?>
       </div>
+  
+   <?php endif; wp_reset_query(); ?>

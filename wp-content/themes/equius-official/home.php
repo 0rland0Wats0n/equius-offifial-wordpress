@@ -15,6 +15,7 @@
       
       get_template_part( 'template-parts/widgets/category', 'switcher' );
 
+      if ( have_posts() ) :
     ?>
 
     <section class="posts__recent">
@@ -44,7 +45,6 @@
     
     <?php if ( !is_paged() ) : ?>
       <section class="posts__popular">
-        <h3 class="object__fancy_heading">Most Popular</h3>
         <?php get_template_part( 'template-parts/content', 'most-popular-posts' ); ?>
       </section>
     <?php endif; ?>
@@ -61,7 +61,18 @@
         get_template_part( 'template-parts/widgets/posts', 'navigation' );
 
       }
+
+      endif;
+
+      if ( !have_posts() ) :
     ?>
+
+    <section class="posts__empty">
+      <h1>whoops!</h1>
+      <h4>No posts added yet. Join our mailing list to keep up to date with us.</h4>
+    </section>
+
+    <?php endif; ?>
   </main>
 
 <?php get_footer(); ?>

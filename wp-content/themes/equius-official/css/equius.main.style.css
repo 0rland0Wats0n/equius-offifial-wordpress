@@ -1777,6 +1777,27 @@ main.archive__asset_classes .asset_classes__back_to_posts > a > h3 {
 }
 
 
+/* Empty */
+main > .posts__empty {
+  max-width: 992px;
+  margin: 0 auto;
+  padding: 10em 2em;
+  text-align: center;
+}
+
+main > .posts__empty>h1 {
+  text-transform: uppercase;
+  opacity: 0.15;
+  font-family: "Avenir LT Std", sans-serif;
+  margin-top: 0;
+}
+
+main > .posts__empty>h4 {
+  max-width: 300px;
+  margin: 0 auto;
+  text-align: center;
+}
+
 
 /* Most Recent Post */
 .posts__most_recent {
