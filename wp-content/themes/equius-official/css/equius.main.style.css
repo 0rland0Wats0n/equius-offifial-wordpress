@@ -572,10 +572,15 @@ section[role="navigation"] .nav__content > nav > ul > li:not(:last-child) a::aft
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
 }
 
 .widget__mailing_list_plus .widget__mailing_list_content > li {
   padding: 4em 2em;
+  min-width: 300px;
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
@@ -961,7 +966,8 @@ section[role="navigation"] .nav__content > nav > ul > li:not(:last-child) a::aft
 
 /* Knowledge Base SOcial Share */
 #kb-social-share {
-  width: 100%;  
+  width: 100%;
+  margin-bottom: 2em;  
 }
 
 nav.widget__kb_social_share {
@@ -979,14 +985,19 @@ nav.widget__kb_social_share {
 
 nav.widget__kb_social_share > li {
   list-style-type: none;
+  text-align: center;
 }
 
 nav.widget__kb_social_share > li > a {
   color: #cbcbcb;
   font-size: 1.5em;
   padding: 0 0.5em;
+  display: inline-block;
 }
 
+nav.widget__kb_social_share > li:first-child > a {
+  padding-left: 0;
+}
 
 
 
@@ -1974,6 +1985,19 @@ main > .posts__empty>h4 {
   margin-bottom: 2em;
   background-color: #001A44;
   color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .popular_posts .popular_posts__post .popular_posts__post_meta {
@@ -2019,7 +2043,7 @@ main > .posts__empty>h4 {
 .popular_posts .popular_posts__post > a:nth-of-type(2) > h3 {
   font-family: "Avenir LT Std", sans-serif;
   font-weight: 900;
-  margin-bottom: 0;
+  margin: 0;
 }
 
 .popular_posts .popular_posts__post > p {
@@ -2058,16 +2082,6 @@ article.post__single > header {
 article.post__single > header .post__meta {
   max-width: 800px;
   margin: 0 auto;
-  /* display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap; */
 }
 
 article.post__single > header .post__meta > span:first-of-type {
@@ -2114,7 +2128,7 @@ article.post__single > header .post__title {
 
 article.post__single > main {
   max-width: 1080px;
-  margin: 4em auto;
+  margin: 2em auto;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2128,6 +2142,7 @@ article.post__single > main {
           align-items: flex-end;
   color: #737b80;
   line-height: 1.43;
+  position: relative;
 }
 
 article.post__single > main > p,
@@ -2137,8 +2152,11 @@ article.post__single > main > h3,
 article.post__single > main > h4,
 article.post__single > main > h5,
 article.post__single > main .wp-block-columns {
-  max-width: 80%;
   padding: 0 32px;
+}
+
+article.post__single>main>:nth-child(2) {
+  margin-top: 0;
 }
 
 article.post__single>main h1,
@@ -2177,6 +2195,7 @@ article.post__single > main > figure > figcaption {
 .post_card {
   margin-bottom: 2em;
   max-width: 350px;
+  min-height: 480px;
   overflow: hidden;
   border-radius: 5px;
   border: 1px solid #dedede;
@@ -2204,6 +2223,8 @@ article.post__single > main > figure > figcaption {
 .post_card > main {
   background-color: white;
   padding: 2em 1.5em;
+  min-height: calc( 100% - 150px );
+  position: relative;
 }
 
 .post_card > main .post_card__meta {
@@ -2366,6 +2387,10 @@ article.post__single > main > figure > figcaption {
 
 #comments.comments-area .comments-title::after {
   right: 32px;
+}
+
+#comments.comments-area .comments-list {
+  margin-bottom: 2em;
 }
 
 #comments.comments-area .comments-list > li {
@@ -2730,7 +2755,49 @@ footer .footer__content .footer_social {
 #   RESPONSIVE
 --------------*/
 @media (min-width: 600px) {
+  .comments-area .comment_form__mobile {
+    display: none;
+  }
 
+  .comments-area .comment_form {
+    display: block;
+  }
+
+  .comments-area #respond form .comment-form-comment {
+    max-width: 75%;
+    padding-right: 0;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    line-height: 0;
+  }
+
+  .comments-area #respond form .comment-form-comment > textarea {
+    margin: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .comments-area #respond form .form-submit {
+    max-width: 25%;
+    padding-left: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-flex: 1;
+                -ms-flex: 1;
+                    flex: 1;
+  }
+
+  .comments-area #respond form .form-submit input {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    cursor: pointer;
+    min-height: 100%;
+  }
 }
 
 @media (max-width: 600px) {
@@ -2757,6 +2824,18 @@ footer .footer__content .footer_social {
 
   h1.type__hero {
     font-size: 8.5vw;
+  }
+  
+  .widget__mailing_list_plus .widget__mailing_list_content > li {
+    padding: 1em 2em;
+  }
+
+  .widget__mailing_list_plus .widget__mailing_list_content > li:first-child {
+    padding-top: 2em;
+  }
+
+  .widget__mailing_list_plus .widget__mailing_list_content > li:last-child {
+    padding-bottom: 2em;
   }
 
   .widget__mailing_list_content {
@@ -2829,6 +2908,63 @@ footer .footer__content .footer_social {
     -webkit-box-flex: 1;
         -ms-flex: 1;
             flex: 1;
+  }
+}
+
+@media (min-width: 800px) {
+  article.post__single > header .post__meta {
+    margin-bottom: 2em;
+  }
+
+  article.post__single > header .post__meta > p {
+    margin-left: 1em;
+  }
+
+  article.post__single > header {
+    padding: 10em 2em;
+  }
+
+  article.post__single > header .post__meta {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  }
+
+  article.post__single>main>p,
+  article.post__single>main>h1,
+  article.post__single>main>h2,
+  article.post__single>main>h3,
+  article.post__single>main>h4,
+  article.post__single>main>h5,
+  article.post__single>main .wp-block-columns {
+    max-width: 80%;
+    padding-right: 20%;
+  }
+
+  #kb-social-share {
+    max-width: 72px;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  nav.widget__kb_social_share {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+  }
+
+  nav.widget__kb_social_share > li > a,
+  nav.widget__kb_social_share > li > a:first-child {
+    padding: 0 0.5em;
   }
 }
 

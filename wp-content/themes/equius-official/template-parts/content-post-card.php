@@ -26,10 +26,13 @@
           <?php echo get_the_author_meta( "user_firstname" ) . " " . get_the_author_meta( "user_lastname" )?>
         </a>
     </div>
-    <a href="<?php echo get_permalink( get_the_ID() ) ?>">
-        <?php the_title( '<h4 class="post_card__title">', '</h4>' ); ?>
-    </a>
-    <p class="post_card__date"><?php echo date("m.d.Y", time( get_the_date() ) ); ?></p>
-    <p class="post_card__excerpt"><?php echo substr( get_the_excerpt(), 0, 150 ) ?></p>
+    <span>
+        <a href="<?php echo get_permalink( get_the_ID() ) ?>">
+            <?php the_title( '<h4 class="post_card__title">', '</h4>' ); ?>
+        </a>
+        <p class="post_card__date"><?php echo date("m.d.Y", time( get_the_date() ) ); ?></p>
+    </span>
+    <p class="post_card__excerpt"><?php echo substr( get_the_excerpt(), 0, 90 ) 
+    ?></p>
   </main>
 </section>
