@@ -2410,8 +2410,54 @@ article.post__single > main > figure > figcaption {
   margin-bottom: 0;
 }
 
+/* Respond */
+.comments-area #respond #reply-title,
+.comments-area #respond form .logged-in-as,
+.comments-area #respond form .comment-notes,
+.comments-area #respond form .comment-form-comment > label {
+  display: none;
+}
 
+.comments-area #respond form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+}
 
+.comments-area #respond form .comment-form-author {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+}
+
+.comments-area #respond form .comment-form-email {
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+}
+
+.comments-area #respond form .comment-form-url {
+  -webkit-box-ordinal-group: 4;
+      -ms-flex-order: 3;
+          order: 3;
+  width: 100%;
+}
+
+.comments-area #respond form .comment-form-comment {
+  -webkit-box-ordinal-group: 5;
+      -ms-flex-order: 4;
+          order: 4;
+}
+
+.comments-area #respond form .form-submit {
+  -webkit-box-ordinal-group: 6;
+      -ms-flex-order: 5;
+          order: 5;
+}
 
 
 

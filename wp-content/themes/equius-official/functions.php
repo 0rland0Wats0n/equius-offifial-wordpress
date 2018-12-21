@@ -163,6 +163,47 @@ if ( ! function_exists( 'equius_official_setup' ) ) :
 		add_action( 'widgets_init', 'cus_widgets_init' );
 
 
+		// hook in to comment form
+		function cus_update_comment_fields( $fields ) {
+
+			$commenter = wp_get_current_commenter();
+			$req       = get_option( 'require_name_email' );
+			$label     = $req ? '*' : ' ' . __( '(optional)', 'text-domain' );
+			$aria_req  = $req ? "aria-required='true'" : '';
+
+			$fields['author'] =
+				'<p class="comment-form-author">
+					<input id="author" name="author" type="text" placeholder="' . esc_attr__( "Name", "text-domain" ) . '" value="' . esc_attr( $commenter['comment_author'] ) .
+				'" size="30" ' . $aria_req . ' />
+				</p>';
+
+			$fields['email'] =
+				'<p class="comment-form-email">
+					<input id="email" name="email" type="email" placeholder="' . esc_attr__( "Email", "text-domain" ) . '" value="' . esc_attr( $commenter['comment_author_email'] ) .
+				'" size="30" ' . $aria_req . ' />
+				</p>';
+
+			$fields['url'] =
+				'<p class="comment-form-url">
+					<input id="url" name="url" type="url"  placeholder="' . esc_attr__( "Website", "text-domain" ) . '" value="' . esc_attr( $commenter['comment_author_url'] ) .
+				'" size="30" />
+					</p>';
+
+			return $fields;
+		}
+		add_filter( 'comment_form_default_fields', 'cus_update_comment_fields' );
+
+		function my_update_comment_field( $comment_field ) {
+
+			$comment_field =
+				'<p class="comment-form-comment">
+						<textarea rows="1" required id="comment" name="comment" placeholder="' . esc_attr__( "Write a comment", "text-domain" ) . '" cols="45" rows="8" aria-required="true"></textarea>
+				</p>';
+
+			return $comment_field;
+		}
+		add_filter( 'comment_form_field_comment', 'my_update_comment_field' );
+
 		remove_action( 'shutdown', 'wp_ob_end_flush_all', 1 );
 	}
 endif;
