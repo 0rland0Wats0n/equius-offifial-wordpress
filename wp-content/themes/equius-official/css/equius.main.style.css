@@ -2187,7 +2187,7 @@ article.post__single > main > figure > figcaption {
           filter: grayscale(100%);
 }
 
-.post_card > main .post_card__meta > p {
+.post_card > main .post_card__meta > a {
   margin: 0;
   color: #F6AE2D;
   font-weight: bold;

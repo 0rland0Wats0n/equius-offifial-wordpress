@@ -22,7 +22,9 @@
   <main>
     <div class="post_card__meta">
        <span style="background-image: url(<?php echo get_avatar_url( get_the_author_meta( "ID" ) ); ?>)"></span>
-       <p><?php echo get_the_author_meta( "user_firstname" ) . " " . get_the_author_meta( "user_lastname" )?></p>
+       <a href="<?php echo get_author_posts_url( get_the_author_meta( "ID" ) ); ?>">
+          <?php echo get_the_author_meta( "user_firstname" ) . " " . get_the_author_meta( "user_lastname" )?>
+        </a>
     </div>
     <a href="<?php echo get_permalink( get_the_ID() ) ?>">
         <?php the_title( '<h4 class="post_card__title">', '</h4>' ); ?>

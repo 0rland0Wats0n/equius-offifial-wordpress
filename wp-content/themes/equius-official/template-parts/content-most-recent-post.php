@@ -32,7 +32,9 @@
     <div class="post__meta">
       <span style="background-image: url(<?php echo get_avatar_url( get_the_author_meta( "ID", $p["post_author"] ) ); ?>)"></span>
       <p>
-        <span><?php echo get_the_author_meta( "user_firstname", $p["post_author"] ) . " " . get_the_author_meta( "user_lastname", $p["post_author"] )?></span>
+        <a href="<?php echo get_author_posts_url( get_the_author_meta( "ID", $p["post_author"] ) ); ?>">
+          <?php echo get_the_author_meta( "user_firstname", $p["post_author"] ) . " " . get_the_author_meta( "user_lastname", $p["post_author"] )?>
+        </a>
         <?php $post_categories = get_the_category( $most_recent[0]["ID"] );
           if( !empty($post_categories) ) : ?>
           <a href="<?php echo get_category_link( $post_categories[0]->term_id ) ?>"><?php echo $post_categories[0]->name ?></a>
