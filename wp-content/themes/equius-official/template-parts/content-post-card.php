@@ -10,7 +10,10 @@
   <header style="background-image: url(<?php echo get_the_post_thumbnail_url() ?>)">
     <?php $post_categories = get_the_category( get_the_ID() );
       if( !empty($post_categories) ) : ?>
-      <span><?php echo $post_categories[0]->name ?></span>
+      <span>
+        <span class="ss-icon">book</span>
+        <?php echo $post_categories[0]->name ?>
+      </span>
     <?php endif; ?>
   </header>
   <main>
