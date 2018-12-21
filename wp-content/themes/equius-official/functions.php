@@ -53,6 +53,9 @@ if ( ! function_exists( 'equius_official_setup' ) ) :
 			include_once( get_stylesheet_directory() . '/acf/acf.php' );
 		}
 
+		// Include custom Footer Social plugin
+		include_once( get_stylesheet_directory() . '/inc/widgets/footer-social.php' );
+
 		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
@@ -149,6 +152,11 @@ if ( ! function_exists( 'equius_official_setup' ) ) :
 				'after_widget'  => '</div>',
 				'before_title'  => '<h2 class="rounded">',
 				'after_title'   => '</h2>',
+			) );
+
+			register_sidebar( array(
+				'name'          => 'Footer Social',
+				'id'            => 'footer_social',
 			) );
 
 		}

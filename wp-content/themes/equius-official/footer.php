@@ -19,7 +19,11 @@
 				<?php the_custom_logo() ?>
 				<p class="type__caption">(415) 382-2500  -  3 Hamilton Landing, Suite 130, Novato CA 94949, USA</p>
 			</span>
-			<ul class="social-nav"></ul>
+			<?php if ( is_active_sidebar( 'footer_social' ) ) : ?>
+				<span class="footer_social">
+					<?php dynamic_sidebar( 'footer_social' ); ?>
+				</span>
+			<?php endif; ?>
 			<p class="type__caption">&copy; <?php echo date('Y'); ?> Equius Partners Inc. All rights reserved.</p>
 		</div>
 	</footer>
