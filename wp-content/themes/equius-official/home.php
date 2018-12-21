@@ -26,7 +26,7 @@
           Recent Posts
         <?php } ?>
       </h3>
-      <div class="posts__recent_contatainer">
+      <div class="posts__recent_container">
         <?php 
           if ( have_posts() ) : 
           $i = 0;
