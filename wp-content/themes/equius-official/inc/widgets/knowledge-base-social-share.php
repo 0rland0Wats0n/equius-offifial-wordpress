@@ -7,9 +7,7 @@ Author: Orlando Watson
 Version: 1.0
 Author URI: http://www.orlandogwatson.com/
 */
-?>
 
-<?php
   class KB_Social_share extends WP_Widget {
     // class constructor
     public function __construct() {
@@ -67,4 +65,5 @@ Author URI: http://www.orlandogwatson.com/
     register_widget( 'KB_Social_share' );
   }
   add_action( 'widgets_init', 'register_kb_social_share' );
-?>  
+
+  ?>

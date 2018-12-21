@@ -7,9 +7,7 @@ Author: Orlando Watson
 Version: 1.0
 Author URI: http://www.orlandogwatson.com/
 */
-?>
 
-<?php
   class Footer_Social extends WP_Widget {
     // class constructor
     public function __construct() {
@@ -22,11 +20,16 @@ Author URI: http://www.orlandogwatson.com/
     }
 
     public function form( $instance ) {
-      $link = ! empty( $instance['profile_link'] ) ? $instance['profile_link'] : ''; ?>
+      $link = ! empty( $instance['profile_link'] ) ? $instance['profile_link'] : ''; 
+    ?>
       <p>
         <label for="<?php echo $this->get_field_id( 'profile_link' ); ?>">LinkedIn Profile:</label>
-        <input type="text" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'profile_link' ); ?>" value="<?php echo esc_attr( $link ); ?>" />
-      </p><?php 
+        <input type="text" 
+          id="<?php echo $this->get_field_id( 'title' ); ?>" 
+          name="<?php echo $this->get_field_name( 'profile_link' ); ?>" 
+          value="<?php echo esc_attr( $link ); ?>" />
+      </p>
+      <?php 
     }
 
     public function update( $new_instance, $old_instance ) {
@@ -43,8 +46,7 @@ Author URI: http://www.orlandogwatson.com/
         <i class="fab fa-linkedin-in"></i>
       </a>
 
-      <?php
-      echo $args['after_widget'];
+      <?php echo $args['after_widget'];
     }
   }
 
@@ -52,4 +54,3 @@ Author URI: http://www.orlandogwatson.com/
     register_widget( 'Footer_Social' );
   }
   add_action( 'widgets_init', 'register_footer_social' );
-?>  
