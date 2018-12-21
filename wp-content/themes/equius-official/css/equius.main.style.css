@@ -2328,51 +2328,27 @@ article.post__single > main > figure > figcaption {
 #comments.comments-area {
   max-width: 800px;
   margin: 0 auto;
+  padding-bottom: 4em;
+}
+
+#comments.comments-area .comments-title {
+  padding: 0 32px;
+}
+
+#comments.comments-area .comments-title::after {
+  right: 32px;
 }
 
 #comments.comments-area .comments-list > li {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  padding: 2em 0;
+  padding: 2em 32px 0;
 }
 
-#comments.comments-area .comments-list > li:not(:last-of-type) {
-  border-bottom: 1px solid #9b9b9b;
+#comments.comments-area .comments-list > li:not(:last-of-type) > main {
+  border-bottom: 2px solid #dedede;
 }
 
 #comments.comments-area .comments-list > li > header {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  overflow: hidden;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 48px;
-          flex: 0 0 48px;
-  margin-right: 1em;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-#comments.comments-area .comments-list > li > header > img {
   width: 100%;
-  max-width: 100%;
-}
-
-#comments.comments-area .comments-list > li > main > span {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2382,18 +2358,36 @@ article.post__single > main > figure > figcaption {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding-bottom: 2em;
+  
 }
 
-#comments.comments-area .comments-list > li > main > span > a {
+#comments.comments-area .comments-list > li > header > span:last-child {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+#comments.comments-area .comments-list > li > header > span:last-child > a {
   font-weight: bold;
   color: #001A44;
   margin-right: 1em;
 }
 
-#comments.comments-area .comments-list > li > main > span > p {
+#comments.comments-area .comments-list > li > header > span:last-child > p {
   margin: 0;
   font-size: 0.85em;
   color: #4a4a4a;
+}
+
+#comments.comments-area .comments-list > li > main {
+  padding-bottom: 2em;
 }
 
 #comments.comments-area .comments-list > li > main .the_comment > p {
@@ -2411,6 +2405,15 @@ article.post__single > main > figure > figcaption {
 }
 
 /* Respond */
+.comments-area .comment_form {
+  display: none;
+}
+
+.comments-area .comment_form__mobile {
+  display: block;
+  margin-bottom: 25.5px;
+}
+
 .comments-area #respond #reply-title,
 .comments-area #respond form .logged-in-as,
 .comments-area #respond form .comment-notes,
@@ -2451,12 +2454,48 @@ article.post__single > main > figure > figcaption {
   -webkit-box-ordinal-group: 5;
       -ms-flex-order: 4;
           order: 4;
+  margin-bottom: 0;
+  padding: 0 2em;
+  width: 100%;
 }
 
 .comments-area #respond form .form-submit {
   -webkit-box-ordinal-group: 6;
-      -ms-flex-order: 5;
-          order: 5;
+  -ms-flex-order: 5;
+  order: 5;
+  margin: 0;
+  padding: 0 2em;
+}
+
+.comments-area #respond form .comment-form-author,
+.comments-area #respond form .comment-form-email,
+.comments-area #respond form .comment-form-url {
+  width: 100%;
+  padding: 0 2em;;
+}
+
+.comments-area #respond form .comment-form-author input,
+.comments-area #respond form .comment-form-email input,
+.comments-area #respond form .comment-form-url input,
+.comments-area #respond form .comment-form-comment textarea {
+  outline: none;
+  border: none;
+  background-color: #dedede;
+  padding: 1em;
+  width: 100%;
+  margin-bottom: 1em;
+}
+
+.comments-area #respond form .form-submit input[type="submit"] {
+  padding: 1.5em;
+  width: 100%;
+  border: none;
+  outline: none;
+  color: white;
+  text-transform: uppercase;
+  background-color: #001A44;
+  letter-spacing: 3px;
+  font-size: 0.75em;
 }
 
 

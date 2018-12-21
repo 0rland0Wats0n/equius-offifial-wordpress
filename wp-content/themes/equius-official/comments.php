@@ -30,6 +30,10 @@ if ( post_password_required() ) {
 
 		<?php the_comments_navigation(); ?>
 
+		<div class="comment_form__mobile">
+			<?php comment_form(); ?>
+		</div>
+
 		<ul class="comments-list">
 			<?php
 			wp_list_comments( array(
@@ -50,9 +54,10 @@ if ( post_password_required() ) {
 			<?php
 		endif;
 
-	endif; // Check for have_comments().
+	endif; // Check for have_comments(). ?>
 
-	comment_form();
-	?>
+	<div class="comment_form">
+		<?php comment_form(); ?>
+	</div>
 
 </div><!-- #comments -->

@@ -172,22 +172,22 @@ if ( ! function_exists( 'equius_official_setup' ) ) :
 			$aria_req  = $req ? "aria-required='true'" : '';
 
 			$fields['author'] =
-				'<p class="comment-form-author">
+				'<div class="comment-form-author">
 					<input id="author" name="author" type="text" placeholder="' . esc_attr__( "Name", "text-domain" ) . '" value="' . esc_attr( $commenter['comment_author'] ) .
 				'" size="30" ' . $aria_req . ' />
-				</p>';
+				</div>';
 
 			$fields['email'] =
-				'<p class="comment-form-email">
+				'<div class="comment-form-email">
 					<input id="email" name="email" type="email" placeholder="' . esc_attr__( "Email", "text-domain" ) . '" value="' . esc_attr( $commenter['comment_author_email'] ) .
 				'" size="30" ' . $aria_req . ' />
-				</p>';
+				</div>';
 
 			$fields['url'] =
-				'<p class="comment-form-url">
+				'<div class="comment-form-url">
 					<input id="url" name="url" type="url"  placeholder="' . esc_attr__( "Website", "text-domain" ) . '" value="' . esc_attr( $commenter['comment_author_url'] ) .
 				'" size="30" />
-					</p>';
+					</div>';
 
 			return $fields;
 		}
@@ -196,9 +196,9 @@ if ( ! function_exists( 'equius_official_setup' ) ) :
 		function my_update_comment_field( $comment_field ) {
 
 			$comment_field =
-				'<p class="comment-form-comment">
+				'<div class="comment-form-comment">
 						<textarea rows="1" required id="comment" name="comment" placeholder="' . esc_attr__( "Write a comment", "text-domain" ) . '" cols="45" rows="8" aria-required="true"></textarea>
-				</p>';
+				</div>';
 
 			return $comment_field;
 		}
