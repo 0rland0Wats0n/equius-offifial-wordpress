@@ -53,8 +53,9 @@ if ( ! function_exists( 'equius_official_setup' ) ) :
 			include_once( get_stylesheet_directory() . '/acf/acf.php' );
 		}
 
-		// Include custom Footer Social plugin
+		// Include custom widgets
 		include_once( get_stylesheet_directory() . '/inc/widgets/footer-social.php' );
+		include_once( get_stylesheet_directory() . '/inc/widgets/knowledge-base-social-share.php' );
 
 		/*
 		 * Make theme available for translation.
@@ -157,6 +158,11 @@ if ( ! function_exists( 'equius_official_setup' ) ) :
 			register_sidebar( array(
 				'name'          => 'Footer Social',
 				'id'            => 'footer_social',
+			) );
+
+			register_sidebar( array(
+				'name'          => 'KB Social Share',
+				'id'            => 'kb_social_share',
 			) );
 
 		}

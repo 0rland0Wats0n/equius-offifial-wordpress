@@ -959,6 +959,34 @@ section[role="navigation"] .nav__content > nav > ul > li:not(:last-child) a::aft
   border: 1px solid #ececec;
 }
 
+/* Knowledge Base SOcial Share */
+#kb-social-share {
+  width: 100%;  
+}
+
+nav.widget__kb_social_share {
+  padding: 0 2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+nav.widget__kb_social_share > li {
+  list-style-type: none;
+}
+
+nav.widget__kb_social_share > li > a {
+  color: #cbcbcb;
+  font-size: 1.5em;
+  padding: 0 0.5em;
+}
+
 
 
 
@@ -2024,13 +2052,13 @@ article.post__single > header {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  padding: 10em 2em;
+  padding: 5em 2em;
 }
 
 article.post__single > header .post__meta {
   max-width: 800px;
   margin: 0 auto;
-  display: -webkit-box;
+  /* display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: start;
@@ -2039,7 +2067,7 @@ article.post__single > header .post__meta {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
+          flex-flow: row wrap; */
 }
 
 article.post__single > header .post__meta > span:first-of-type {
@@ -2048,15 +2076,15 @@ article.post__single > header .post__meta > span:first-of-type {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  width: 48px;
-  height: 48px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
 }
 
 article.post__single > header .post__meta > p {
   color: white;
   text-transform: uppercase;
-  margin: 0 2em;
+  margin: 1.5em 0;
   line-height: 1;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2068,7 +2096,8 @@ article.post__single > header .post__meta > p {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-size: 12px;
+  font-size: 11px;
+  letter-spacing: 1px;
 }
 
 article.post__single > header .post__meta > p > span:not(:last-of-type)::after,
@@ -2079,7 +2108,7 @@ article.post__single > header .post__meta > p > a::after {
 
 article.post__single > header .post__title {
   max-width: 800px;
-  margin: 0.5em auto 0;
+  margin: 0 auto;
   color: white;
 }
 
@@ -2700,6 +2729,10 @@ footer .footer__content .footer_social {
 /* -------------
 #   RESPONSIVE
 --------------*/
+@media (min-width: 600px) {
+
+}
+
 @media (max-width: 600px) {
   section[role="navigation"] {
     padding: 1em;

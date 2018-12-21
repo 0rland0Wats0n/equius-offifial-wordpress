@@ -25,6 +25,11 @@
     <?php the_title( '<h1 class="post__title">', '</h1>' ); ?>
   </header>
   <main>
+    <?php if ( is_active_sidebar( 'kb_social_share' ) ) : ?>
+        <div id="kb-social-share" class="primary-sidebar widget-area" role="complementary">
+          <?php dynamic_sidebar( 'kb_social_share' ); ?>
+        </div>
+    <?php endif; ?>
     <?php the_content(); ?>
   </main>
 </article>
