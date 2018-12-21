@@ -18,6 +18,10 @@
       <span class="header__scroll">Scroll</span>
     </div>
   </header>
+  
+  <div class="recent_articles__mobile">
+    <?php get_template_part( 'template-parts/content', 'recent-articles' ); ?>
+  </div>
 
   <section id="no-secrets">
     <div class="no_secrets__content">
@@ -79,7 +83,8 @@
         </div>
       <?php } else { ?>
         <div class="contact__activate_home_contact_widget">
-          <h2>Please activate home contact widget to display contact form.</h2>
+          <h2>Action Required!</h2>
+          <p>Ensure the Ninja Forms plugin is installed and you have added your contact form to the Home Contact widget area.</p>
         </div>
       <?php } ?>
       <div class="contact__details">

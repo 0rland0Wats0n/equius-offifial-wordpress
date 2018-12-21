@@ -1028,6 +1028,51 @@ header.header__landing .header__content .header__scroll::after {
 /* -----------------
 # LANDING SECTIONS
 -------------------*/
+
+.recent_articles__mobile {
+  display: none;
+  margin-top: 6em;
+  padding: 0 2em;
+}
+
+.recent_articles__mobile > .widget__recent_articles {
+  margin: 0;
+}
+
+.recent_articles__mobile > .widget__recent_articles > p {
+  color: #001A44;
+  font-size: 1em;
+  margin-bottom: 0.5em;
+}
+
+.recent_articles__mobile > .widget__recent_articles .recent_articles__article>h4 {
+  color: #001A44;
+  font-size: 1.5em;
+  margin: 0 0 1.5em;
+}
+
+.recent_articles__mobile > .widget__recent_articles .recent_articles__article > span {
+  color: #001A44;
+}
+
+.recent_articles__mobile>.widget__recent_articles .recent_articles__article>span>p {
+  margin: 0;
+}
+
+.recent_articles__mobile > .widget__recent_articles .object__caret_right {
+  border-left-color: #001A44;
+}
+
+.recent_articles__mobile .recent_articles__switcher>li {
+  background-color: #001A44;
+  opacity: 0.35;
+}
+
+.recent_articles__mobile .recent_articles__switcher>li.active,
+.recent_articles__mobile .recent_articles__switcher>li:hover {
+  opacity: 1;
+}
+
 /* No Screts */
 #no-secrets {
   padding: 7em 2em 4em;
@@ -1454,28 +1499,6 @@ header.header__landing .header__content .header__scroll::after {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-}
-
-#contact .contact__bottom .contact__form input[type],
-#contact .contact__bottom .contact__form textarea {
-  padding: 1em;
-  background-color: rgba(171, 181, 186, 30%);
-  color: #005391;
-  outline: none;
-  border: none;
-  border-radius: 4px;
-  display: block;
-  width: 100%;
-  margin-bottom: 1em;
-}
-
-#contact .contact__bottom .contact__form button {
-  border: none;
-  outline: none;
-  background-color: #F6AE2D;
-  color: white;
-  padding: 1em 2em;
-  cursor: pointer;
 }
 
 #contact .contact__bottom .contact__details > h4 {
@@ -2557,8 +2580,29 @@ footer .footer__content .social-nav {
 #   RESPONSIVE
 --------------*/
 @media (max-width: 600px) {
+  section[role="navigation"] {
+    padding: 1em;
+  }
+
+  section[role="navigation"] .nav__content > .custom-logo-link > img {
+    max-width: 98px;
+  }
+
+  header.header__landing {
+    padding: 2em;
+  }
+
+  header.header__landing .header__content .widget__recent_articles {
+    display: none;
+  }
+
+  .recent_articles__mobile {
+    display: block;
+    background-color: white;
+  }
+
   h1.type__hero {
-    font-size: 12vw;
+    font-size: 8.5vw;
   }
 
   .widget__mailing_list_content {

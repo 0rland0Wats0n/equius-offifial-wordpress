@@ -40,9 +40,13 @@
               <?php echo(date("m.d.Y", time($recent["post_date"]))); ?>
               <?php
                 if( !empty($post_categories) ) {
+                  $i = 0;
                   foreach( $post_categories as $category ) { 
+                    if ( $i > 0 ) { break; }
+
                     echo(esc_html($category->name));
-                    echo " ";
+
+                    $i++;
                   }
                 } 
               ?>
