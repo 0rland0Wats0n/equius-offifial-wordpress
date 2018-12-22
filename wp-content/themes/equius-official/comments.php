@@ -21,18 +21,17 @@ if ( post_password_required() ) {
 ?>
 
 <div id="comments" class="comments-area">
+	<h3 class="comments-title object__fancy_heading">Comments</h3><!-- .comments-title -->
+
+	<div class="comment_form__mobile">
+			<?php comment_form(); ?>
+	</div>
 
 	<?php
 	// You can start editing here -- including this comment!
 	if ( have_comments() ) :
-		?>
-		<h3 class="comments-title object__fancy_heading">Comments</h3><!-- .comments-title -->
 
-		<?php the_comments_navigation(); ?>
-
-		<div class="comment_form__mobile">
-			<?php comment_form(); ?>
-		</div>
+		the_comments_navigation(); ?>
 
 		<ul class="comments-list">
 			<?php

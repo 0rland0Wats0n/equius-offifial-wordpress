@@ -508,7 +508,7 @@ section[role="navigation"] .nav__content > nav > ul > li:not(:last-child) a::aft
 .widget__testimonials {
   width: 100%;
   background-color: #001A44;
-  padding: 8em 2em;
+  padding: 0 2em 8em;
 }
 
 .widget__testimonials .testimonials__content {
@@ -810,6 +810,12 @@ section[role="navigation"] .nav__content > nav > ul > li:not(:last-child) a::aft
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+}
+
+.widget__post_navigation > ul > .inner.none {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .widget__post_navigation > ul > .inner > li {
@@ -1462,7 +1468,7 @@ header.header__landing .header__content .header__scroll::after {
   border-right: 6px solid transparent;
   border-left: 6px solid transparent;
   border-top: 12px solid #F6AE2D;
-  left: 49.287%;
+  left: 49.0985%;
   bottom: -3em;
 }
 
@@ -2812,6 +2818,10 @@ footer .footer__content .footer_social {
 }
 
 @media (max-width: 600px) {
+  #no-secrets {
+    padding-top: 2em;
+  }
+
   section[role="navigation"] {
     padding: 1em;
   }
@@ -2868,6 +2878,10 @@ footer .footer__content .footer_social {
     border: none !important;
   }
 
+  .expertise__content .expertise__items>li:not(:last-child) {
+    border-bottom: 2px solid #d8d8d8 !important;
+  }
+
   .widget__testimonials .testimonials__items>li>blockquote {
     font-size: 5.5vw;
   }
@@ -2883,11 +2897,42 @@ footer .footer__content .footer_social {
     width: 100%;
   }
 
+  #contact .contact__bottom .contact__details>section {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+
   footer .footer__content {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+
+  footer .footer__content > span {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+
+  footer .footer__content .footer_social {
+    padding: 1em 0;
+  }
+
+  footer .footer__content > p {
+    padding: 0;
   }
 }
 
