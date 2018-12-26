@@ -1,6 +1,33 @@
 (function() {
+
+  var isElementInViewport = function(el, p) {
+    var rect = el.getBoundingClientRect();
+    var p = p || 1.25
+
+    if (typeof jQuery === "function" && el instanceof jQuery) {
+      el = el[0];
+    }
+
+    return rect.bottom > 0 &&
+      rect.right > 0 &&
+      rect.left < (window.innerWidth || document.documentElement.clientWidth) &&
+      rect.top * p < (window.innerHeight || document.documentElement.clientHeight);
+  }
+
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", function(e) {
+        // handle beliefs fade in
+        var hasBeliefs = document.querySelector("#beliefs .belief");
+
+        if (hasBeliefs) {
+          window.addEventListener("scroll", function() {
+            document.querySelectorAll(".belief").forEach(function (el) {
+              if (isElementInViewport(el))
+                el.setAttribute("data-in-view", "true");
+            });
+          })
+        }
+
         // handle recent articles auto switching
         var rac = document.querySelectorAll("header .recent_articles__article").length;
 

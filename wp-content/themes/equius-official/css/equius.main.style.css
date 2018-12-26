@@ -1228,6 +1228,13 @@ header.header__landing .header__content .header__scroll::after {
   -ms-flex: 0 1 60%;
   flex: 0 1 60%;
   text-align: right;
+  opacity: 0;
+  -webkit-transition: opacity 500ms ease-in;
+  transition: opacity 500ms ease-in;
+}
+
+.belief[data-in-view="true"] .belief__image {
+  opacity: 1;
 }
 
 .belief:nth-child(2n) .belief__image {

@@ -31,7 +31,7 @@
   <?php if ( !empty( $beliefs ) ) : ?>
     <?php foreach( $beliefs as $belief ): $belief = array_filter( $belief ); ?>
       <?php if ( ! empty( $belief ) ) : ?>
-        <div class="belief">
+        <div class="belief" data-in-view="false">
           <section class="belief__image">
             <img src="<?php echo $belief[2] ?>" alt="">
           </section>
