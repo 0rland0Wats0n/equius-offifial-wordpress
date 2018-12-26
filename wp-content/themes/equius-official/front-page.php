@@ -25,7 +25,20 @@
 
   <section id="no-secrets">
     <div class="no_secrets__content">
-      <?php the_content() ?>
+      <?php
+        $no_secret_heading  = get_field( 'no_secret_heading' );
+        $no_scret_content   = get_field( 'no_secret_content' );
+
+        if ( !$no_secret_heading ) {
+          $no_secret_heading = "Our secret? No secret.";
+        }
+
+        if ( !$no_scret_content ) {
+          $no_scret_content = "Information is indeed power, and it is most powerful when shared. We believe in complete transparency, in open-source knowledge. We encourage our clients to question the status quo, and the motives of those who defend it.";
+        }
+      ?>
+      <h1><?php echo $no_secret_heading ?></h1>
+      <p><?php echo $no_scret_content ?></p>
     </div>
   </section>
       
