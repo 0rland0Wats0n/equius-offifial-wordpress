@@ -6,10 +6,13 @@
    get_header();
 ?>
 
-<?php $author = get_queried_object()->ID; ?>
+<?php 
+  $author = get_queried_object()->ID;
+  $hero = get_field( 'author_profile_hero', 'user_'.$author ); 
+?>
 
   <main class="author">
-    <header>
+    <header style="background-image: url(<?php echo $hero ?>)">
       <div>
         <h1>
           <?php echo get_the_author_meta( "user_firstname" ) ?> 

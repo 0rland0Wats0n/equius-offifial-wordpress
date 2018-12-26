@@ -2569,8 +2569,11 @@ article.post__single > main > figure > figcaption {
 # AUTHOR
 ------------*/
 main.author > header {
-  padding: 4em 2em;
+  padding: 8em 2em;
   background-color: #001a44;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 main.author > header > div {
