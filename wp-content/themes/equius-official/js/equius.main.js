@@ -1,3 +1,50 @@
+// polyfulls
+if (!Array.prototype.findIndex) {
+  Object.defineProperty(Array.prototype, 'findIndex', {
+    value: function (predicate) {
+      // 1. Let O be ? ToObject(this value).
+      if (this == null) {
+        throw new TypeError('"this" is null or not defined');
+      }
+
+      var o = Object(this);
+
+      // 2. Let len be ? ToLength(? Get(O, "length")).
+      var len = o.length >>> 0;
+
+      // 3. If IsCallable(predicate) is false, throw a TypeError exception.
+      if (typeof predicate !== 'function') {
+        throw new TypeError('predicate must be a function');
+      }
+
+      // 4. If thisArg was supplied, let T be thisArg; else let T be undefined.
+      var thisArg = arguments[1];
+
+      // 5. Let k be 0.
+      var k = 0;
+
+      // 6. Repeat, while k < len
+      while (k < len) {
+        // a. Let Pk be ! ToString(k).
+        // b. Let kValue be ? Get(O, Pk).
+        // c. Let testResult be ToBoolean(? Call(predicate, T, « kValue, k, O »)).
+        // d. If testResult is true, return k.
+        var kValue = o[k];
+        if (predicate.call(thisArg, kValue, k, o)) {
+          return k;
+        }
+        // e. Increase k by 1.
+        k++;
+      }
+
+      // 7. Return -1.
+      return -1;
+    },
+    configurable: true,
+    writable: true
+  });
+}
+
 (function() {
 
   var isElementInViewport = function(el, p) {
@@ -162,7 +209,63 @@
         }
 
         // handle teams carousel switching
+      var hasTeamWidget = document.querySelector(".widget__team");
 
+      if (hasTeamWidget) {
+        var reorder = function() {
+          var members = Array.from(document.querySelectorAll(".widget__team .team__members li"));
+          var refIndex = members.findIndex(function(member) {
+            return member.getAttribute("data-is-ref") === "true";
+          });
+
+          for (let i = 0; i < refIndex; i++) {
+            members[i].style.order = members.length - i;
+          }
+
+          var order = 1;
+
+          for (let i = refIndex; i < members.length; i++) {
+            members[i].style.order = order;
+            order++;
+          }
+        }
+
+        var $ref = document.querySelector(".widget__team .team__members li[data-is-ref='true']"),
+          $nextButton = document.querySelector(".widget__team .widget_team__content .object__arrow_right"),
+          $prevButton = document.querySelector(".widget__team .widget_team__content .object__arrow_left");
+
+        $nextButton.addEventListener("click", function (el) {
+          var $next = $ref.nextElementSibling;
+
+          if (!$next)
+            $next = document.querySelector(".widget__team .team__members li:first-child");
+
+            
+          // switch ref to next
+          $ref.setAttribute("data-is-ref", "false");
+          $ref = $next; 
+          $next.setAttribute("data-is-ref", "true");
+
+          // reorder other elements
+          reorder();
+        });
+        
+
+        $prevButton.addEventListener("click", function (el) {
+          var $prev = $ref.previousElementSibling 
+          
+          if (!$prev)
+            $prev = document.querySelector(".widget__team .team__members li:last-child");
+
+          // switch ref to prev
+          $ref.setAttribute("data-is-ref", "false");
+          $ref = $prev;
+          $prev.setAttribute("data-is-ref", "true");
+
+          // reorder elements
+          reorder();
+        });
+      }
     });
   }
 })();
