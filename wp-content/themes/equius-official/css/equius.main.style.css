@@ -9,10 +9,6 @@ h1 {
   line-height: 1.15;
 }
 
-h1.type__hero {
-  font-size: 67.5px
-}
-
 h2,
 h3 {
   font-family: "Tiempos Fine", serif;
@@ -328,11 +324,11 @@ section[role="navigation"] .nav__content > nav > ul > li:not(:last-child) a::aft
 /* Recent Articles */
 .widget__recent_articles {
   color: white;
-  margin-bottom: 7em;
+  margin-bottom: 5em;
 }
 
 .recent_articles__article {
-  width: 455px;
+  width: 360px;
   max-width: 100%;
   min-height: 162.5px;
   border: 1px solid #F6AE2D;
@@ -1014,7 +1010,7 @@ header.header__landing {
   background-position: right;
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 10em 2em 2em;
+  padding: 2.5em 2em;
 }
 
 header.header__landing .header__content {
