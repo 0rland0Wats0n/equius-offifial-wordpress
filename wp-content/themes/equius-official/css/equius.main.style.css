@@ -619,7 +619,7 @@ section[role="navigation"] .nav__content > nav > ul > li:not(:last-child) a::aft
 .widget__mailing_list_plus .widget__mailing_list_content > li > a > span > h4 {
   padding-right: 0.5em;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 18px;
   margin: 0;
 }
 
@@ -1867,9 +1867,11 @@ main > .posts__empty>h4 {
   background-size: cover;
   background-repeat: no-repeat;
   padding: 10em 2em;
+  position: relative;
 }
 
 .posts__most_recent .post__meta {
+  position: relative;
   max-width: 800px;
   margin: 0 auto;
   display: -webkit-box;
@@ -1920,12 +1922,14 @@ main > .posts__empty>h4 {
 }
 
 .posts__most_recent .post__title {
+  position: relative;
   max-width: 800px;
   margin: 0.5em auto 0;
   color: white;
 }
 
 .posts__most_recent > span {
+  position: relative;
   display: block;
   max-width: 800px;
   margin: 0 auto;
@@ -1974,6 +1978,7 @@ main > .posts__empty>h4 {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+  margin-bottom: 60px;
 }
 
 /* Popular Posts */
@@ -2062,8 +2067,7 @@ main > .posts__empty>h4 {
 }
 
 .popular_posts .popular_posts__post > a:nth-of-type(2) > h3 {
-  font-family: "Avenir LT Std", sans-serif;
-  font-weight: 900;
+  font-weight: bold;
   margin: 0;
 }
 
@@ -2214,7 +2218,7 @@ article.post__single > main > figure > figcaption {
 # POST CARD
 ------------*/
 .post_card {
-  margin-bottom: 2em;
+  margin-bottom: 60px;
   max-width: 350px;
   min-height: 480px;
   overflow: hidden;
@@ -2239,6 +2243,10 @@ article.post__single > main > figure > figcaption {
   letter-spacing: 3px;
   font-size: 0.65em;
   position: relative;
+}
+
+.post_card > header > span:last-child > a {
+  font-weight: bold;
 }
 
 .post_card > main {
@@ -2664,6 +2672,10 @@ main.author > section .author__posts .post_card {
   margin-bottom: 1em;
 }
 
+#home-contact form .nf-error-msg {
+  display: none;
+}
+
 #home-contact form input[type="button"],
 #home-contact form input[type="submit"],
 #home-contact form input[type="reset"],
@@ -3007,8 +3019,8 @@ footer .footer__content .footer_social {
   .posts__recent .posts__recent_container .post_card {
     max-width: 49.5%;
     -webkit-box-flex: 0;
-        -ms-flex: 0 1 49.5%;
-            flex: 0 1 49.5%;
+        -ms-flex: 0 1 49%;
+            flex: 0 1 49%;
   }
 
   article.post__single > header .post__meta {
@@ -3105,16 +3117,16 @@ footer .footer__content .footer_social {
 @media (min-width: 992px) {
   .popular_posts .popular_posts__post {
     -webkit-box-flex: 0;
-        -ms-flex: 0 1 48%;
-            flex: 0 1 48%;
+        -ms-flex: 0 1 49%;
+            flex: 0 1 49%;
   }
 }
 
 @media (min-width: 1280px) { 
   .posts__recent .posts__recent_container .post_card {
-    max-width: 24.5%;
+    max-width: 23.5%;
     -webkit-box-flex: 0;
-        -ms-flex: 0 1 24.5%;
-            flex: 0 1 24.5%;
+        -ms-flex: 0 1 23.5%;
+            flex: 0 1 23.5%;
   }
 } 

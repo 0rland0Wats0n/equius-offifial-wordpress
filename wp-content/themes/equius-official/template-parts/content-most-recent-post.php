@@ -29,6 +29,7 @@
 
   <section class="posts__most_recent" 
     style="background-image: url(<?php echo get_the_post_thumbnail_url( $p["ID"] ) ?>)">
+    <div class="object__overlay"></div>
     <div class="post__meta">
       <span style="background-image: url(<?php echo get_avatar_url( get_the_author_meta( "ID", $p["post_author"] ) ); ?>)"></span>
       <p>
@@ -42,7 +43,9 @@
         <span><?php echo date("m.d.Y", time( get_the_date() ) ); ?></span>
       </p>
     </div>
-    <?php the_title( '<h1 class="post__title">', '</h1>' ); ?>
+      <a href="<?php echo get_permalink( $p["ID"] ); ?>">
+        <?php the_title( '<h1 class="post__title">', '</h1>' ); ?>
+      </a>
     <span>
       <a href="<?php echo get_permalink( $p["ID"] ); ?>">Read Article</a>
     </span>
