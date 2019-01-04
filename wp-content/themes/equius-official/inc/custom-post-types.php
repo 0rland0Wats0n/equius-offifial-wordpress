@@ -36,7 +36,29 @@
 
 					register_post_type( 'team_members', $args );
 			}
-      add_action( 'init', 'create_team_members_post_type' );
+			add_action( 'init', 'create_team_members_post_type' );
+			
+			add_filter( 'manage_team_members_posts_columns', 'set_custom_edit_team_members_columns' );
+			function set_custom_edit_team_members_columns($columns) {
+					unset( $columns['title'] );
+					$columns['team_member_name'] = __( 'Name', 'textdomain' );
+					$columns['team_member_role'] = __( 'Role', 'textdomain' );
+
+					return $columns;
+			}
+
+			add_action( 'manage_team_members_posts_custom_column' , 'custom_team_members_column', 10, 2 );
+			function custom_team_members_column( $column, $post_id ) {
+					switch ( $column ) {
+						case 'team_member_name' :
+								echo get_field( 'team_member_name', $post_id );
+								break;
+
+						case 'team_member_role' :
+								echo get_field( 'team_member_role', $post_id );
+								break;
+					}
+			}
       
       /**
 		 * Add custom post type
@@ -74,7 +96,34 @@
 
 					register_post_type( 'testimonials', $args );
 			}
-      add_action( 'init', 'create_testimonial_post_type' );
+			add_action( 'init', 'create_testimonial_post_type' );
+			
+			add_filter( 'manage_testimonials_posts_columns', 'set_custom_edit_testimonials_columns' );
+			function set_custom_edit_testimonials_columns($columns) {
+					unset( $columns['title'] );
+					$columns['testimonial_attestant'] = __( 'Attestant', 'textdomain' );
+					$columns['testimonial_job_title'] = __( 'Job Title', 'textdomain' );
+					$columns['testimonial_company'] = __( 'Company', 'textdomain' );
+
+					return $columns;
+			}
+
+			add_action( 'manage_testimonials_posts_custom_column' , 'custom_testimonials_column', 10, 2 );
+			function custom_testimonials_column( $column, $post_id ) {
+					switch ( $column ) {
+						case 'testimonial_attestant' :
+								echo get_field( 'testimonial_attestant', $post_id );
+								break;
+
+						case 'testimonial_job_title' :
+								echo get_field( 'testimonial_job_title', $post_id );
+								break;
+						
+						case 'testimonial_company' :
+								echo get_field( 'testimonial_company', $post_id );
+								break;
+					}
+			}
 
       /**
 			 * Update column headings for the team members post type
