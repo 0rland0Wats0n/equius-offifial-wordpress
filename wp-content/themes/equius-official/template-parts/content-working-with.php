@@ -48,7 +48,6 @@
           <header>
             <img src="<?php echo $step[2] ?>" alt="">
             <span>
-              <p class="type__caption">step <?php echo $key ?></p>
               <h3><?php echo $step[0] ?></h3>
             </span>
           </header>
