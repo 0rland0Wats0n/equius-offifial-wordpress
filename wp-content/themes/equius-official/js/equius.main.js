@@ -194,6 +194,10 @@ if (!Array.prototype.findIndex) {
             if ($next) {
               $active.setAttribute("data-state", "inactive");
               $next.setAttribute("data-state", "active");
+
+              // switch indicators
+              document.querySelector(`.widget__testimonials .testimonials__switchers li[data-testimonial='${$active.getAttribute("data-testimonial")}']`).setAttribute("data-state", "inactive");
+              document.querySelector(`.widget__testimonials .testimonials__switchers li[data-testimonial='${$next.getAttribute("data-testimonial")}']`).setAttribute("data-state", "active");
             }
           });
 
@@ -204,6 +208,10 @@ if (!Array.prototype.findIndex) {
             if ($prev) {
               $active.setAttribute("data-state", "inactive");
               $prev.setAttribute("data-state", "active");
+
+              // switch indicators
+              document.querySelector(`.widget__testimonials .testimonials__switchers li[data-testimonial='${$active.getAttribute("data-testimonial")}']`).setAttribute("data-state", "inactive");
+              document.querySelector(`.widget__testimonials .testimonials__switchers li[data-testimonial='${$prev.getAttribute("data-testimonial")}']`).setAttribute("data-state", "active");
             }
           });
         }

@@ -490,6 +490,7 @@ section[role="navigation"] .nav__content > nav > ul > li:not(:last-child) a::aft
   padding: 0;
   max-width: 800px;
   margin: 0 auto 2em;
+  padding: 0 3em;
 }
 
 .widget__testimonials .testimonials__items > li {
@@ -512,7 +513,7 @@ section[role="navigation"] .nav__content > nav > ul > li:not(:last-child) a::aft
 
 .widget__testimonials .testimonials__items > li > p:first-of-type {
   margin: 0;
-  font-size: 18px;
+  font-weight: bold;
 }
 
 .widget__testimonials .testimonials__items > li > p:last-of-type {
@@ -522,6 +523,36 @@ section[role="navigation"] .nav__content > nav > ul > li:not(:last-child) a::aft
 .widget__testimonials .testimonials__items > li[data-state="inactive"] {
   height: 0;
   overflow: hidden;
+}
+
+.widget__testimonials .testimonials__switchers {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.widget__testimonials .testimonials__switchers > li {
+  margin: 0 3px;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background-color: white;
+  opacity: 0.5;
+  cursor: pointer;
+  -webkit-transition: opacity 200ms linear, width 200ms linear, height 200ms linear;
+  transition: opacity 200ms linear, width 200ms linear, height 200ms linear;
+}
+
+.widget__testimonials .testimonials__switchers > li[data-state="active"] {
+  width: 6px;
+  height: 6px;
+  opacity: 1;
 }
 
 /* Mailing List Plus Nav */
@@ -1493,6 +1524,7 @@ header.header__landing .header__content .header__scroll::after {
 .working__content .working__steps > li > p {
   color: #737B80;
   font-size: 21px;
+  margin-bottom: 0;
 }
 
 #working .working__blue_bg {
@@ -3085,4 +3117,4 @@ footer .footer__content .footer_social {
         -ms-flex: 0 1 24.5%;
             flex: 0 1 24.5%;
   }
-}
+} 
