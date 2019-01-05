@@ -255,7 +255,6 @@ function equius_official_scripts() {
 	wp_enqueue_style( 'font-ss-standard', get_template_directory_uri() . '/fonts/ss standard/ss-standard.css' );
 	wp_enqueue_style( 'fonts', get_template_directory_uri() . '/fonts/fonts.main.css' );
 	wp_enqueue_style( 'equius-official-style', get_stylesheet_uri() );
-	wp_enqueue_style( 'main-styles', get_template_directory_uri() . '/css/equius.main.style.css' );
 
 	wp_enqueue_script( 'equius-official-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 	
