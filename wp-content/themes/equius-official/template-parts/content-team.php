@@ -9,6 +9,7 @@
   * Get team members
   */
   $args = array(
+    'posts_per_page'    => -1,
     'meta_key'          => 'team_member_name',
     'orderby'           => 'meta_value',
     'order'             => 'ASC',
@@ -22,11 +23,11 @@
 
   <section class="widget__team">
     <div class="widget_team__content">
-      <span class="object__arrow_left">
+      <span class="object__arrow_left toggle" data-toggle="prev">
         <img src="<?php echo get_template_directory_uri() . '/assets/images/arrow_left.png'?>" alt="">
       </span>
       <div class="team__carousel_wrapper">
-        <ul class="team__members">
+        <ul class="team__members carousel is-set">
           <?php
           $count = 1;
           $members = $the_query->post_count;
@@ -38,7 +39,7 @@
               $image  = get_field( 'team_member_photo' );
           ?>
   
-          <li data-is-ref="<?php echo $count == 1 ? "true" : "false" ?>">
+          <li class="carousel-seat <?php echo $count == $members ? "is-ref" : "" ?>">
             <a href="#">
               <img src="<?php echo $image ?>" alt="">
               <div class="object__overlay"></div>
@@ -50,7 +51,7 @@
           <?php $count++; endwhile; ?>
         </ul>
       </div>
-      <span class="object__arrow_right">
+      <span class="object__arrow_right toggle" data-toggle="next">
         <img src="<?php echo get_template_directory_uri() . '/assets/images/arrow_right.png'?>" alt="">
       </span>
       <?php endif; ?>

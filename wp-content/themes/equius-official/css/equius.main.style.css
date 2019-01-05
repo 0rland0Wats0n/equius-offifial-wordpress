@@ -404,26 +404,27 @@ section[role="navigation"] .nav__content > nav > ul > li:not(:last-child) a::aft
 
 .widget__team .team__carousel_wrapper {
   max-width: 1080px;
-  overflow-y: hidden;
+  overflow: hidden;
   max-height: 156.75px;
   margin: 0 auto;
   padding: 0 3em;
 }
 
-.widget_team__content .team__members {
-  width: 100%;
-  margin: 0;
-  padding: 0;
+.carousel {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
+  left: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  left: -240px;
+  -webkit-transform: translateX(160px);
+          transform: translateX(160px);
 }
 
 .widget_team__content .team__members>li {
@@ -431,19 +432,6 @@ section[role="navigation"] .nav__content > nav > ul > li:not(:last-child) a::aft
   color: white;
   min-width: 160px;
   padding: 0 1em;
-  -webkit-box-ordinal-group: 3;
-      -ms-flex-order: 2;
-          order: 2;
-  -webkit-transition: -webkit-box-ordinal-group 400ms ease-in;
-  transition: -webkit-box-ordinal-group 400ms ease-in;
-  transition: order 400ms ease-in;
-  transition: order 400ms ease-in, -webkit-box-ordinal-group 400ms ease-in, -ms-flex-order 400ms ease-in;
-}
-
-.widget_team__content .team__members>li[data-is-ref="true"] {
-  -webkit-box-ordinal-group: 2;
-      -ms-flex-order: 1;
-          order: 1;
 }
 
 .widget_team__content .team__members>li>a {
@@ -471,6 +459,26 @@ section[role="navigation"] .nav__content > nav > ul > li:not(:last-child) a::aft
 
 .widget_team__content .team__members>li>p {
   margin: 0 0 1em;
+}
+
+.carousel.is-reversing {
+  -webkit-transform: translateX(-160px);
+          transform: translateX(-160px);
+}
+
+.carousel.is-set {
+  -webkit-transform: none;
+          transform: none;
+  -webkit-transition: -webkit-transform 0.5s ease-in-out;
+  transition: -webkit-transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+}
+
+.carousel-seat.is-ref {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
 }
 
 /* Testimonials */

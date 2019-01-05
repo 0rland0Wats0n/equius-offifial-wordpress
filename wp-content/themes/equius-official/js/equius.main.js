@@ -217,63 +217,52 @@ if (!Array.prototype.findIndex) {
         }
 
         // handle teams carousel switching
-      var hasTeamWidget = document.querySelector(".widget__team");
+        var $carousel = $('.carousel');
+        var $seats = $('.carousel-seat');
 
-      if (hasTeamWidget) {
-        var reorder = function() {
-          var members = Array.from(document.querySelectorAll(".widget__team .team__members li"));
-          var refIndex = members.findIndex(function(member) {
-            return member.getAttribute("data-is-ref") === "true";
+        if ($carousel && $seats) {
+          $('.toggle').on('click', function (e) {
+            var $newSeat;
+            var $el = $('.is-ref');
+            var $currSliderControl = $(e.currentTarget);
+            // Info: e.target is what triggers the event dispatcher to trigger and e.currentTarget is what you assigned your listener to.
+
+            $el.removeClass('is-ref');
+            if ($currSliderControl.data('toggle') === 'next') {
+              $newSeat = next($el);
+              $carousel.removeClass('is-reversing');
+            } else {
+              $newSeat = prev($el);
+              $carousel.addClass('is-reversing');
+            }
+
+            $newSeat.addClass('is-ref').css('order', 1);
+            for (var i = 2; i <= $seats.length; i++) {
+              $newSeat = next($newSeat).css('order', i);
+            }
+
+            $carousel.removeClass('is-set');
+            return setTimeout(function () {
+              return $carousel.addClass('is-set');
+            }, 50);
+
+            function next($el) {
+              if ($el.next().length) {
+                return $el.next();
+              } else {
+                return $seats.first();
+              }
+            }
+
+            function prev($el) {
+              if ($el.prev().length) {
+                return $el.prev();
+              } else {
+                return $seats.last();
+              }
+            }
           });
-
-          for (let i = 0; i < refIndex; i++) {
-            members[i].style.order = members.length - i;
-          }
-
-          var order = 1;
-
-          for (let i = refIndex; i < members.length; i++) {
-            members[i].style.order = order;
-            order++;
-          }
         }
-
-        var $ref = document.querySelector(".widget__team .team__members li[data-is-ref='true']"),
-          $nextButton = document.querySelector(".widget__team .widget_team__content .object__arrow_right"),
-          $prevButton = document.querySelector(".widget__team .widget_team__content .object__arrow_left");
-
-        $nextButton.addEventListener("click", function (el) {
-          var $next = $ref.nextElementSibling;
-
-          if (!$next)
-            $next = document.querySelector(".widget__team .team__members li:first-child");
-
-            
-          // switch ref to next
-          $ref.setAttribute("data-is-ref", "false");
-          $ref = $next; 
-          $next.setAttribute("data-is-ref", "true");
-
-          // reorder other elements
-          reorder();
-        });
-        
-
-        $prevButton.addEventListener("click", function (el) {
-          var $prev = $ref.previousElementSibling 
-          
-          if (!$prev)
-            $prev = document.querySelector(".widget__team .team__members li:last-child");
-
-          // switch ref to prev
-          $ref.setAttribute("data-is-ref", "false");
-          $ref = $prev;
-          $prev.setAttribute("data-is-ref", "true");
-
-          // reorder elements
-          reorder();
-        });
-      }
     });
   }
 })();
