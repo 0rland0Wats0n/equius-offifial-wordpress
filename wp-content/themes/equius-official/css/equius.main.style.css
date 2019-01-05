@@ -406,8 +406,15 @@ section[role="navigation"] .nav__content > nav > ul > li:not(:last-child) a::aft
   max-width: 1080px;
   overflow: hidden;
   max-height: 156.75px;
-  margin: 0 auto;
-  padding: 0 3em;
+  margin: 0 3em;
+  position: relative;
+}
+
+@media (min-width: 1280px) {
+  .widget__team .team__carousel_wrapper {
+    margin: 0 auto;
+    padding: 0 3em;
+  }
 }
 
 .carousel {
@@ -417,6 +424,10 @@ section[role="navigation"] .nav__content > nav > ul > li:not(:last-child) a::aft
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
   left: 0;
   list-style: none;
   margin: 0;
