@@ -1433,7 +1433,7 @@ section[role="navigation"] .nav__content>nav>ul>li:not(:last-child) a::after {
 	margin: 0;
 	padding: 0;
 	position: relative;
-	left: -80px;
+	left: -160px;
 	-webkit-transform: translateX(160px);
 	transform: translateX(160px);
 }
@@ -3522,6 +3522,141 @@ article.post__single>main>figure>figcaption {
 	-ms-flex: 0 1 24%;
 	flex: 0 1 24%;
 }
+
+
+
+
+
+/* -----------------------------
+#	SINGLE TEAM MEMBER
+--------------------------------*/
+main.team_members__single {
+	padding: 5em 2em;
+	text-align: center;
+	background-color: #001A44;
+	color: white;
+}
+
+main.team_members__single > h1 {
+	margin: 0 0 1em 0;
+}
+
+main.team_members__single .team_members__single_content {
+	max-width: 1080px;
+	margin: 0 auto;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	    -ms-flex-flow: row wrap;
+	        flex-flow: row wrap;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+					justify-content: center;
+	-webkit-box-align: start;
+	    -ms-flex-align: start;
+	        align-items: flex-start;
+}
+
+main.team_members__single .team_members__single_content > img {
+	padding: 0 1em;
+	width: 464px;
+	max-width: 100%;
+	margin-bottom: 5em;
+}
+
+main.team_members__single .team_members__single_content > div {
+	-webkit-box-flex: 1;
+	    -ms-flex: 1;
+					flex: 1;
+	max-width: 510px;
+	min-width: 300px;
+	text-align: left;
+	padding: 0 1em;
+	margin-bottom: 5em;
+}
+
+main.team_members__single .team_members__single_content > div > h3 {
+	margin: 0;
+	padding-bottom: 0.5em;
+	border-bottom: 1px solid #979797;
+	font-family: "Avenir LT Std", sans-serif;
+	font-weight: normal;
+}
+
+main.team_members__single .team_members__single_content > div > h4 {
+	font-family: "Avenir LT Std", sans-serif;
+	font-weight: normal;
+	font-size: 18px;
+	margin: 0.5em 0;
+}
+
+main.team_members__single .team_members__single_content > div > span {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	    -ms-flex-flow: row wrap;
+					flex-flow: row wrap;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+}
+
+main.team_members__single .team_members__single_content > div > p:last-of-type {
+	margin-bottom: 3em;
+}
+
+main.team_members__single .team_members__single_content > div > span > p {
+	margin: 0;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	    -ms-flex-flow: row nowrap;
+	        flex-flow: row nowrap;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+					align-items: center;
+}
+
+main.team_members__single .team_members__single_content > div > span > :first-child {
+	padding-right: 1em;
+}
+
+main.team_members__single .team_members__single_content > div > span > :not(:first-child) {
+	padding: 0 1em;
+	border-left: 1px solid white;
+}
+
+main.team_members__single .team_members__single_content>div>span>p>span:first-child {
+	padding-right: 0.75em;
+}
+
+main.team_members__single .team_members__single_content>div>span>p>span:last-child {
+	line-height: 1;
+}
+
+.team_members__single_carousel {
+	max-width: 1080px;
+	margin: 0 auto;
+}
+
+.team_members__single_carousel .widget__team {
+	margin: 0;
+}
+
+.team_members__single_carousel .widget__team .team__carousel_wrapper {
+	padding: 0;
+	margin: 0 3em;
+}
+
+
+
+
 
 
 
