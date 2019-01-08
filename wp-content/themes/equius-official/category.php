@@ -14,6 +14,7 @@
     <header>
       <span>
         <h2>Results for<br/> <?php  echo $category ?></h2>
+        <?php get_template_part( 'template-parts/widgets/posts', 'sort' ); ?>
       </span>
       <h3 class="object__fancy_heading">Sorted Category</h3>
     </header>
