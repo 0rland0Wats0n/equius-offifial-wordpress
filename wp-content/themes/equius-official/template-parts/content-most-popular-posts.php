@@ -36,7 +36,7 @@
           <a href="<?php echo get_permalink( get_the_ID() ); ?>">
             <?php the_title( '<h3 class="popular_posts_post__title">', '</h3>' ); ?>
           </a>
-          <p class="popular_posts_post__date"><?php echo date("m.d.Y", time( get_the_date() ) ); ?></p>
+          <p class="popular_posts_post__date"><?php echo the_time( "m.d.Y" ); ?></p>
           <p class="popular_posts_post__excerpt"><?php echo substr( get_the_excerpt(), 0, 90 ) . "..." ?></p>
         </div>
 

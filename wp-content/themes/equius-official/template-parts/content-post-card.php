@@ -30,7 +30,7 @@
         <a href="<?php echo get_permalink( get_the_ID() ) ?>">
             <?php the_title( '<h4 class="post_card__title">', '</h4>' ); ?>
         </a>
-        <p class="post_card__date"><?php echo date("m.d.Y", time( get_the_date() ) ); ?></p>
+        <p class="post_card__date"><?php echo the_time( "m.d.Y" ); ?></p>
     </span>
     <p class="post_card__excerpt"><?php echo substr( get_the_excerpt(), 0, 90 ) 
     ?></p>

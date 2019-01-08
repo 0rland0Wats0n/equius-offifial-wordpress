@@ -40,7 +40,7 @@
           if( !empty($post_categories) ) : ?>
           <a href="<?php echo get_category_link( $post_categories[0]->term_id ) ?>"><?php echo $post_categories[0]->name ?></a>
         <?php endif; ?>
-        <span><?php echo date("m.d.Y", time( get_the_date() ) ); ?></span>
+        <span><?php echo the_time( "m.d.Y" ); ?></span>
       </p>
     </div>
       <a href="<?php echo get_permalink( $p["ID"] ); ?>">

@@ -19,7 +19,7 @@
           if( !empty($post_categories) ) : ?>
           <span><?php echo $post_categories[0]->name ?></span>
         <?php endif; ?>
-        <span><?php echo date("m.d.Y", time( get_the_date() ) ); ?></span>
+        <span><?php echo the_time( "m.d.Y" ); ?></span>
       </p>
     </div>
     <?php the_title( '<h1 class="post__title">', '</h1>' ); ?>
