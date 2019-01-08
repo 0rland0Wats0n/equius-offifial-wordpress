@@ -1398,6 +1398,7 @@ section[role="navigation"] .nav__content>nav>ul>li:not(:last-child) a::after {
 
 /* Team */
 .widget__team {
+	max-width: 1080px;
 	margin: 10.5em auto 0;
 	position: relative;
 }
@@ -1408,13 +1409,6 @@ section[role="navigation"] .nav__content>nav>ul>li:not(:last-child) a::after {
 	max-height: 156.75px;
 	margin: 0 3em;
 	position: relative;
-}
-
-@media (min-width: 1280px) {
-	.widget__team .team__carousel_wrapper {
-		margin: 0 auto;
-		padding: 0 3em;
-	}
 }
 
 .carousel {

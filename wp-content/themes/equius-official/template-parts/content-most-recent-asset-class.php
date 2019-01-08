@@ -33,7 +33,7 @@
       <h1>Asset Class</h1>
       <h4>latest asset class</h4>
       <h2><?php echo $most_recent[0]["post_title"] ?></h2>
-      <p><?php echo date("F, Y", time($most_recent[0]["post_date"])) ?></p>
+      <p><?php echo get_the_time( "F, Y", $most_recent[0]["ID"] ) ?></p>
       <p><?php echo $most_recent[0]["post_content"] ?></p>
       <a href="<?php echo get_field( 'asset_class_pdf' ); ?>" download>download pdf</a>
     </div>

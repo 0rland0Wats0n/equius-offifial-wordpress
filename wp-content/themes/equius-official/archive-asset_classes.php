@@ -20,7 +20,7 @@
           <?php while( have_posts() ) : $asset_class = the_post(); ?>
   
           <div class="asset_classes__class">
-            <h5><?php echo date("F Y", time($asset_class["post_date"])) ?></h5>
+            <h5><?php echo the_time( "F Y" ) ?></h5>
             <h3><?php echo get_the_title($asset_class["ID"]) ?></h3>
             <?php echo the_content(); ?>
             <a href="<?php echo get_field( 'asset_class_pdf' ); ?>" download title="Download Asset Class">
