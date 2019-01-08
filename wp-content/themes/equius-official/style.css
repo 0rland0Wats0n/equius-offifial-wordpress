@@ -2887,6 +2887,7 @@ main.archive__asset_classes .asset_classes__back_to_posts>a>h3 {
 	font-weight: bold;
 	color: #001A44;
 	max-width: 500px;
+	min-height: 50px;
 	line-height: 1;
 }
 
@@ -3715,13 +3716,14 @@ main.team_members__single .team_members__single_content>div>span>p>span:last-chi
 #comments.comments-area .comments-list>li>header>span:last-child>a {
 	font-weight: bold;
 	color: #001A44;
-	margin-right: 1em;
 }
 
 #comments.comments-area .comments-list>li>header>span:last-child>p {
 	margin: 0;
+	margin-left: 1em;
 	font-size: 0.85em;
 	color: #4a4a4a;
+	line-height: 1;
 }
 
 #comments.comments-area .comments-list>li>main {

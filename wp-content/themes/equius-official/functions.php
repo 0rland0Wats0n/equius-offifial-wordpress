@@ -183,17 +183,17 @@ if ( ! function_exists( 'equius_official_setup' ) ) :
 				'" size="30" ' . $aria_req . ' />
 				</div>';
 
-			$fields['email'] =
-				'<div class="comment-form-email">
-					<input id="email" name="email" type="email" placeholder="' . esc_attr__( "Email", "text-domain" ) . '" value="' . esc_attr( $commenter['comment_author_email'] ) .
-				'" size="30" ' . $aria_req . ' />
-				</div>';
+			$fields['email'] = "";
+				// '<div class="comment-form-email">
+				// 	<input id="email" name="email" type="email" placeholder="' . esc_attr__( "Email", "text-domain" ) . '" value="' . esc_attr( $commenter['comment_author_email'] ) .
+				// '" size="30" ' . $aria_req . ' />
+				// </div>';
 
-			$fields['url'] =
-				'<div class="comment-form-url">
-					<input id="url" name="url" type="url"  placeholder="' . esc_attr__( "Website", "text-domain" ) . '" value="' . esc_attr( $commenter['comment_author_url'] ) .
-				'" size="30" />
-					</div>';
+			$fields['url'] = "";
+				// '<div class="comment-form-url">
+				// 	<input id="url" name="url" type="url"  placeholder="' . esc_attr__( "Website", "text-domain" ) . '" value="' . esc_attr( $commenter['comment_author_url'] ) .
+				// '" size="30" />
+				// 	</div>';
 
 			return $fields;
 		}
