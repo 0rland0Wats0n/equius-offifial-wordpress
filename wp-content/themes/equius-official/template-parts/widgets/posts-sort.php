@@ -14,14 +14,24 @@
   <div class="widget__sort_posts">
     <p>Sort by:</p>
     <div class="sort_posts__switcher">
-      <p>None</p>
+      <p>
+        <?php
+          if ( $order == "meta_value_num" ) {
+            echo "Popularity";
+          } elseif ( $order == "date" ) {
+            echo "Date";
+          } else {
+            echo "Default";
+          }
+        ?>
+      </p>
       <ul>
         <li>
           <a href="<?php echo $curr_url ?>">
             <?php if( $order == 1 ) { ?>
               <i class="fas fa-check"></i>
             <?php } ?>
-            None
+            Default
           </a>
         </li>
         <li>

@@ -263,6 +263,21 @@ if (!Array.prototype.findIndex) {
             }
           });
         }
+
+        // handle posts sorter dropdown
+        var $sorter = document.querySelector(".widget__sort_posts");
+
+        if ($sorter) {
+          document.querySelector(".widget__sort_posts .sort_posts__switcher > p").addEventListener("click", function(e) {
+            var $switcher = e.srcElement.nextElementSibling;
+
+            if ($switcher.classList.contains("open")) {
+              $switcher.classList.remove("open");
+            } else {
+              $switcher.classList.add("open");
+            }
+          });
+        }
     });
   }
 })();

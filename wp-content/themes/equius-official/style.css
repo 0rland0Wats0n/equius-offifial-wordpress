@@ -2070,12 +2070,22 @@ nav.widget__kb_social_share>li:first-child>a {
 	width: 100%;
 	border-radius: 5px;
 	padding: 6px 8px;
+	cursor: pointer;
 }
 
 .widget__sort_posts .sort_posts__switcher > ul {
 	position: absolute;
 	width: 100%;
 	z-index: 99;
+	max-height: 0;
+	overflow: hidden;
+	-webkit-transition: max-height 500ms ease-out;
+	transition: max-height 500ms ease-out;
+}
+
+.widget__sort_posts .sort_posts__switcher > ul.open {
+	max-height: 215px;
+	overflow-y: auto;
 }
 
 .widget__sort_posts .sort_posts__switcher > ul >  li > a {
@@ -2089,6 +2099,16 @@ nav.widget__kb_social_share>li:first-child>a {
 	border-right: 1px solid #ececec;
 	color: #737B80;
 	position: relative;
+}
+
+.widget__sort_posts .sort_posts__switcher > ul >  li:first-child > a {
+	border-top-left-radius: 9px;
+	border-top-right-radius: 9px;
+}
+
+.widget__sort_posts .sort_posts__switcher > ul >  li:last-child > a {
+	border-bottom-left-radius: 9px;
+	border-bottom-right-radius: 9px;
 }
 
 .widget__sort_posts .sort_posts__switcher > ul >  li > a > i {
