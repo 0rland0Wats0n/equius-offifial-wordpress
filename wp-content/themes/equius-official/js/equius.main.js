@@ -142,7 +142,7 @@ if (!Array.prototype.findIndex) {
 
           }
 
-          var mrecentArticlesSwitcherInterval = setInterval(mrecentArticlesSwitcher, 5000);
+          var mrecentArticlesSwitcherInterval = setInterval(mrecentArticlesSwitcher, 4800);
 
           // handle recent articles manual switching
           var mrecentArticlesSwitchers = document.querySelectorAll(".recent_articles__mobile .recent_articles__switcher > li");
@@ -162,7 +162,7 @@ if (!Array.prototype.findIndex) {
               switcher.classList.add("active");
               document.querySelector(".recent_articles__mobile .recent_articles__article[data-post-id='" + $postID + "']").setAttribute("data-active", "active");
 
-              mrecentArticlesSwitcherInterval = setInterval(mrecentArticlesSwitcher, 5000);
+              mrecentArticlesSwitcherInterval = setInterval(mrecentArticlesSwitcher, 4800);
             });
           });
         }

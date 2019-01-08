@@ -3929,6 +3929,8 @@ main.author>section .author__posts .post_card {
 	display: block;
 	width: 100%;
 	margin: 0;
+	font-family: "Avenir LT Std", sans-serif;
+	font-weight: 600;
 }
 
 #home-contact form .nf-field-container {

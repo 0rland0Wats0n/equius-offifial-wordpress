@@ -25,6 +25,12 @@
 
 @font-face {
   font-family: "Avenir LT Std";
+  font-weight: 600;
+  src: url(./Avenir\ LT\ Std/AvenirLTStd-Roman.otf);
+}
+
+@font-face {
+  font-family: "Avenir LT Std";
   font-weight: 900;
   src: url(./Avenir\ LT\ Std/AvenirLTStd-Heavy.otf);
 }
