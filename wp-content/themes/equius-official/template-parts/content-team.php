@@ -10,8 +10,7 @@
   */
   $args = array(
     'posts_per_page'    => -1,
-    'meta_key'          => 'team_member_name',
-    'orderby'           => 'meta_value',
+    'orderby'           => 'title',
     'order'             => 'ASC',
     'post_type'         => 'team_members',
     'suppress_filters'  => true
@@ -34,7 +33,7 @@
            while( $the_query->have_posts() ):
               $the_query->the_post();
   
-              $name   = get_field( 'team_member_name' );
+              $name   = get_the_title();
               $role   = get_field( 'team_member_role' );
               $image  = get_field( 'team_member_photo' );
           ?>

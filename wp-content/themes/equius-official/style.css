@@ -1433,7 +1433,7 @@ section[role="navigation"] .nav__content>nav>ul>li:not(:last-child) a::after {
 	margin: 0;
 	padding: 0;
 	position: relative;
-	left: -160px;
+	left: -80px;
 	-webkit-transform: translateX(160px);
 	transform: translateX(160px);
 }
@@ -1473,8 +1473,8 @@ section[role="navigation"] .nav__content>nav>ul>li:not(:last-child) a::after {
 }
 
 .carousel.is-reversing {
-	-webkit-transform: translateX(-160px);
-	transform: translateX(-160px);
+	-webkit-transform: translateX();
+	transform: translateX();
 }
 
 .carousel.is-set {

@@ -41,11 +41,22 @@
 			
 			add_filter( 'manage_team_members_posts_columns', 'set_custom_edit_team_members_columns' );
 			function set_custom_edit_team_members_columns($columns) {
-					unset( $columns['title'] );
-					$columns['team_member_name'] = __( 'Name', 'textdomain' );
 					$columns['team_member_role'] = __( 'Role', 'textdomain' );
-
 					return $columns;
+			}
+
+			add_filter('manage_posts_columns', 'column_order');
+			function column_order($columns) {
+				$n_columns = array();
+				$move = 'team_member_role';
+				$before = 'date';
+				foreach($columns as $key => $value) {
+					if ($key==$before){
+						$n_columns[$move] = $move;
+					}
+						$n_columns[$key] = $value;
+				}
+				return $n_columns;
 			}
 
 			add_action( 'manage_team_members_posts_custom_column' , 'custom_team_members_column', 10, 2 );
