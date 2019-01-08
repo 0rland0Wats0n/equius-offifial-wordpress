@@ -3,12 +3,85 @@
     "title": "Team Members",
     "fields": [
         {
-            "key": "field_5bf1df075c17a",
-            "label": "Name",
-            "name": "team_member_name",
+            "key": "field_5bf1df285c17b",
+            "label": "Role",
+            "name": "team_member_role",
             "type": "text",
-            "instructions": "Add the team member's name here.",
+            "instructions": "Add team member's role here.",
             "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5c34ca33c8303",
+            "label": "Bio",
+            "name": "team_member_bio",
+            "type": "textarea",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": "wpautop"
+        },
+        {
+            "key": "field_5c34ca70c8304",
+            "label": "LinkedIn",
+            "name": "team_member_linkedin",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_5c34ca8cc8305",
+            "label": "Phone",
+            "name": "team_member_phone",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5c34caaec8306",
+            "label": "Email",
+            "name": "team_member_email",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -27,7 +100,7 @@
             "name": "team_member_photo",
             "type": "image",
             "instructions": "Upload a photo of the team member here.",
-            "required": 0,
+            "required": 1,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -44,25 +117,6 @@
             "max_height": "",
             "max_size": "",
             "mime_types": ""
-        },
-        {
-            "key": "field_5bf1df285c17b",
-            "label": "Role",
-            "name": "team_member_role",
-            "type": "text",
-            "instructions": "Add team member's role here.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
         }
     ],
     "location": [
@@ -93,5 +147,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1542580922
+    "modified": 1546964101
 }

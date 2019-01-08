@@ -7,7 +7,8 @@
 
 		 function create_team_members_post_type() {
 					$supports = array(
-							'revisions'
+							'revisions',
+							'title'
 					);
 
 					$labels = array(
@@ -58,6 +59,18 @@
 								echo get_field( 'team_member_role', $post_id );
 								break;
 					}
+			}
+
+			add_filter('enter_title_here', 'team_members_title_placeholder' , 20 , 2 );
+			function team_members_title_placeholder($title , $post){
+
+					if( $post->post_type == 'team_members' ){
+							$my_title = "Enter team member name here";
+							return $my_title;
+					}
+
+					return $title;
+
 			}
       
       /**

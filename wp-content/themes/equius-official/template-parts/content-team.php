@@ -40,7 +40,7 @@
           ?>
   
           <li class="carousel-seat <?php echo $count == $members ? "is-ref" : "" ?>">
-            <a href="#">
+            <a href="<?php echo get_permalink( get_the_ID() ) ?>">
               <img src="<?php echo $image ?>" alt="">
               <div class="object__overlay"></div>
             </a>
