@@ -7,22 +7,19 @@
 ?>
 
 <?php
-  $args = array(
-    'numberposts' => 1,
-    'offset' => 0,
-    'category' => 0,
-    'orderby' => 'post_date',
-    'order' => 'DESC',
-    'include' => '',
-    'exclude' => '',
-    'meta_key' => '',
-    'meta_value' =>'',
-    'post_type' => 'asset_classes',
-    'post_status' => 'publish',
-    'suppress_filters' => true
-  );
+  $ac_temp = json_decode( file_get_contents( 'http://mobile.equiuspartners.com/newsletters.json' ) );
+  $asset_classes = array();
 
-  $most_recent = wp_get_recent_posts( $args, ARRAY_A );
+  foreach( $ac_temp as $ac )
+  {
+    array_push( $asset_classes, $ac->newsletter );
+  }
+
+    usort( $asset_classes, function( $a, $b ) {
+    return ( strtotime( $b->date ) - strtotime( $a->date ));
+  });
+
+  $most_recent = $asset_classes[0];
 ?>
 
 <?php if( $most_recent ) : ?>
@@ -32,10 +29,9 @@
     <div>
       <h1>Asset Class</h1>
       <h4>latest asset class</h4>
-      <h2><?php echo $most_recent[0]["post_title"] ?></h2>
-      <p><?php echo get_the_time( "F, Y", $most_recent[0]["ID"] ) ?></p>
-      <p><?php echo $most_recent[0]["post_content"] ?></p>
-      <a href="<?php echo get_field( 'asset_class_pdf' ); ?>" download>download pdf</a>
+      <h2><?php echo $most_recent->title ?></h2>
+      <p><?php echo date( "F, Y", strtotime( $most_recent->upload_updated_at ) ) ?></p>
+      <a href="<?php echo $most_recent->clean_pdf_link ?>" target="_blank" download>download pdf</a>
     </div>
   </section>
 

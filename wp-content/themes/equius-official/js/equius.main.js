@@ -278,6 +278,52 @@ if (!Array.prototype.findIndex) {
             }
           });
         }
+
+        // handle asset class view by year state
+        var $switcher = document.querySelector('.switcher');
+
+        if ($switcher) {
+          var $yearList = document.querySelector(".switcher > ul");
+
+          $switcher.querySelector(".switcher__year_holder").addEventListener("click", function (e) {
+            e.preventDefault();
+
+            if ( $yearList.getAttribute("data-state") === "closed" ) {
+              $yearList.setAttribute("data-state", "open");
+            } else {
+              $yearList.setAttribute("data-state", "closed");
+            }
+          });
+
+          document.querySelectorAll('.switcher > ul > li').forEach(function(el) {
+            el.addEventListener("click", function(e) {
+              e.preventDefault();
+
+              if (el.getAttribute("data-state") == "active")
+                return;
+
+              var year = el.getAttribute("data-year");
+              var $active = document.querySelector(".switcher > ul > li[data-state='active']")
+
+              document.querySelector(".switcher__year_holder").textContent = year;
+              
+              if ($active)
+                $active.setAttribute("data-state", "inactive");
+
+              el.setAttribute("data-state", "active");
+              $yearList.setAttribute("data-state", "closed");
+
+              document.querySelectorAll(".asset_classes__class").forEach(function(element) {
+                if (element.getAttribute("data-year") == year
+                  || year === "all") {
+                  element.setAttribute("data-state", "visible");
+                } else {
+                  element.setAttribute("data-state", "hidden");
+                }
+              });
+            });
+          });
+        }
     });
   }
 })();

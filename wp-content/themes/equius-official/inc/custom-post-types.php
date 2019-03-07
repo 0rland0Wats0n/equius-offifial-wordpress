@@ -23,7 +23,7 @@
 							'view_item'         => __( 'View Team Members' ),
 							'all_items'         => __( 'All Team Members' ),
 							'search_items'      => __( 'Search Team Members' ),
-							'not_found'         => __( 'No team members found.' ),
+							'not_found'         => __( 'No team members found.' )
 					);
 
 					$args = array(

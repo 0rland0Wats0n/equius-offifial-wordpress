@@ -30,7 +30,7 @@
         $no_scret_content   = get_field( 'no_secret_content' );
 
         if ( !$no_secret_heading ) {
-          $no_secret_heading = "Our secret? No secret.";
+          $no_secret_heading = "Our secret? No secrets.";
         }
 
         if ( !$no_scret_content ) {
