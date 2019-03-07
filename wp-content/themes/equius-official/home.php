@@ -48,6 +48,12 @@
         <?php get_template_part( 'template-parts/content', 'most-popular-posts' ); ?>
       </section>
     <?php endif; ?>
+
+    <?php if ( !is_paged() ) : ?>
+      <section class="recent__asset_classes">
+        <?php get_template_part( 'template-parts/content', 'most-recent-asset-classes' ); ?>
+      </section>
+    <?php endif; ?>
     
     <?php if ( !is_paged() ) : ?>
       <section class="posts__view_all">
