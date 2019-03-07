@@ -65,7 +65,10 @@
   <section id="team">
     <div class="team__content">
         <h1><?php echo $team_heading ?></h1>
-        <?php echo $team_content ?>
+        <section class="team__content_content"
+          data-state="visible">
+          <?php echo $team_content ?>
+        </section>
 
         <?php
           //get team members template part

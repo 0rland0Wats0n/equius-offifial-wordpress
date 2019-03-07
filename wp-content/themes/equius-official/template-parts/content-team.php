@@ -19,7 +19,47 @@
 
   if( $the_query->have_posts() ):
 ?>
-
+  <section class="team__full_content">
+    <?php
+      while ( $the_query->have_posts() ) :
+        $the_query->the_post();
+        
+        $headshot =   get_field( 'team_member_photo' );
+        $linkedin =   get_field( 'team_member_linkedin' );
+        $phone =      get_field( 'team_member_phone' );
+        $email =      get_field( 'team_member_email' );
+    ?>
+      <div class="team_member"
+        data-state="hidden"
+        data-id="<?php echo get_the_ID() ?>">
+        <img src="<?php echo $headshot ?>" alt="" />
+        <div>
+          <h3><?php echo get_the_title() ?></h3>
+          <h4><?php echo get_field( 'team_member_role' ) ?></h4>
+          <?php echo get_field( 'team_member_bio' ) ?>
+          <span>
+            <?php if ( $linkedin ) : ?>
+              <a href="<?php echo $linkedin ?>">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            <?php endif; ?>
+            <?php if ( $phone ) : ?>
+              <p>
+                <span class="ss-icon">phone</span>
+                <span><?php echo $phone ?></span>
+              </p>
+            <?php endif; ?>
+            <?php if ( $email ) : ?>
+              <p>
+                <span class="ss-icon">email</span>
+                <span><?php echo $email ?></span>
+              </p>
+            <?php endif; ?>
+          </span>
+        </div>
+      </div>
+    <?php endwhile; ?>
+  </section>
   <section class="widget__team">
     <div class="widget_team__content">
       <span class="object__arrow_left toggle" data-toggle="prev">
@@ -39,7 +79,9 @@
           ?>
   
           <li class="carousel-seat <?php echo $count == $members ? "is-ref" : "" ?>">
-            <a href="<?php echo get_permalink( get_the_ID() ) ?>">
+            <a href="#" 
+              data-id="<?php echo get_the_ID(); ?>"
+              data-state="inactive">
               <img src="<?php echo $image ?>" alt="">
               <div class="object__overlay"></div>
             </a>

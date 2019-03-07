@@ -262,6 +262,37 @@ if (!Array.prototype.findIndex) {
               }
             }
           });
+
+          // handle team viewing
+          var content = document.querySelector(".team__content_content");
+
+          document.querySelectorAll(".carousel-seat > a").forEach(function(a) {
+            a.addEventListener("click", function(e) {
+              e.preventDefault();
+
+              var active = document.querySelector(".carousel-seat > a[data-state='active']");
+              var id = a.getAttribute("data-id");
+              var teamMember = document.querySelector(`.team_member[data-id="${id}"`);
+              
+              if (a == active) {
+                content.setAttribute("data-state", "visible");
+                a.setAttribute("data-state", "inactive");
+                teamMember.setAttribute("data-state", "hidden");
+                
+                return;
+              }
+              
+              if (active) {
+                var activeTeamMember = document.querySelector(`.team_member[data-id="${active.getAttribute("data-id")}"`);
+                activeTeamMember.setAttribute("data-state", "hidden");
+                active.setAttribute("data-state", "inactive");
+              }
+
+              content.setAttribute("data-state", "hidden");
+               teamMember.setAttribute("data-state", "visible");
+               a.setAttribute("data-state", "active");
+            });
+          })
         }
 
         // handle posts sorter dropdown
