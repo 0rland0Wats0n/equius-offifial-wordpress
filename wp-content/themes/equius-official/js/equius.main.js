@@ -186,91 +186,35 @@ if (!Array.prototype.findIndex) {
         var $testimonialWidget = document.querySelector(".widget__testimonials");
 
         if ( $testimonialWidget ) {
-          
-          document.querySelector(".widget__testimonials .object__arrow_right").addEventListener("click", function(e) {
-            var $active = e.currentTarget.previousElementSibling.querySelector("li[data-state='active']");
-            var $next = $active.nextElementSibling || e.currentTarget.previousElementSibling.querySelector("li:first-child");
-
-            if ($next) {
-              $active.setAttribute("data-state", "inactive");
-              $next.setAttribute("data-state", "active");
-
-              // switch indicators
-              document.querySelector(`.widget__testimonials .testimonials__switchers li[data-testimonial='${$active.getAttribute("data-testimonial")}']`).setAttribute("data-state", "inactive");
-              document.querySelector(`.widget__testimonials .testimonials__switchers li[data-testimonial='${$next.getAttribute("data-testimonial")}']`).setAttribute("data-state", "active");
-            }
-          });
-
-          document.querySelector(".widget__testimonials .object__arrow_left").addEventListener("click", function (e) {
-            var $active = e.currentTarget.nextElementSibling.querySelector("li[data-state='active']");
-            var $prev = $active.previousElementSibling || e.currentTarget.nextElementSibling.querySelector("li:last-child");
-
-            if ($prev) {
-              $active.setAttribute("data-state", "inactive");
-              $prev.setAttribute("data-state", "active");
-
-              // switch indicators
-              document.querySelector(`.widget__testimonials .testimonials__switchers li[data-testimonial='${$active.getAttribute("data-testimonial")}']`).setAttribute("data-state", "inactive");
-              document.querySelector(`.widget__testimonials .testimonials__switchers li[data-testimonial='${$prev.getAttribute("data-testimonial")}']`).setAttribute("data-state", "active");
-            }
+          $(".testimonials__items.owl-carousel").owlCarousel({
+            items: 1,
+            autoPlay: true
           });
         }
 
         // handle teams carousel switching
-        var $carousel = $('.carousel');
-        var $seats = $('.carousel-seat');
+        var $teamMembers = $('.team__members');
 
-        if ($carousel && $seats) {
-          $('.toggle').on('click', function (e) {
-            var $newSeat;
-            var $el = $('.is-ref');
-            var $currSliderControl = $(e.currentTarget);
-            // Info: e.target is what triggers the event dispatcher to trigger and e.currentTarget is what you assigned your listener to.
-
-            $el.removeClass('is-ref');
-            if ($currSliderControl.data('toggle') === 'next') {
-              $newSeat = next($el);
-              $carousel.removeClass('is-reversing');
-            } else {
-              $newSeat = prev($el);
-              $carousel.addClass('is-reversing');
-            }
-
-            $newSeat.addClass('is-ref').css('order', 1);
-            for (var i = 2; i <= $seats.length; i++) {
-              $newSeat = next($newSeat).css('order', i);
-            }
-
-            $carousel.removeClass('is-set');
-            return setTimeout(function () {
-              return $carousel.addClass('is-set');
-            }, 50);
-
-            function next($el) {
-              if ($el.next().length) {
-                return $el.next();
-              } else {
-                return $seats.first();
-              }
-            }
-
-            function prev($el) {
-              if ($el.prev().length) {
-                return $el.prev();
-              } else {
-                return $seats.last();
-              }
+        if ($teamMembers) {
+          $(".team__members.owl-carousel").owlCarousel({ 
+            items: 7,
+            dotsEach: 7,
+            responsive: {
+              0: { items: 2, dotsEach: 2 },
+              600: { items: 4, dotsEach: 4 },
+              768: { items: 5, dotsEach: 5 },
+              992: { items: 7, dotsEach: 7 }
             }
           });
 
           // handle team viewing
           var content = document.querySelector(".team__content_content");
 
-          document.querySelectorAll(".carousel-seat > a").forEach(function(a) {
+          document.querySelectorAll(".team__members li > a").forEach(function(a) {
             a.addEventListener("click", function(e) {
               e.preventDefault();
 
-              var active = document.querySelector(".carousel-seat > a[data-state='active']");
+              var active = document.querySelector(".team__members li > a[data-state='active']");
               var id = a.getAttribute("data-id");
               var teamMember = document.querySelector(`.team_member[data-id="${id}"`);
               
@@ -311,49 +255,193 @@ if (!Array.prototype.findIndex) {
         }
 
         // handle asset class view by year state
-        var $switcher = document.querySelector('.switcher');
+        var $switchers = document.querySelectorAll('.switcher');
 
-        if ($switcher) {
-          var $yearList = document.querySelector(".switcher > ul");
+        if ($switchers.length) {
+          $switchers.forEach(function($switcher) {
+            let $list = $switcher.querySelector("ul");
 
-          $switcher.querySelector(".switcher__year_holder").addEventListener("click", function (e) {
-            e.preventDefault();
+            $switcher.querySelector(".active_holder").addEventListener("click", function (e) {
+              e.preventDefault();
+  
+              if ( $list.getAttribute("data-state") === "closed" ) {
+                $list.setAttribute("data-state", "open");
+              } else {
+                $list.setAttribute("data-state", "closed");
+              }
+            });
 
-            if ( $yearList.getAttribute("data-state") === "closed" ) {
-              $yearList.setAttribute("data-state", "open");
-            } else {
-              $yearList.setAttribute("data-state", "closed");
+            var type = $switcher.getAttribute("data-type");
+
+            if (type === "year")
+            {
+              $switcher.querySelectorAll("ul > li").forEach(function(el) {
+                el.addEventListener("click", switchYear.bind(this, el));
+              });
+            }
+
+            if (type === "month") {
+              $switcher.querySelectorAll("ul > li").forEach(function(el) {
+                el.addEventListener("click", switchMonth.bind(this, el));
+              });
             }
           });
+          
+          function switchYear(year) 
+          {
+            if (year.getAttribute("data-state") == "active")
+              return;
+            
+            let yearVal = year.getAttribute("data-year");
+            let $activeYear = document.querySelector(".switcher[data-type='year'] > ul > li[data-state='active']");
+            let activeMonth = document.querySelector(".switcher[data-type='month'] > ul > li[data-state='active']")
+              .getAttribute("data-month");
 
-          document.querySelectorAll('.switcher > ul > li').forEach(function(el) {
-            el.addEventListener("click", function(e) {
-              e.preventDefault();
-
-              if (el.getAttribute("data-state") == "active")
-                return;
-
-              var year = el.getAttribute("data-year");
-              var $active = document.querySelector(".switcher > ul > li[data-state='active']")
-
-              document.querySelector(".switcher__year_holder").textContent = year;
+            if ($activeYear)
+              $activeYear.setAttribute("data-state", "inactive");
               
-              if ($active)
-                $active.setAttribute("data-state", "inactive");
+            year.setAttribute("data-state", "active");
+            document.querySelector(".switcher[data-type='year'] .active_holder").textContent = yearVal;
 
-              el.setAttribute("data-state", "active");
-              $yearList.setAttribute("data-state", "closed");
-
-              document.querySelectorAll(".asset_classes__class").forEach(function(element) {
-                if (element.getAttribute("data-year") == year
-                  || year === "all") {
+            document.querySelectorAll(".asset_classes__class").forEach(function (element) {
+              if (activeMonth === "all") {
+                if (element.getAttribute("data-year") == yearVal
+                  || yearVal === "all") {
                   element.setAttribute("data-state", "visible");
                 } else {
                   element.setAttribute("data-state", "hidden");
                 }
-              });
+              } else {
+                if (element.getAttribute("data-year") == yearVal
+                  && (element.getAttribute("data-month") == activeMonth)) {
+                  element.setAttribute("data-state", "visible");
+                } else if (yearVal === "all" 
+                  && (element.getAttribute("data-month") == activeMonth)) {
+                  element.setAttribute("data-state", "visible");
+                } else {
+                  element.setAttribute("data-state", "hidden");
+                }
+              }
+            });
+
+            toggleMonths(yearVal);
+            document.querySelector(".switcher[data-type='year'] > ul").setAttribute("data-state", "closed");
+          }
+
+          function switchMonth(month)
+          {
+            if (month.getAttribute("data-state") == "active")
+              return;
+
+            let monthVal = month.getAttribute("data-month");
+            let $activeMonth = document.querySelector(".switcher[data-type='month'] > ul > li[data-state='active']");
+            let activeYear = document.querySelector(".switcher[data-type='year'] > ul > li[data-state='active']")
+              .getAttribute("data-year");
+
+            if ($activeMonth)
+              $activeMonth.setAttribute("data-state", "inactive");
+
+            month.setAttribute("data-state", "active");
+            document.querySelector(".switcher[data-type='month'] .active_holder").textContent = monthVal;
+
+            document.querySelectorAll(".asset_classes__class").forEach(function (element) {
+              if (activeYear === "all") {
+                if (element.getAttribute("data-month") == monthVal
+                  || monthVal === "all") {
+                  element.setAttribute("data-state", "visible");
+                } else {
+                  element.setAttribute("data-state", "hidden");
+                }
+              } else {
+                if (element.getAttribute("data-month") == monthVal
+                  && (element.getAttribute("data-year") == activeYear)) {
+                  element.setAttribute("data-state", "visible");
+                } else if (monthVal === "all"
+                  && (element.getAttribute("data-year") == activeYear)) {
+                  element.setAttribute("data-state", "visible");
+                } else {
+                  element.setAttribute("data-state", "hidden");
+                }
+              }
+            });
+
+            document.querySelector(".switcher[data-type='month'] > ul").setAttribute("data-state", "closed");
+          }
+
+          function toggleMonths(year)
+          {
+            document.querySelectorAll(".switcher[data-type=month] > ul > li").forEach(function(el) {
+              if (year === "all" || el.getAttribute("data-month") === "all") 
+              {
+                el.setAttribute("data-view", "visible");
+              }
+              else if (!document.querySelector(`.asset_classes__class[data-year="${year}"][data-month="${el.getAttribute("data-month")}"]`))
+              {
+                el.setAttribute("data-view", "hidden");
+              }
+            });
+          }
+        }
+
+        function appendChildrenToContainer(container, childClass)
+        {
+          var child = document.createElement("section");
+          child.classList.add("empty");
+          child.classList.add(childClass);
+
+          container.appendChild(child);
+        }
+
+        var recentPostsContainer = document.querySelector(".posts__recent_container");
+
+        if (recentPostsContainer && window.innerWidth >= 1280)
+        {
+          var numPosts = recentPostsContainer.querySelectorAll(".post_card").length;
+          var numEmptyToAdd = 4 - (numPosts%4);
+
+          if (numPosts % 4)
+          {
+            for (let i = numEmptyToAdd; i > 0; i--)
+            {
+              appendChildrenToContainer(recentPostsContainer, "post_card");
+            }
+          }
+        }
+
+        var beliefs = document.querySelectorAll(".belief");
+        if (beliefs)
+        {
+          beliefs.forEach(function(belief, i) {
+            belief.querySelector(".belief__image > div").addEventListener("click", function(e) {
+              e.preventDefault();
+              var heading = e.currentTarget.getAttribute("data-belief");
+              var modal = document.querySelector(`.modal[data-belief="${heading}"]`);
+              var frame = modal.querySelector("iframe");
+              var player = new Vimeo.Player(frame);
+
+              modal.setAttribute("data-state", "open");
+              player.play();
             });
           });
+
+          var modals = document.querySelectorAll(".modal");
+          if (modals)
+          {
+            modals.forEach(function(el, i) {
+              el.addEventListener("click", function(e) {
+                var modalContent = el.querySelector(".modal__content");
+
+                if (modalContent.contains(e.target))
+                  return;
+
+                var frame = el.querySelector("iframe");
+                var player = new Vimeo.Player(frame);
+                
+                player.pause();
+                el.setAttribute("data-state", "closed");
+              });
+            });
+          }
         }
     });
   }

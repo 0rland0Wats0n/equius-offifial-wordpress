@@ -1,6 +1,24 @@
 {
     "key": "group_5bf2197c9869a",
     "title": "Testimonials",
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "testimonials"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1554781040,
     "fields": [
         {
             "key": "field_5bf219a3080c3",
@@ -78,23 +96,5 @@
             "rows": "",
             "new_lines": ""
         }
-    ],
-    "location": [
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "testimonials"
-            }
-        ]
-    ],
-    "menu_order": 0,
-    "position": "acf_after_title",
-    "style": "seamless",
-    "label_placement": "top",
-    "instruction_placement": "label",
-    "hide_on_screen": "",
-    "active": 1,
-    "description": "",
-    "modified": 1542594457
+    ]
 }

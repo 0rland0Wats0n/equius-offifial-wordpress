@@ -24,7 +24,7 @@
         <li>
           <?php echo $prev ?>
         </li>
-      <? endif; ?>
+      <?php endif; ?>
       <li class="back-to-posts">
         <a href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>">
           <i class="fas fa-th"></i>
@@ -34,7 +34,7 @@
         <li>
           <?php echo $next ?>
         </li>
-      <? endif; ?>
+      <?php endif; ?>
     </div>
   </ul>
 </nav>

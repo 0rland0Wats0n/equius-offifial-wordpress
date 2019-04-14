@@ -24,12 +24,12 @@
         <li>
           <?php echo $prev ?>
         </li>
-      <? endif; ?>
+      <?php endif; ?>
       <?php $next = get_next_posts_link( '<h3>Next <span>Page</span></h3> <i class="fas fa-chevron-right"></i>' ); if( $next ) : ?>
         <li>
           <?php echo $next ?>
         </li>
-      <? endif; ?>
+      <?php endif; ?>
     </div>
   </ul>
 </nav>

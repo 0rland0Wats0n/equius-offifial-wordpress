@@ -45,14 +45,14 @@
 ?>
 
 <section id="expertise">
-  <img class="expertise__q_overlay" src="<?php echo get_template_directory_uri() . '/assets/images/Q Overlay.png'; ?>" alt="" />
+  <img class="expertise__q_overlay" src="<?php echo get_template_directory_uri() . '/assets/images/Q Overlay.svg'; ?>" alt="" />
   <div class="expertise__content">
     <section>
       <h1><?php echo $expertise_heading ?></h1>
-    </section>
-    <section>
       <p><?php echo $expertise_details ?></p>
       <p><?php echo $expertise_more_details ?></p>
+    </section>
+    <section>
       <ul class="expertise__items">
         <?php 
           foreach( $expertise as $e ) :

@@ -30,7 +30,7 @@
       <h1>Asset Class</h1>
       <h4>latest asset class</h4>
       <h2><?php echo $most_recent->title ?></h2>
-      <p><?php echo date( "F, Y", strtotime( $most_recent->upload_updated_at ) ) ?></p>
+      <p><?php echo date( "F, Y", strtotime( $most_recent->date ) ) ?></p>
       <a href="<?php echo $most_recent->clean_pdf_link ?>" target="_blank" download>download pdf</a>
     </div>
   </section>

@@ -1,6 +1,6 @@
 {
     "key": "group_5bf1bb303f8dd",
-    "title": "Front Page Settings",
+    "title": "Landing",
     "fields": [
         {
             "key": "field_5bf1cb18b7a1c",
@@ -17,6 +17,73 @@
             },
             "placement": "top",
             "endpoint": 0
+        },
+        {
+            "key": "field_5bf1cee76d680",
+            "label": "Hero Heading",
+            "name": "hero_heading",
+            "type": "textarea",
+            "instructions": "Add the text overlay for the hero image.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 3,
+            "new_lines": "wpautop"
+        },
+        {
+            "key": "field_5bf23e938a376",
+            "label": "Show mailing list widget?",
+            "name": "show_mailinglist_widget",
+            "type": "radio",
+            "instructions": "Choose whether to show mailing list widget or not.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Show": "Show",
+                "Hide": "Hide"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "",
+            "layout": "vertical",
+            "return_format": "value",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_5bf1cb3cb7a1d",
+            "label": "Show contact section?",
+            "name": "show_contact_section",
+            "type": "radio",
+            "instructions": "Choose whether to show contact section or not.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Show": "Show",
+                "Hide": "Hide"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "",
+            "layout": "vertical",
+            "return_format": "value",
+            "save_other_choice": 0
         },
         {
             "key": "field_5bf2269ae0cd4",
@@ -249,6 +316,49 @@
             "mime_types": ""
         },
         {
+            "key": "field_5cac85671d761",
+            "label": "Video?",
+            "name": "belief_1_is_video",
+            "type": "true_false",
+            "instructions": "Does this belief have a video?",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5cac86141d764",
+            "label": "Video Embed Code",
+            "name": "belief_1_embed_code",
+            "type": "oembed",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5cac85671d761",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "width": "",
+            "height": ""
+        },
+        {
             "key": "field_5bf1bf2e58a45",
             "label": "Belief 2",
             "name": "",
@@ -328,6 +438,49 @@
             "mime_types": ""
         },
         {
+            "key": "field_5cac85c41d762",
+            "label": "Video?",
+            "name": "belief_2_is_video",
+            "type": "true_false",
+            "instructions": "Does this belief have a video?",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5cac86991d765",
+            "label": "Video Embed Code",
+            "name": "belief_2_embed_code",
+            "type": "oembed",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5cac85c41d762",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "width": "",
+            "height": ""
+        },
+        {
             "key": "field_5bf1bf5d58a49",
             "label": "Belief 3",
             "name": "",
@@ -405,6 +558,49 @@
             "max_height": "",
             "max_size": "",
             "mime_types": ""
+        },
+        {
+            "key": "field_5cac85e01d763",
+            "label": "Video?",
+            "name": "belief_3_is_video",
+            "type": "true_false",
+            "instructions": "Does this belief have a video?",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5cac86b51d766",
+            "label": "Video Embed Code",
+            "name": "belief_3_embed_code",
+            "type": "oembed",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5cac85e01d763",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "width": "",
+            "height": ""
         },
         {
             "key": "field_5bf1c876ca0a6",
@@ -586,8 +782,8 @@
             "min_width": "",
             "min_height": "",
             "min_size": "",
-            "max_width": 100,
-            "max_height": 100,
+            "max_width": "",
+            "max_height": "",
             "max_size": "",
             "mime_types": ""
         },
@@ -665,8 +861,8 @@
             "min_width": "",
             "min_height": "",
             "min_size": "",
-            "max_width": 100,
-            "max_height": 100,
+            "max_width": "",
+            "max_height": "",
             "max_size": "",
             "mime_types": ""
         },
@@ -744,8 +940,8 @@
             "min_width": "",
             "min_height": "",
             "min_size": "",
-            "max_width": 100,
-            "max_height": 100,
+            "max_width": "",
+            "max_height": "",
             "max_size": "",
             "mime_types": ""
         },
@@ -823,8 +1019,8 @@
             "min_width": "",
             "min_height": "",
             "min_size": "",
-            "max_width": 100,
-            "max_height": 100,
+            "max_width": "",
+            "max_height": "",
             "max_size": "",
             "mime_types": ""
         },
@@ -992,8 +1188,8 @@
             "min_width": "",
             "min_height": "",
             "min_size": "",
-            "max_width": 100,
-            "max_height": 100,
+            "max_width": "",
+            "max_height": "",
             "max_size": "",
             "mime_types": ""
         },
@@ -1071,8 +1267,8 @@
             "min_width": "",
             "min_height": "",
             "min_size": "",
-            "max_width": 100,
-            "max_height": 100,
+            "max_width": "",
+            "max_height": "",
             "max_size": "",
             "mime_types": ""
         },
@@ -1150,8 +1346,8 @@
             "min_width": "",
             "min_height": "",
             "min_size": "",
-            "max_width": 100,
-            "max_height": 100,
+            "max_width": "",
+            "max_height": "",
             "max_size": "",
             "mime_types": ""
         },
@@ -1176,9 +1372,9 @@
     "location": [
         [
             {
-                "param": "page_template",
+                "param": "page_type",
                 "operator": "==",
-                "value": "front-page.php"
+                "value": "front_page"
             }
         ]
     ],
@@ -1195,5 +1391,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1545173341
+    "modified": 1554866974
 }

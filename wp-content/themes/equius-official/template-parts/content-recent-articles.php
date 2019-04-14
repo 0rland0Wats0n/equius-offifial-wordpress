@@ -27,6 +27,7 @@
 
 <?php if($recent_posts): ?>
   <section class="widget__recent_articles">
+    <p>Recent Articles</p>
     <section class="recent_articles__articles">
       <?php foreach( $recent_posts as $key => $recent ): ?>
         <div class="recent_articles__article"

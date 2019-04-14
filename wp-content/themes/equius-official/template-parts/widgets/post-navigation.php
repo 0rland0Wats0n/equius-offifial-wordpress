@@ -20,7 +20,7 @@
             <h3>Previous <span>Post</span></h3>
           </a>
         </li>
-      <? endif; ?>
+      <?php endif; ?>
       <li class="back-to-posts">
         <a href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>">
           <i class="fas fa-th"></i>
@@ -33,7 +33,7 @@
               <i class="fas fa-chevron-right"></i>
           </a>
         </li>
-      <? endif; ?>
+      <?php endif; ?>
     </div>
   </ul>
 </nav>

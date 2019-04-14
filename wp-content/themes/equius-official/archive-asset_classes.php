@@ -37,6 +37,21 @@
   }
 
   rsort( $years );
+
+  $months = array(
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "Octber",
+    "November",
+    "December"
+  )
 ?>
   <main class="archive__asset_classes">
     <?php if ( sizeof( $asset_classes ) > 0 ) { ?>
@@ -47,23 +62,40 @@
         <header>
           <h2>Asset Class Archives</h2>
           <div class="asset_classes__year_switcher">
-            <p>View By Year</p>
-            <div class="switcher">
-              <p class="switcher__year_holder"></p>
+          <span>
+            <p>Year</p>
+            <div class="switcher" data-type="year">
+              <p class="active_holder">All</p>
               <ul data-state="closed">
-                <li data-year="all">All</li>
+                <li data-year="all" data-state="active">All</li>
                 <?php foreach ( $years as $year ) : ?>
                   <li data-year="<?php echo $year ?>"
                     data-state="inactive"><?php echo $year ?></li>
                 <?php endforeach ?>
               </ul>
             </div>
+          </span>
+          <span>
+            <p>Month</p>
+            <div class="switcher" data-type="month">
+              <p class="active_holder">All</p>
+              <ul data-state="closed">
+                <li data-month="all" data-state="active">All</li>
+                <?php foreach ( $months as $month ) : ?>
+                  <li data-month="<?php echo $month ?>"
+                    data-state="inactive"
+                    data-view="visible"><?php echo $month ?></li>
+                <?php endforeach ?>
+              </ul>
+            </div>
+          </span>
           </div>
         </header>
         <section>
           <?php for ( $i = 1; $i < sizeof( $asset_classes ) ; $i++ ) : $current = $asset_classes[$i]; ?>
   
           <div class="asset_classes__class" 
+            data-month="<?php echo date( "F", strtotime( $current->date ) ) ?>"
             data-year="<?php echo date( "Y", strtotime( $current->date ) ) ?>"
             data-state="<?php echo $i <= 12 ? 'visible' : 'hidden' ?>">
             <h5><?php echo date( "F, Y", strtotime( $current->date ) ) ?></h5>

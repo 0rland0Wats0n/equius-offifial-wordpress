@@ -22,7 +22,9 @@
 
 <?php if( sizeof( $asset_classes ) > 0 ) : ?>
 
-  <h3 class="object__fancy_heading">Asset Classes</h3>
+  <a href="<?php echo get_post_type_archive_link( 'asset_classes' ); ?>">
+    <h3 class="object__fancy_heading">Asset Classes</h3>
+  </a>    
   <div class="recent_asset_classes">
     <?php for ( $i = 0; $i < 6 ; $i++ ) : $current = $asset_classes[$i]; ?>
       <div class="asset_classes__class" 

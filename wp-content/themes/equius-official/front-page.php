@@ -12,7 +12,7 @@
   ?>
   <header class="header__landing" style="background-image: url(<?php echo($featured_image) ?>)">
     <div class="header__content">
-      <?php $hero_heading = get_bloginfo( 'description' ) ?>
+      <?php $hero_heading = get_field( 'hero_heading' ) ?>
       <h1 class="type__hero"><?php echo $hero_heading ?></h1>
       <?php get_template_part( 'template-parts/content', 'recent-articles' ); ?>
       <span class="header__scroll">Scroll</span>
@@ -90,7 +90,6 @@
   <section id="contact">
     <section class="contact__top">
       <h1>Contact Equius</h1>
-      <h3><?php echo get_field( 'business_phone' ); ?></h3>
     </section>
     <section class="contact__bottom">
       <?php if ( is_active_sidebar( 'home_contact' ) ) { ?>
@@ -105,14 +104,20 @@
       <?php } ?>
       <div class="contact__details">
         <img src="<?php echo get_template_directory_uri() . '/assets/images/Map.png' ?>" alt="">
-        <h4>Where to Find Us</h4>
         <section>
           <span>
+            <h4>Where to Find Us</h4>
             <p><?php echo get_field( 'business_address' ) ?></p>
-          </span>
-          <span>
             <p><?php echo get_field( 'business_email' ) ?></p>
             <p><?php echo get_field( 'business_phone' ) ?></p>
+          </span>
+          <span>
+            <h4>Follow Us</h4>
+            <?php if ( is_active_sidebar( 'footer_social' ) ) : ?>
+              <span class="footer_social">
+                <?php dynamic_sidebar( 'footer_social' ); ?>
+              </span>
+            <?php endif; ?>
           </span>
         </section>
       </div>

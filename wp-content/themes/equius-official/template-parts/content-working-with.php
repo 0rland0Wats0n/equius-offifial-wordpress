@@ -40,6 +40,7 @@
 ?>
 
   <section id="working">
+    <span class="object__arrow_down"></span>
     <div class="working__content">
       <h1><?php echo $working_heading ?></h1>
       <ul class="working__steps">
@@ -56,7 +57,6 @@
         <?php endforeach; ?>
       </ul>
     </div>
-    <div class="working__blue_bg"></div>
   </section>
 
 <?php endif; ?>

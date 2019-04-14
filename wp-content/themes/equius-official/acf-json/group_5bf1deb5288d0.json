@@ -1,6 +1,35 @@
 {
     "key": "group_5bf1deb5288d0",
     "title": "Team Members",
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "team_members"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "permalink",
+        "the_content",
+        "excerpt",
+        "discussion",
+        "comments",
+        "slug",
+        "author",
+        "page_attributes",
+        "featured_image",
+        "categories"
+    ],
+    "active": 1,
+    "description": "",
+    "modified": 1554781040,
     "fields": [
         {
             "key": "field_5bf1df285c17b",
@@ -118,34 +147,5 @@
             "max_size": "",
             "mime_types": ""
         }
-    ],
-    "location": [
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "team_members"
-            }
-        ]
-    ],
-    "menu_order": 0,
-    "position": "normal",
-    "style": "seamless",
-    "label_placement": "top",
-    "instruction_placement": "label",
-    "hide_on_screen": [
-        "permalink",
-        "the_content",
-        "excerpt",
-        "discussion",
-        "comments",
-        "slug",
-        "author",
-        "page_attributes",
-        "featured_image",
-        "categories"
-    ],
-    "active": 1,
-    "description": "",
-    "modified": 1546964101
+    ]
 }

@@ -139,12 +139,6 @@ if ( ! function_exists( 'equius_official_setup' ) ) :
 		}
 		add_filter('excerpt_more', 'new_excerpt_more');
 
-		function cc_mime_types($mimes) {
-			$mimes['svg'] = 'image/svg+xml';
-			return $mimes;
-		}
-		add_filter('upload_mimes', 'cc_mime_types');
-
 		/**
 		 * Register new widget areas
 		 *
@@ -216,6 +210,12 @@ if ( ! function_exists( 'equius_official_setup' ) ) :
 		add_filter( 'comment_form_field_comment', 'my_update_comment_field' );
 
 		remove_action( 'shutdown', 'wp_ob_end_flush_all', 1 );
+
+		function cc_mime_types($mimes) {
+			$mimes['svg'] = 'image/svg+xml';
+			return $mimes;
+		}
+		add_filter('upload_mimes', 'cc_mime_types');
 	}
 endif;
 add_action( 'after_setup_theme', 'equius_official_setup' );
@@ -259,11 +259,17 @@ add_action( 'widgets_init', 'equius_official_widgets_init' );
 function equius_official_scripts() {
 	wp_enqueue_style( 'font-ss-standard', get_template_directory_uri() . '/fonts/ss standard/ss-standard.css' );
 	wp_enqueue_style( 'fonts', get_template_directory_uri() . '/fonts/fonts.main.css' );
+	wp_enqueue_style( 'owl', get_template_directory_uri() . '/assets/OwlCarousel2-2.3.4/dist/assets/owl.carousel.css' );
+	wp_enqueue_style( 'owl-theme', get_template_directory_uri() . '/assets/OwlCarousel2-2.3.4/dist/assets/owl.theme.default.css' );
 	wp_enqueue_style( 'equius-official-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'equius-official-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 	
 	wp_enqueue_script( 'equius-official-jquery', get_template_directory_uri() . '/js/jquery.min.js', array(), '20151215', true );
+
+	wp_enqueue_script( 'equius-official-player-js', 'https://player.vimeo.com/api/player.js', array(), '20151215', true );
+
+	wp_enqueue_script( 'owl-js', get_template_directory_uri() . '/assets/OwlCarousel2-2.3.4/dist/owl.carousel.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'equius-official-main', get_template_directory_uri() . '/js/equius.main.js', array(), '20151215', true );
 
