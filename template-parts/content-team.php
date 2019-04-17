@@ -10,7 +10,8 @@
   */
   $args = array(
     'posts_per_page'    => -1,
-    'orderby'           => 'title',
+    'orderby'           => 'meta_value',
+    'meta_key'          => 'team_member_order',
     'order'             => 'ASC',
     'post_type'         => 'team_members',
     'suppress_filters'  => true
@@ -73,9 +74,10 @@
               $name   = get_the_title();
               $role   = get_field( 'team_member_role' );
               $image  = get_field( 'team_member_photo' );
+              $order  = get_field( 'team_member_order' );
           ?>
   
-          <li>
+          <li data-order="<?php echo $order; ?>">
             <a href="#" 
               data-id="<?php echo get_the_ID(); ?>">
               <img src="<?php echo $image ?>" alt="">

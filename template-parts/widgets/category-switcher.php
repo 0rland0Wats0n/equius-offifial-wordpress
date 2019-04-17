@@ -18,10 +18,10 @@
 <section class="widget__category_switcher">
    <h3>I'm Looking For</h3>
    <section>
+      <i class="fas fa-chevron-down widget__category_switcher__toggler"></i>
       <?php if( $cat_id ) : ?>
         <h3><?php echo get_category( $cat_id )->name ?></h3>
       <?php endif; ?>
-      <i class="fas fa-chevron-down widget__category_switcher__toggler"></i>
     <ul data-state="closed">
       <li class="tag__asset_class">
         <a href="<?php echo get_post_type_archive_link( 'asset_classes' ); ?>">Asset Class</a>

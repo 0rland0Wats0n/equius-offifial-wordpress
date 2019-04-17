@@ -18,20 +18,18 @@
         <?php
           if ( $order == "meta_value_num" ) {
             echo "Popularity";
-          } elseif ( $order == "date" ) {
-            echo "Date";
           } else {
-            echo "Default";
+            echo "Date";
           }
         ?>
       </p>
       <ul>
         <li>
-          <a href="<?php echo $curr_url ?>">
-            <?php if( $order == 1 ) { ?>
+          <a href="<?php echo $curr_url . "?orderby=date&order=desc" ?>">
+            <?php if( $order == "date" ) { ?>
               <i class="fas fa-check"></i>
             <?php } ?>
-            Default
+            Date
           </a>
         </li>
         <li>
@@ -40,14 +38,6 @@
               <i class="fas fa-check"></i>
             <?php } ?>
             Popularity
-          </a>
-        </li>
-        <li>
-          <a href="<?php echo $curr_url . "?orderby=date&order=desc" ?>">
-            <?php if( $order == "date" ) { ?>
-              <i class="fas fa-check"></i>
-            <?php } ?>
-            Date
           </a>
         </li>
       </ul>

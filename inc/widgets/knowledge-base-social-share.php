@@ -39,6 +39,11 @@ Author URI: http://www.orlandogwatson.com/
       ?>
 
       <nav class="widget__kb_social_share">
+        <?php if (function_exists('pf_show_link')) { ?>
+          <li>
+            <?php echo pf_show_link(); ?>
+          </li>
+        <?php } ?>
         <li>
           <a href="<?php echo $facebookURL?>" target="_blank" rel="noopener noreferrer">
             <i class="fab fa-facebook"></i>

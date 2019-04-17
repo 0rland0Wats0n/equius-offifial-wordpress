@@ -32,7 +32,7 @@
         </a>
         <p class="post_card__date"><?php echo the_time( "m.d.Y" ); ?></p>
     </span>
-    <p class="post_card__excerpt"><?php echo substr( get_the_excerpt(), 0, 90 ) 
+    <p class="post_card__excerpt"><?php echo substr( get_the_excerpt(), 0, 90 ) . "..." 
     ?></p>
   </main>
 </section>

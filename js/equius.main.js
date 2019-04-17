@@ -200,7 +200,7 @@ if (!Array.prototype.findIndex) {
             items: 7,
             dotsEach: 7,
             responsive: {
-              0: { items: 2, dotsEach: 2 },
+              0: { items: 2, dotsEach: 2, },
               600: { items: 4, dotsEach: 4 },
               768: { items: 5, dotsEach: 5 },
               992: { items: 7, dotsEach: 7 }
@@ -214,13 +214,14 @@ if (!Array.prototype.findIndex) {
             a.addEventListener("click", function(e) {
               e.preventDefault();
 
+              var target = e.currentTarget;
               var active = document.querySelector(".team__members li > a[data-state='active']");
-              var id = a.getAttribute("data-id");
+              var id = target.getAttribute("data-id");
               var teamMember = document.querySelector(`.team_member[data-id="${id}"`);
               
-              if (a == active) {
+              if (target == active) {
                 content.setAttribute("data-state", "visible");
-                a.setAttribute("data-state", "inactive");
+                target.setAttribute("data-state", "inactive");
                 teamMember.setAttribute("data-state", "hidden");
                 
                 return;
@@ -234,7 +235,7 @@ if (!Array.prototype.findIndex) {
 
               content.setAttribute("data-state", "hidden");
                teamMember.setAttribute("data-state", "visible");
-               a.setAttribute("data-state", "active");
+               target.setAttribute("data-state", "active");
             });
           })
         }
