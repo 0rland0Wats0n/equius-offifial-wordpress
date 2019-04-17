@@ -1,29 +1,6 @@
 {
     "key": "group_5c23c90ce7670",
     "title": "Author Profile Hero",
-    "location": [
-        [
-            {
-                "param": "user_form",
-                "operator": "==",
-                "value": "edit"
-            },
-            {
-                "param": "user_role",
-                "operator": "!=",
-                "value": "subscriber"
-            }
-        ]
-    ],
-    "menu_order": 0,
-    "position": "normal",
-    "style": "default",
-    "label_placement": "top",
-    "instruction_placement": "label",
-    "hide_on_screen": "",
-    "active": 1,
-    "description": "",
-    "modified": 1554781039,
     "fields": [
         {
             "key": "field_5c23c963a3004",
@@ -49,5 +26,28 @@
             "max_size": "",
             "mime_types": ""
         }
-    ]
+    ],
+    "location": [
+        [
+            {
+                "param": "user_form",
+                "operator": "==",
+                "value": "edit"
+            },
+            {
+                "param": "user_role",
+                "operator": "!=",
+                "value": "subscriber"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1555279369
 }

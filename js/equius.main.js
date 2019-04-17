@@ -393,6 +393,7 @@ if (!Array.prototype.findIndex) {
         }
 
         var recentPostsContainer = document.querySelector(".posts__recent_container");
+        var categoryPostsContainer = document.querySelector(".category_search__results");
 
         if (recentPostsContainer && window.innerWidth >= 1280)
         {
@@ -404,6 +405,20 @@ if (!Array.prototype.findIndex) {
             for (let i = numEmptyToAdd; i > 0; i--)
             {
               appendChildrenToContainer(recentPostsContainer, "post_card");
+            }
+          }
+        }
+
+        if (categoryPostsContainer && window.innerWidth >= 1280)
+        {
+          var numPosts = categoryPostsContainer.querySelectorAll(".post_card").length;
+          var numEmptyToAdd = 4 - (numPosts%4);
+
+          if (numPosts % 4)
+          {
+            for (let i = numEmptyToAdd; i > 0; i--)
+            {
+              appendChildrenToContainer(categoryPostsContainer, "post_card");
             }
           }
         }

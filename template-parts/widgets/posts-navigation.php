@@ -16,25 +16,27 @@
   }
 ?>
 
-<nav class="widget__post_navigation" role="navigation">
-  <h2 class="screen-reader-text">Posts navigation</h2>
-  <ul class="post_navigation__links">
-    <div class="inner <?php echo $links ?>">
-      <?php if( $prev ) : ?>
-        <li>
-          <?php echo $prev ?>
-        </li>
-      <?php endif; ?>
-      <li class="back-to-posts">
-        <a href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>">
-          <i class="fas fa-th"></i>
-        </a>
-      </li class="post_navigation__link_next">
-       <?php if( $next ) : ?>
-        <li>
-          <?php echo $next ?>
-        </li>
-      <?php endif; ?>
-    </div>
-  </ul>
-</nav>
+<?php if ( $next || $prev ) : ?>
+  <nav class="widget__post_navigation" role="navigation">
+    <h2 class="screen-reader-text">Posts navigation</h2>
+    <ul class="post_navigation__links">
+      <div class="inner <?php echo $links ?>">
+        <?php if( $prev ) : ?>
+          <li>
+            <?php echo $prev ?>
+          </li>
+        <?php endif; ?>
+        <li class="back-to-posts">
+          <a href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>">
+            <i class="fas fa-th"></i>
+          </a>
+        </li class="post_navigation__link_next">
+        <?php if( $next ) : ?>
+          <li>
+            <?php echo $next ?>
+          </li>
+        <?php endif; ?>
+      </div>
+    </ul>
+  </nav>
+<?php endif; ?>

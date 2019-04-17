@@ -42,7 +42,7 @@
                 if( !empty($post_categories) ) {
                   $category = $post_categories[0];
               ?>
-              <a href="<? echo get_category_link( $category->term_id ) ?>">
+              <a href="<?php echo get_category_link( $category->term_id ) ?>">
                 <?php echo " / " . $category->name ?>
               </a>
               <?php } ?>

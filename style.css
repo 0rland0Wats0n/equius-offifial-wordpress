@@ -1018,7 +1018,7 @@ h6,
 .type__caption {
 	font-family: "Avenir LT Std", sans-serif;
 	font-weight: 500;
-	font-size: 11.25px;
+	font-size: 12px;
 }
 
 small,
@@ -1757,6 +1757,7 @@ section[role="navigation"] .nav__content>nav>ul>li:not(:last-child) a::after {
 	border-bottom-right-radius: 4px;
 	text-transform: uppercase;
 	cursor: pointer;
+	font-family: "Avenir LT Std", san-serif;
 }
 
 /* Post(s) Navigation */
@@ -1946,6 +1947,7 @@ section[role="navigation"] .nav__content>nav>ul>li:not(:last-child) a::after {
 	width: 100%;
 	left: 0;
 	top: 4em;
+	z-index: 99;
 	max-height: 0;
 	overflow-y: hidden;
 	-webkit-transition: max-height 200ms linear;
@@ -1965,6 +1967,12 @@ section[role="navigation"] .nav__content>nav>ul>li:not(:last-child) a::after {
 	font-weight: bold;
 	padding: 1em;
 	border: 1px solid #ececec;
+}
+.widget__category_switcher>section>ul>li.tag__asset_class,
+.widget__category_switcher>section>ul>li.tag__video,
+.widget__category_switcher>section>ul>li.tag__asset_class>a,
+.widget__category_switcher>section>ul>li.tag__video>a {
+	background-color: #f9f9f9;
 }
 
 /* Knowledge Base SOcial Share */
@@ -2697,6 +2705,10 @@ header.header__landing .header__content .header__scroll::after {
 }
 
 /* Contact */
+#contact {
+	background-color: #fafafa;
+}
+
 #contact .contact__top {
 	color: #001A44;
 	text-align: center;
@@ -3036,21 +3048,23 @@ main.archive__asset_classes .asset_classes__back_to_posts>a>h3 {
 
 .asset_classes__class>h5 {
 	text-transform: uppercase;
-	color: #F6AE2D;
+	color: #005391;
 	margin: 0;
-	padding-bottom: 1em;
+	padding-bottom: .75em;
 	border-bottom: 2px solid #dedede;
 	font-weight: bold;
 	letter-spacing: 2px;
-	font-size: 9px;
+	font-size: 16px;
 }
 
 .asset_classes__class>h3 {
 	font-weight: bold;
+	font-size: 28px;
 	color: #001A44;
 	max-width: 500px;
 	min-height: 50px;
-	line-height: 1;
+	line-height: 1.3;
+	margin-bottom: 0;
 }
 
 .asset_classes__class>p {
@@ -3206,7 +3220,8 @@ main>.posts__empty>h4 {
 	color: white;
 	text-transform: uppercase;
 	margin: 0 2em;
-	line-height: 1;
+	font-family: avenir-heavy;
+	letter-spacing: .25em;
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -3411,7 +3426,8 @@ article.post__single>header {
 }
 
 article.post__single>header .post__meta {
-	max-width: 800px;
+	width: 800px;
+	max-width: 100%;
 	margin: 0 auto;
 }
 
@@ -3452,13 +3468,15 @@ article.post__single>header .post__meta>p>a::after {
 }
 
 article.post__single>header .post__title {
-	max-width: 800px;
+	width: 800px;
+	max-width: 100%;
 	margin: 0 auto;
 	color: white;
 }
 
 article.post__single>main {
-	max-width: 1080px;
+	width: 1080px;
+	max-width: 100%;
 	margin: 2em auto;
 	position: relative;
 	display: -webkit-box;
@@ -3678,7 +3696,7 @@ article.post__single>main>figure>figcaption {
 
 /* Empty state */
 .category_search .category_search__empty {
-	max-width: 992px;
+	width: 100%;
 	margin: 0 auto;
 	padding: 8em 2em 10em;
 	text-align: center;
@@ -4125,10 +4143,10 @@ main.author>section .author__posts .post_card {
 #home-contact form input[type],
 #home-contact form textarea {
 	padding: 1em;
-	background-color: rgba(171, 181, 186, 30%);
+	background-color: white;
 	color: #005391;
 	outline: none;
-	border: none;
+	border: 2px solid #e0e0e0;
 	border-radius: 4px;
 	display: block;
 	width: 100%;
@@ -4219,7 +4237,7 @@ main.author>section .author__posts .post_card {
 ------------*/
 footer {
 	width: 100%;
-	background-color: #001A44;
+	background-color: white;
 	color: white;
 }
 
@@ -4236,6 +4254,7 @@ footer .footer__content {
 	-webkit-box-align: center;
 	-ms-flex-align: center;
 	align-items: center;
+	color: #001A44;
 }
 
 footer .footer__content>span {
@@ -4263,12 +4282,9 @@ footer .footer__content p {
 	margin: 1em 0;
 }
 
-footer .footer__content .footer_social {
-	padding: 0 3em;
-}
-
-footer .footer__content .footer_social i {
+.footer_social i {
 	font-size: 21px;
+	color: #001A44;
 }
 
 /* -------------
@@ -4586,7 +4602,8 @@ footer .footer__content .footer_social i {
 	article.post__single>main>h4,
 	article.post__single>main>h5,
 	article.post__single>main .wp-block-columns {
-		max-width: 80%;
+		width: 80%;
+		max-width: 100%;
 		padding-right: 20%;
 	}
 

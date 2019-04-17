@@ -23,6 +23,13 @@
       <?php endif; ?>
       <i class="fas fa-chevron-down widget__category_switcher__toggler"></i>
     <ul data-state="closed">
+      <li class="tag__asset_class">
+        <a href="<?php echo get_post_type_archive_link( 'asset_classes' ); ?>">Asset Class</a>
+      </li>
+      <li class="tag__video">
+        <?php $tag = get_term_by( "slug", "video", "post_tag" ); ?>
+        <a href="<?php echo get_tag_link( $tag ); ?>">Video</a>
+      </li>
       <?php foreach( $categories as $category ) : ?>
         <li><a href="<?php echo get_category_link( $category->term_id ) ?>">
           <?php echo $category->name ?>
